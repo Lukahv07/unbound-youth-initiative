@@ -4,31 +4,24 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Globe, Users } from "lucide-react";
-
 const ContactSection = () => {
-  const actionCards = [
-    {
-      icon: Users,
-      title: "Students",
-      description: "Want to start a service initiative at your school?",
-      action: "Get Started Guide"
-    },
-    {
-      icon: Mail,
-      title: "Educators",
-      description: "Bring the UNbound Workshop to your campus",
-      action: "Schedule Workshop"
-    },
-    {
-      icon: Globe,
-      title: "Organizations",
-      description: "Partner with us to amplify youth impact",
-      action: "Partner with Us"
-    }
-  ];
-
-  return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-light-blue-soft to-white">
+  const actionCards = [{
+    icon: Users,
+    title: "Students",
+    description: "Want to start a service initiative at your school?",
+    action: "Get Started Guide"
+  }, {
+    icon: Mail,
+    title: "Educators",
+    description: "Bring the UNbound Workshop to your campus",
+    action: "Schedule Workshop"
+  }, {
+    icon: Globe,
+    title: "Organizations",
+    description: "Partner with us to amplify youth impact",
+    action: "Partner with Us"
+  }];
+  return <section id="contact" className="py-20 bg-gradient-to-b from-light-blue-soft to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -45,9 +38,8 @@ const ContactSection = () => {
           {/* Action Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {actionCards.map((card, index) => {
-              const IconComponent = card.icon;
-              return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow group">
+            const IconComponent = card.icon;
+            return <Card key={index} className="text-center hover:shadow-lg transition-shadow group">
                   <CardHeader>
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
                       <IconComponent className="w-6 h-6 text-primary" />
@@ -60,9 +52,8 @@ const ContactSection = () => {
                       {card.action}
                     </Button>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           {/* Contact Form and Info */}
@@ -87,11 +78,7 @@ const ContactSection = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your interest in UNbound, your school, or your project ideas..."
-                    rows={4}
-                  />
+                  <Textarea id="message" placeholder="Tell us about your interest in UNbound, your school, or your project ideas..." rows={4} />
                 </div>
                 <Button variant="hero" className="w-full" size="lg">
                   Send Message
@@ -125,21 +112,11 @@ const ContactSection = () => {
                 </CardContent>
               </Card>
 
-              <div className="bg-gradient-to-r from-primary to-turquoise rounded-2xl p-6 text-white">
-                <h4 className="text-xl font-bold mb-4">Ready to Unbind Your Impact?</h4>
-                <p className="mb-4 opacity-90">
-                  The world needs your voice. Let's unbind it together.
-                </p>
-                <Button variant="outline" className="bg-white text-primary hover:bg-white/90">
-                  Download Starter Guide
-                </Button>
-              </div>
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;

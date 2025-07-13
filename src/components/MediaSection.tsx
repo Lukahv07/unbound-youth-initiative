@@ -2,16 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Eye, Mail } from "lucide-react";
-
 const MediaSection = () => {
-  const features = [
-    "On-the-ground footage from medical missions",
-    "Interviews with families, doctors, and volunteers",
-    "Reflections from student leaders"
-  ];
-
-  return (
-    <section id="media" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
+  const features = ["On-the-ground footage from medical missions", "Interviews with families, doctors, and volunteers", "Reflections from student leaders"];
+  return <section id="media" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -47,12 +40,10 @@ const MediaSection = () => {
               <div className="mb-8">
                 <h4 className="font-semibold text-foreground mb-4">Featuring:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-2">
+                  {features.map((feature, index) => <div key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <p className="text-sm text-muted-foreground">{feature}</p>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
@@ -73,7 +64,7 @@ const MediaSection = () => {
           {/* Additional Media Content */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-6 my-0">
                 <h4 className="font-semibold text-foreground mb-3">Photo Gallery</h4>
                 <p className="text-muted-foreground mb-4">
                   Explore moments from our missions, workshops, and student-led initiatives around the world.
@@ -82,20 +73,10 @@ const MediaSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-3">Press & Articles</h4>
-                <p className="text-muted-foreground mb-4">
-                  Read about our impact in local and international publications, and download our press kit.
-                </p>
-                <Button variant="outline" size="sm">Read More</Button>
-              </CardContent>
-            </Card>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default MediaSection;

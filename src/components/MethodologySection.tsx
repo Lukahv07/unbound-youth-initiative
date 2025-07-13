@@ -1,43 +1,34 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Search, Zap, PenTool, Rocket, RotateCcw } from "lucide-react";
-
 const MethodologySection = () => {
-  const steps = [
-    {
-      icon: Search,
-      title: "Identify",
-      description: "Students identify personal passions, local needs, and global SDG connections.",
-      color: "bg-primary/10 text-primary"
-    },
-    {
-      icon: Zap,
-      title: "Empower",
-      description: "We guide students through a structured, mentored process of turning ideas into impact.",
-      color: "bg-turquoise/10 text-turquoise"
-    },
-    {
-      icon: PenTool,
-      title: "Design",
-      description: "Together, students build collaborative action plans that involve educators, peers, administrators, and community members.",
-      color: "bg-light-blue/10 text-light-blue"
-    },
-    {
-      icon: Rocket,
-      title: "Launch",
-      description: "Initiatives are implemented with school-wide support, NGO partnerships, and real-world engagement.",
-      color: "bg-primary/10 text-primary"
-    },
-    {
-      icon: RotateCcw,
-      title: "Sustain",
-      description: "We foster continuity through feedback, reflection, and leadership development, empowering new cohorts to carry the torch.",
-      color: "bg-turquoise/10 text-turquoise"
-    }
-  ];
-
-  return (
-    <section id="methodology" className="py-20 bg-white">
+  const steps = [{
+    icon: Search,
+    title: "Identify",
+    description: "Students identify personal passions, local needs, and global SDG connections.",
+    color: "bg-primary/10 text-primary"
+  }, {
+    icon: Zap,
+    title: "Empower",
+    description: "We guide students through a structured, mentored process of turning ideas into impact.",
+    color: "bg-turquoise/10 text-turquoise"
+  }, {
+    icon: PenTool,
+    title: "Design",
+    description: "Together, students build collaborative action plans that involve educators, peers, administrators, and community members.",
+    color: "bg-light-blue/10 text-light-blue"
+  }, {
+    icon: Rocket,
+    title: "Launch",
+    description: "Initiatives are implemented with school-wide support, NGO partnerships, and real-world engagement.",
+    color: "bg-primary/10 text-primary"
+  }, {
+    icon: RotateCcw,
+    title: "Sustain",
+    description: "We foster continuity through feedback, reflection, and leadership development, empowering new cohorts to carry the torch.",
+    color: "bg-turquoise/10 text-turquoise"
+  }];
+  return <section id="methodology" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -49,9 +40,8 @@ const MethodologySection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {steps.map((step, index) => {
-              const IconComponent = step.icon;
-              return (
-                <Card key={index} className="relative hover:shadow-lg transition-shadow border-l-4 border-primary">
+            const IconComponent = step.icon;
+            return <Card key={index} className="relative hover:shadow-lg transition-shadow border-l-4 border-primary">
                   <CardHeader className="pb-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 ${step.color}`}>
                       <IconComponent className="w-6 h-6" />
@@ -66,9 +56,8 @@ const MethodologySection = () => {
                       {index + 1}
                     </Badge>
                   </div>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           {/* Impact Statement */}
@@ -77,14 +66,10 @@ const MethodologySection = () => {
               <span className="text-2xl">📍</span>
             </div>
             <h3 className="text-2xl font-bold text-foreground mb-4">Real Projects. Real People. Real Change.</h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              With UNbound's support, students across 10 Tri-Association schools have launched projects—from environmental campaigns to health equity drives—each uniquely rooted in their context but united by shared values.
-            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">UNbound has rallied students and educators across 10 Tri-Association schools for the 2025-26 school year to launch service projects across 5 countries—from environmental campaigns to health equity drives—each uniquely rooted in their context but united by shared values.</p>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default MethodologySection;

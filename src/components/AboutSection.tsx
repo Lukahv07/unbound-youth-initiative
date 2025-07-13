@@ -1,9 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Globe, Target } from "lucide-react";
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
+  return <section id="about" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -17,9 +15,7 @@ const AboutSection = () => {
             <p className="text-lg mb-6">
               The UNbound Youth Initiative was born from a story of transformation.
             </p>
-            <p className="mb-6">
-              At 15, founder Lukah Villarreal stood in a hospital hallway during an Operation Smile medical mission—translating between doctors and patients, comforting families before life-changing cleft palate surgeries. As part of Miles for Smiles, the largest student-led Operation Smile initiative in Mexico, Lukah helped raise $30,000 annually, led over 1,000 runners each year, and worked side-by-side with surgeons, nurses, and children whose lives were about to change.
-            </p>
+            <p className="mb-6">At 16, founder Lukah Villarreal stood in the recovery room of an Operation Smile medical mission—translating between surgeons and nurses and playing with children before life-changing cleft palate surgeries. As Finance Chair of Miles for Smiles, the largest student-led Operation Smile initiative in Mexico, Lukah helped raise $30,000 annually—enough for around 20 surgeries—rallied over 1,000 runners each year for the Miles for Smiles charity raced, and worked side-by-side with surgeons, nurses, and children whose lives were about to change.</p>
             <p className="mb-6">
               But Lukah saw a bigger pattern. While powerful, initiatives like M4S often operated in silos—limited to single causes or events. What if students could be empowered to build their own movements, tailored to their communities, aligned with the United Nations Sustainable Development Goals (SDGs)?
             </p>
@@ -83,8 +79,6 @@ const AboutSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
