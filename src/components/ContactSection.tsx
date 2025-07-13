@@ -94,9 +94,12 @@ const ContactSection = () => {
                     <Mail className="w-5 h-5 text-primary" />
                     <h4 className="font-semibold">Email Us</h4>
                   </div>
-                  <p className="text-muted-foreground">
-                    contact@unboundyouth.org
-                  </p>
+                  <a 
+                    href="mailto:26villarreal7045@asfm.mx"
+                    className="text-primary hover:text-turquoise transition-colors"
+                  >
+                    26villarreal7045@asfm.mx
+                  </a>
                 </CardContent>
               </Card>
 
