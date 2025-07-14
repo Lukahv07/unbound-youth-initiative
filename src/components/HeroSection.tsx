@@ -2,13 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
-// Array of hero images - you can add more images here
+// Array of hero images showcasing UNbound Youth Initiative's real impact
 const heroImages = [
-  "/src/assets/hero-image-new.jpg",
-  "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1920&h=1080&fit=crop", // Youth volunteering
-  "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&h=1080&fit=crop", // Students collaborating
-  "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1920&h=1080&fit=crop", // Global community
-  "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1920&h=1080&fit=crop", // Youth leadership
+  "/lovable-uploads/3c68bc51-a5da-4e66-baa1-ef654df88194.png", // Miles for Smiles race - families and children at starting line
+  "/lovable-uploads/42ba317a-9747-41e4-aeea-fd644ce68948.png", // Global hands supporting Earth - worldwide youth impact
+  "/lovable-uploads/5916036d-9e8c-4f7a-abee-91928b5de98a.png", // Operation Smile medical mission - real healthcare impact
+  "/lovable-uploads/897a314a-56bd-4e57-be99-90180abd6877.png", // Youth with SDG signs - climate action and education focus
 ];
 
 const HeroSection = () => {
