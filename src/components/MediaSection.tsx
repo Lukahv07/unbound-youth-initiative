@@ -20,9 +20,7 @@ const MediaSection = () => {
                   <Play className="w-5 h-5" />
                 </div>
                 <div>
-                  <Badge variant="outline" className="border-white text-white mb-2">
-                    🎬 Documentary
-                  </Badge>
+                  <Badge variant="outline" className="border-white text-white mb-2">🎬 Mini Documentary</Badge>
                   <CardTitle className="text-2xl">"More Than a Race"</CardTitle>
                 </div>
               </div>
