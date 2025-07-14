@@ -35,9 +35,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/60 text-sm">
-            © 2024 UNbound Youth Initiative. All rights reserved.
-          </p>
+          <p className="text-white/60 text-sm">© 2025 UNbound Youth Initiative. All rights reserved.</p>
           <div className="flex items-center space-x-1 text-white/60 text-sm mt-4 md:mt-0">
             <span>Made with</span>
             <Heart className="w-4 h-4 text-red-400" />

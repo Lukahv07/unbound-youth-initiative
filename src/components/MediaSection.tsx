@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Play, Eye, Mail } from "lucide-react";
 const MediaSection = () => {
   const features = ["On-the-ground footage from medical missions", "Interviews with families, doctors, and volunteers", "Reflections from student leaders"];
-  return <section id="media" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  return <section id="media" className="bg-gradient-to-b from-background to-light-blue-soft py-[40px] bg-slate-400">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-0">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Media</h2>
@@ -59,9 +59,9 @@ const MediaSection = () => {
           </Card>
 
           {/* Additional Media Content */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 my-[20px]">
             <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6 my-0">
+              <CardContent className="p-6 my-0 px-[24px] py-[24px]">
                 <h4 className="font-semibold text-foreground mb-3">Photo Gallery</h4>
                 <p className="text-muted-foreground mb-4">
                   Explore moments from our missions, workshops, and student-led initiatives around the world.

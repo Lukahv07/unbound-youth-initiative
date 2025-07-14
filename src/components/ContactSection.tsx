@@ -21,7 +21,7 @@ const ContactSection = () => {
     description: "Partner with us to amplify youth impact",
     action: "Partner with Us"
   }];
-  return <section id="contact" className="py-20 bg-gradient-to-b from-light-blue-soft to-white">
+  return <section id="contact" className="bg-gradient-to-b from-light-blue-soft to-white py-[40px] bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -94,10 +94,7 @@ const ContactSection = () => {
                     <Mail className="w-5 h-5 text-primary" />
                     <h4 className="font-semibold">Email Us</h4>
                   </div>
-                  <a 
-                    href="mailto:26villarreal7045@asfm.mx"
-                    className="text-primary hover:text-turquoise transition-colors"
-                  >
+                  <a href="mailto:26villarreal7045@asfm.mx" className="text-primary hover:text-turquoise transition-colors">
                     26villarreal7045@asfm.mx
                   </a>
                 </CardContent>
