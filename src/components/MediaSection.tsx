@@ -40,7 +40,7 @@ const MediaSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                   {features.map((feature, index) => <div key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <p className="text-sm text-muted-foreground">{feature}</p>
+                      
                     </div>)}
                 </div>
               </div>
@@ -57,7 +57,7 @@ const MediaSection = () => {
           </Card>
 
           {/* Additional Media Content */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 my-[20px]">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 my-0">
             <Card className="hover:shadow-md transition-shadow">
               <CardContent className="p-6 my-0 px-[24px] py-[24px]">
                 <h4 className="font-semibold text-foreground mb-3">Photo Gallery</h4>
