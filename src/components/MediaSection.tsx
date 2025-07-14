@@ -8,7 +8,7 @@ const MediaSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-0">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-5xl">Media</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4 py-0 my-[40px] sm:text-5xl">Media</h2>
         </div>
 
         <div className="max-w-4xl mx-auto">
