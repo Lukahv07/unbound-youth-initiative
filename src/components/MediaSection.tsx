@@ -53,10 +53,7 @@ const MediaSection = () => {
                   <Eye className="w-4 h-4" />
                   <span>Watch Trailer</span>
                 </Button>
-                <Button variant="outline" className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <span>Contact for Screening</span>
-                </Button>
+                
               </div>
             </CardContent>
           </Card>

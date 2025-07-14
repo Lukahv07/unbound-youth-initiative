@@ -1,8 +1,6 @@
 import { Heart } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-foreground text-white py-12">
+  return <footer className="bg-foreground text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
@@ -28,7 +26,7 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Get Involved</h4>
-            <p className="text-white/80 mb-2">contact@unboundyouth.org</p>
+            <p className="text-white/80 mb-2">26villarreal7045@asfm.mx</p>
             <p className="text-white/80">
               Join students across 10+ schools making global impact locally.
             </p>
@@ -47,8 +45,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
