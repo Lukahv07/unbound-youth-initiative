@@ -57,7 +57,7 @@ const MediaSection = () => {
           </Card>
 
           {/* Additional Media Content */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 my-0">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 my-[20px]">
             <Card className="hover:shadow-md transition-shadow">
               <CardContent className="p-6 my-0 px-[24px] py-[24px]">
                 <h4 className="font-semibold text-foreground mb-3">Photo Gallery</h4>
