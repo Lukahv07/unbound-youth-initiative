@@ -71,16 +71,7 @@ const WorkshopsSection = () => {
           </Card>
 
           {/* Call to Action */}
-          <div className="text-center bg-gradient-to-r from-primary to-turquoise rounded-2xl p-8 text-white">
-            <h3 className="font-bold mb-4 text-3xl">Ready to Transform Your School?</h3>
-            <p className="text-lg mb-6 opacity-90">
-              Bring the UNbound methodology to your educational community and empower the next generation of changemakers.
-            </p>
-            <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-white/90">
-              Bring UNbound to Your School
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
+          
         </div>
       </div>
     </section>;
