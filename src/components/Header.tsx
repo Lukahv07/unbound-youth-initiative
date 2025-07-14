@@ -16,7 +16,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
-            <img alt="UNbound Youth Initiative" className="h-10 w-auto" src="/lovable-uploads/cd61915f-3f45-49d4-87b3-316473029c1a.png" />
+            <img alt="UNbound Youth Initiative" className="h-10 w-auto" src="/lovable-uploads/2bc4ce61-cf77-4315-abb4-5ce06a7f2692.png" />
             <h1 className="text-xl font-bold text-primary">UNbound Youth Initiative</h1>
           </div>
 
