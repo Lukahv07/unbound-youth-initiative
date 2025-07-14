@@ -31,9 +31,7 @@ const AboutSection = () => {
           <p className="text-lg text-center text-foreground leading-relaxed max-w-3xl mx-auto font-normal">
             To equip students with the tools, guidance, and global lens to lead multilateral, community-based service initiatives—sparking lasting impact that begins in schools and ripples outward.
           </p>
-          <p className="text-center text-muted-foreground mt-4 max-w-3xl mx-auto text-lg font-normal">
-            We challenge the traditional "club model" by cultivating interdisciplinary, multi-stakeholder, and SDG-aligned action plans that elevate student agency and transform extracurricular learning.
-          </p>
+          <p className="text-center text-muted-foreground mt-4 max-w-3xl mx-auto text-lg font-normal">We challenge the traditional, silo-centric "club" model by cultivating interdisciplinary, multi-stakeholder, and SDG-aligned action plans that elevate student agency and transform extracurricular learning.</p>
         </div>
 
         {/* Values Cards */}
