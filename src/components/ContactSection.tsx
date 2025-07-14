@@ -25,10 +25,8 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-4 py-[40px] sm:text-5xl">Join the Movement</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Want to start a service initiative at your school? Already leading a cause but want to connect it to the SDGs?
-          </p>
+          <h2 className="text-3xl font-bold text-foreground mb-4 py-[40px] sm:text-5xl">Ready to Transform Your School?</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Bring the UNbound methodology to your educational community and empower the next generation of changemakers.</p>
           <p className="text-lg text-primary mt-4 font-medium">
             Whether you're a student, educator, or changemaker—you belong here.
           </p>
