@@ -30,7 +30,7 @@ const MediaSection = () => {
                 A behind-the-scenes look at Miles for Smiles, Operation Smile Mexico, and the moments that sparked a movement.
               </p>
               
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-lg">
                 From hospital hallways to 1,000-runner fundraisers, explore the journey of students who turned compassion into action.
               </p>
 

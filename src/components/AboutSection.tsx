@@ -19,7 +19,7 @@ const AboutSection = () => {
             <p className="mb-6">
               But Lukah saw a bigger pattern. While powerful, initiatives like M4S often operated in silos—limited to single causes or events. What if students could be empowered to build their own movements, tailored to their communities, aligned with the United Nations Sustainable Development Goals (SDGs)?
             </p>
-            <p className="text-lg font-medium text-primary">
+            <p className="font-medium text-primary text-xl">
               That's how UNbound began: a platform to unchain youth service from boundaries—of subject, of setting, of expectation—and replace them with bold collaboration and global purpose.
             </p>
           </div>
@@ -28,10 +28,10 @@ const AboutSection = () => {
         {/* Mission */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
           <h3 className="font-bold text-center text-foreground mb-6 text-3xl">Our Mission</h3>
-          <p className="text-lg text-center text-foreground leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg text-center text-foreground leading-relaxed max-w-3xl mx-auto font-normal">
             To equip students with the tools, guidance, and global lens to lead multilateral, community-based service initiatives—sparking lasting impact that begins in schools and ripples outward.
           </p>
-          <p className="text-center text-muted-foreground mt-4 max-w-3xl mx-auto">
+          <p className="text-center text-muted-foreground mt-4 max-w-3xl mx-auto text-lg font-normal">
             We challenge the traditional "club model" by cultivating interdisciplinary, multi-stakeholder, and SDG-aligned action plans that elevate student agency and transform extracurricular learning.
           </p>
         </div>
