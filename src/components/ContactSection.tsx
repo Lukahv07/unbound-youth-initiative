@@ -48,9 +48,7 @@ const ContactSection = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">{card.description}</p>
-                    <Button variant="outline" size="sm" className="w-full">
-                      {card.action}
-                    </Button>
+                    
                   </CardContent>
                 </Card>;
           })}
