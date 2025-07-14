@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 
 // Array of hero images showcasing UNbound Youth Initiative's real impact
 const heroImages = [
-  "/lovable-uploads/3c68bc51-a5da-4e66-baa1-ef654df88194.png", // Miles for Smiles race - families and children at starting line
-  "/lovable-uploads/42ba317a-9747-41e4-aeea-fd644ce68948.png", // Global hands supporting Earth - worldwide youth impact
-  "/lovable-uploads/5916036d-9e8c-4f7a-abee-91928b5de98a.png", // Operation Smile medical mission - real healthcare impact
-  "/lovable-uploads/897a314a-56bd-4e57-be99-90180abd6877.png", // Youth with SDG signs - climate action and education focus
+  "/lovable-uploads/2bc4ce61-cf77-4315-abb4-5ce06a7f2692.png", // User uploaded image 1
+  "/lovable-uploads/cd61915f-3f45-49d4-87b3-316473029c1a.png", // User uploaded image 2
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1950&q=80", // Team collaboration backup
+  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1950&q=80", // Hands holding earth backup
 ];
 
 const HeroSection = () => {
