@@ -16,9 +16,7 @@ const AboutSection = () => {
               The UNbound Youth Initiative was born from a story of transformation.
             </p>
             <p className="mb-6">At 16, founder Lukah Villarreal stood in the recovery room of an Operation Smile medical mission—translating between surgeons and nurses and playing with children before life-changing cleft palate surgeries. As Finance Chair of Miles for Smiles (M4S), the largest student-led Operation Smile initiative in Mexico, Lukah helped raise $30,000 annually—enough for around 20 surgeries—rallied over 1,000 runners each year for the M4S charity raced, and worked side-by-side with surgeons, nurses, and children whose lives were about to change.</p>
-            <p className="mb-6">
-              But Lukah saw a bigger pattern. While powerful, initiatives like M4S often operated in silos—limited to single causes or events. What if students could be empowered to build their own movements, tailored to their communities, aligned with the United Nations Sustainable Development Goals (SDGs)?
-            </p>
+            <p className="mb-6">But Lukah saw a bigger pattern. While powerful, initiatives like M4S often operated in silos—limited in size, diversity, and interest. What if students could be empowered to build their own movements, tailored to their communities, aligned with the United Nations Sustainable Development Goals (SDGs)?</p>
             <p className="font-medium text-primary text-xl">
               That's how UNbound began: a platform to unchain youth service from boundaries—of subject, of setting, of expectation—and replace them with bold collaboration and global purpose.
             </p>
