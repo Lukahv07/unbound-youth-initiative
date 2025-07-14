@@ -1,7 +1,30 @@
+
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image-new.jpg";
+import { useState, useEffect } from "react";
+
+// Array of hero images - you can add more images here
+const heroImages = [
+  "/src/assets/hero-image-new.jpg",
+  "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1920&h=1080&fit=crop", // Youth volunteering
+  "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&h=1080&fit=crop", // Students collaborating
+  "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1920&h=1080&fit=crop", // Global community
+  "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1920&h=1080&fit=crop", // Youth leadership
+];
 
 const HeroSection = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-scroll through images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % heroImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -11,11 +34,17 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      {/* Background Images Carousel */}
+      <div className="absolute inset-0">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-turquoise/70"></div>
       </div>
 
@@ -49,6 +78,21 @@ const HeroSection = () => {
             About Us
           </Button>
         </div>
+      </div>
+
+      {/* Image Indicators */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentImageIndex 
+                ? 'bg-white scale-110' 
+                : 'bg-white/50 hover:bg-white/70'
+            }`}
+            onClick={() => setCurrentImageIndex(index)}
+          />
+        ))}
       </div>
 
       {/* Scroll Indicator */}
