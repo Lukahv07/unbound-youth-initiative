@@ -49,7 +49,7 @@ const MediaSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" className="flex items-center space-x-2">
                   <Eye className="w-4 h-4" />
-                  <span>Watch Trailer</span>
+                  <span>Watch (~3 min)</span>
                 </Button>
                 
               </div>
