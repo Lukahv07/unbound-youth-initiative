@@ -60,7 +60,7 @@ const WorkshopsSection = () => {
             <CardHeader>
               <CardTitle className="text-center text-2xl">Participants engage in:</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-[80px]">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {activities.map((activity, index) => <div key={index} className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
