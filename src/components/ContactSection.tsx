@@ -21,7 +21,7 @@ const ContactSection = () => {
     description: "Partner with us to amplify youth impact",
     action: "Partner with Us"
   }];
-  return <section id="contact" className="bg-gradient-to-b from-light-blue-soft to-white py-[40px] bg-slate-50">
+  return <section id="contact" className="bg-gradient-to-b from-light-blue-soft to-white py-[40px] bg-slate-400">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
