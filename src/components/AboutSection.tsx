@@ -12,7 +12,7 @@ const AboutSection = () => {
         {/* Story Content */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="prose prose-lg max-w-none text-foreground leading-relaxed">
-            <p className="text-lg mb-6">
+            <p className="mb-6 text-xl font-bold">
               The UNbound Youth Initiative was born from a story of transformation.
             </p>
             <p className="mb-6">At 16, founder Lukah Villarreal stood in the recovery room of an Operation Smile medical mission—translating between surgeons and nurses and playing with children before life-changing cleft palate surgeries. As Finance Chair of Miles for Smiles, the largest student-led Operation Smile initiative in Mexico, Lukah helped raise $30,000 annually—enough for around 20 surgeries—rallied over 1,000 runners each year for the Miles for Smiles charity raced, and worked side-by-side with surgeons, nurses, and children whose lives were about to change.</p>
