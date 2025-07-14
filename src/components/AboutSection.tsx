@@ -5,7 +5,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">About</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-5xl">About</h2>
           <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Our Story: From Miles to Movements</h3>
         </div>
 
@@ -27,7 +27,7 @@ const AboutSection = () => {
 
         {/* Mission */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
-          <h3 className="text-2xl font-bold text-center text-foreground mb-6">Our Mission</h3>
+          <h3 className="font-bold text-center text-foreground mb-6 text-3xl">Our Mission</h3>
           <p className="text-lg text-center text-foreground leading-relaxed max-w-3xl mx-auto">
             To equip students with the tools, guidance, and global lens to lead multilateral, community-based service initiatives—sparking lasting impact that begins in schools and ripples outward.
           </p>
@@ -43,7 +43,7 @@ const AboutSection = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="font-semibold text-foreground mb-2">Compassion</h4>
+              <h4 className="font-semibold text-foreground mb-2 text-lg">Compassion</h4>
               <p className="text-sm text-muted-foreground">Driven by empathy and the desire to make a difference</p>
             </CardContent>
           </Card>
@@ -53,7 +53,7 @@ const AboutSection = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="font-semibold text-foreground mb-2">Collaboration</h4>
+              <h4 className="font-semibold text-foreground mb-2 text-lg">Collaboration</h4>
               <p className="text-sm text-muted-foreground">Building bridges between students, educators, and communities</p>
             </CardContent>
           </Card>
@@ -63,7 +63,7 @@ const AboutSection = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="font-semibold text-foreground mb-2">Global Perspective</h4>
+              <h4 className="text-foreground mb-2 font-semibold text-lg">Global Perspective</h4>
               <p className="text-sm text-muted-foreground">Connecting local actions to worldwide sustainable development</p>
             </CardContent>
           </Card>
@@ -73,7 +73,7 @@ const AboutSection = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="font-semibold text-foreground mb-2">Impact</h4>
+              <h4 className="font-semibold text-foreground mb-2 text-lg">Impact</h4>
               <p className="text-sm text-muted-foreground">Creating lasting change that ripples through communities</p>
             </CardContent>
           </Card>

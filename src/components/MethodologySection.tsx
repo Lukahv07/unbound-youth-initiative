@@ -32,7 +32,7 @@ const MethodologySection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">What We Do</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-5xl">What We Do</h2>
           <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Our Methodology: The UNbound Model</h3>
         </div>
 
@@ -46,7 +46,7 @@ const MethodologySection = () => {
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 ${step.color}`}>
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground">{step.title}</CardTitle>
+                    <CardTitle className="text-foreground font-bold text-2xl">{step.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed">{step.description}</p>
@@ -65,7 +65,7 @@ const MethodologySection = () => {
             <div className="mb-4">
               <span className="text-2xl">📍</span>
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">Real Projects. Real People. Real Change.</h3>
+            <h3 className="font-bold text-foreground mb-4 text-3xl">Real Projects. Real People. Real Change.</h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">UNbound has rallied students and educators across 10 Tri-Association schools for the 2025-26 school year to launch service projects across 5 countries—from environmental campaigns to health equity drives—each uniquely rooted in their context but united by shared values.</p>
           </div>
         </div>

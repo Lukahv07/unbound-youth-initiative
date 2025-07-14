@@ -21,7 +21,7 @@ const WorkshopsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Workshops & Conferences</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-5xl">Workshops & Conferences</h2>
           <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Global Goals, Local Impact: Inspiring Youth Leadership With a Cause</h3>
           <Badge variant="outline" className="text-lg px-4 py-2 bg-white">
             Our ServiceEd Session at NEASC
@@ -32,7 +32,7 @@ const WorkshopsSection = () => {
           {/* Workshop Description */}
           <Card className="mb-12 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">Interactive Hour-Long Workshop</CardTitle>
+              <CardTitle className="text-center text-3xl">Interactive Hour-Long Workshop</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <p className="text-lg text-center text-muted-foreground">
@@ -58,7 +58,7 @@ const WorkshopsSection = () => {
           {/* Activities */}
           <Card className="mb-12">
             <CardHeader>
-              <CardTitle className="text-xl text-center">Participants engage in:</CardTitle>
+              <CardTitle className="text-center text-2xl">Participants engage in:</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -72,7 +72,7 @@ const WorkshopsSection = () => {
 
           {/* Call to Action */}
           <div className="text-center bg-gradient-to-r from-primary to-turquoise rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your School?</h3>
+            <h3 className="font-bold mb-4 text-3xl">Ready to Transform Your School?</h3>
             <p className="text-lg mb-6 opacity-90">
               Bring the UNbound methodology to your educational community and empower the next generation of changemakers.
             </p>

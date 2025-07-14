@@ -25,7 +25,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Join the Movement</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4 py-[40px] sm:text-5xl">Join the Movement</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Want to start a service initiative at your school? Already leading a cause but want to connect it to the SDGs?
           </p>
