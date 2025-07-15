@@ -32,11 +32,11 @@ const ContactSection = () => {
 
     try {
       // Initialize EmailJS with your public key
-      emailjs.init("your_public_key_here");
+      emailjs.init("uMNwmyp_ASfpHMYO8");
       
       await emailjs.send(
-        "your_service_id_here",
-        "your_template_id_here",
+        "UNboundYouthInitiative",
+        "template_xc6jvd9",
         {
           from_name: formData.name,
           from_email: formData.email,
