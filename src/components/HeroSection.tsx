@@ -2,13 +2,11 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 // Array of hero images showcasing UNbound Youth Initiative's real impact
-const heroImages = ["/lovable-uploads/2bc4ce61-cf77-4315-abb4-5ce06a7f2692.png",
-// User uploaded image 1
-"/lovable-uploads/cd61915f-3f45-49d4-87b3-316473029c1a.png",
-// User uploaded image 2
-"https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1950&q=80",
-// Team collaboration backup
-"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1950&q=80" // Hands holding earth backup
+const heroImages = [
+  "/lovable-uploads/7bdb6b03-5c23-4b52-8933-c87fede02548.png", // Miles for Smiles charity run
+  "/lovable-uploads/3aa7d80a-73bf-423e-8d25-1e6fed176002.png", // Hands holding Earth - global impact
+  "/lovable-uploads/3a78a30a-d587-4a65-be4f-7adaf5ee8441.png", // Youth with SDG signs
+  "/lovable-uploads/febafb1f-f6bc-48e7-8a22-49351a8f7c45.png"  // Medical mission with children
 ];
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
