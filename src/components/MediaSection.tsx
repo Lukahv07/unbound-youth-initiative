@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Eye, Mail } from "lucide-react";
 const MediaSection = () => {
-  const features = ["On-the-ground footage from medical missions", "Interviews with families, doctors, and volunteers", "Reflections from student leaders"];
+  const features = ["On-the-ground footage from medical missions", "Interviews with families and volunteers", "Reflections from student leaders"];
   return <section id="media" className="bg-gradient-to-b from-background to-light-blue-soft py-[40px] bg-slate-500">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-0">
         {/* Header */}
