@@ -27,8 +27,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Get Involved</h4>
             <p className="text-white/80 mb-2">
-              <a href="mailto:26villarreal7045@asfm.mx" className="hover:text-white transition-colors">26villarreal7045@asfm.mx (Founder)</a><br/>
-              <a href="mailto:unboundyouthinitiative@gmail.com" className="hover:text-white transition-colors">unboundyouthinitiative@gmail.com</a>
+              <a href="https://mail.google.com/mail/?view=cm&to=26villarreal7045@asfm.mx" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">26villarreal7045@asfm.mx (Founder)</a><br/>
+              <a href="https://mail.google.com/mail/?view=cm&to=unboundyouthinitiative@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">unboundyouthinitiative@gmail.com</a>
             </p>
             <p className="text-white/80">
               Join students across 10+ schools making global impact locally.
