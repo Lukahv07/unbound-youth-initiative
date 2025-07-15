@@ -201,14 +201,24 @@ const ContactSection = () => {
                     <Mail className="w-5 h-5 text-white" />
                     <h4 className="font-semibold text-white">Email Us</h4>
                   </div>
-                  <a 
-                    href="https://mail.google.com/mail/?view=cm&to=26villarreal7045@asfm.mx" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-white hover:text-white/80 transition-colors"
-                  >
-                    26villarreal7045@asfm.mx
-                  </a>
+                  <div className="space-y-2">
+                    <a 
+                      href="https://mail.google.com/mail/?view=cm&to=26villarreal7045@asfm.mx" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white hover:text-white/80 transition-colors block"
+                    >
+                      26villarreal7045@asfm.mx (Founder)
+                    </a>
+                    <a 
+                      href="https://mail.google.com/mail/?view=cm&to=unboundyouthinitiative@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white hover:text-white/80 transition-colors block"
+                    >
+                      unboundyouthinitiative@gmail.com
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 
