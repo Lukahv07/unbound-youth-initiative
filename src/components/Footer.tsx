@@ -26,7 +26,8 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Get Involved</h4>
-            <p className="text-white/80 mb-2">26villarreal7045@asfm.mx</p>
+            <p className="text-white/80 mb-2">26villarreal7045@asfm.mx
+unboundyouthinitiative@gmail.com</p>
             <p className="text-white/80">
               Join students across 10+ schools making global impact locally.
             </p>
