@@ -28,7 +28,7 @@ export const CustomCursor = () => {
         age: 0,
       };
       
-      setTrails(prev => [...prev.slice(-20), newTrail]); // Keep last 20 trails
+      setTrails(prev => [...prev.slice(-12), newTrail]); // Keep last 12 trails
       setTrailId(prev => prev + 1);
     };
 
@@ -92,81 +92,47 @@ export const CustomCursor = () => {
         />
       ))}
       
-      {/* Ocean wave patterns - multiple layers for depth */}
-      {trails.slice(-8).map((trail, index) => (
-        <div key={`wave1-${trail.id}`}>
-          {/* Primary wave ring */}
-          <div
-            className="fixed rounded-full border"
-            style={{
-              left: trail.x - 20 - index * 3,
-              top: trail.y - 20 - index * 3,
-              width: 40 + index * 6,
-              height: 40 + index * 6,
-              opacity: trail.opacity * 0.3,
-              borderWidth: '1px',
-              borderColor: `hsl(186, 100%, ${65 + index * 5}%, ${trail.opacity * 0.4})`,
-              transform: `scale(${1 + (trail.age * 0.05)})`,
-              animation: `pulse 1.2s ease-out infinite`,
-            }}
-          />
-          
-          {/* Secondary wave ring */}
-          <div
-            className="fixed rounded-full border"
-            style={{
-              left: trail.x - 15 - index * 2,
-              top: trail.y - 15 - index * 2,
-              width: 30 + index * 4,
-              height: 30 + index * 4,
-              opacity: trail.opacity * 0.2,
-              borderWidth: '0.5px',
-              borderColor: `hsl(186, 100%, ${70 + index * 3}%, ${trail.opacity * 0.3})`,
-              transform: `scale(${1 + (trail.age * 0.08)})`,
-              animation: `pulse 1.5s ease-out infinite`,
-              animationDelay: '0.2s',
-            }}
-          />
-          
-          {/* Ripple effect */}
-          <div
-            className="fixed rounded-full"
-            style={{
-              left: trail.x - 12,
-              top: trail.y - 12,
-              width: 24,
-              height: 24,
-              opacity: trail.opacity * 0.15,
-              background: `radial-gradient(circle, 
-                transparent 60%, 
-                hsl(186, 100%, 75%, ${trail.opacity * 0.2}) 70%, 
-                transparent 80%
-              )`,
-              transform: `scale(${1 + (trail.age * 0.1)})`,
-            }}
-          />
-        </div>
+      {/* Ocean wave patterns - subtle and less frequent */}
+      {trails.slice(-4).map((trail, index) => (
+        index % 2 === 0 && (
+          <div key={`wave1-${trail.id}`}>
+            {/* Primary wave ring */}
+            <div
+              className="fixed rounded-full border"
+              style={{
+                left: trail.x - 18,
+                top: trail.y - 18,
+                width: 36,
+                height: 36,
+                opacity: trail.opacity * 0.15,
+                borderWidth: '0.5px',
+                borderColor: `hsl(186, 100%, 70%, ${trail.opacity * 0.2})`,
+                transform: `scale(${1 + (trail.age * 0.03)})`,
+                animation: `pulse 2s ease-out infinite`,
+              }}
+            />
+          </div>
+        )
       ))}
       
-      {/* Flowing water effect */}
-      {trails.slice(-12).map((trail, index) => (
+      {/* Subtle ripple effect */}
+      {trails.slice(-6).map((trail, index) => (
         index % 3 === 0 && (
           <div
-            key={`flow-${trail.id}`}
-            className="fixed"
+            key={`ripple-${trail.id}`}
+            className="fixed rounded-full"
             style={{
-              left: trail.x - 5,
-              top: trail.y - 5,
-              width: 10,
-              height: 10,
-              opacity: trail.opacity * 0.1,
-              background: `linear-gradient(45deg, 
-                hsl(186, 100%, 80%, ${trail.opacity * 0.1}), 
-                transparent 70%
+              left: trail.x - 10,
+              top: trail.y - 10,
+              width: 20,
+              height: 20,
+              opacity: trail.opacity * 0.08,
+              background: `radial-gradient(circle, 
+                transparent 70%, 
+                hsl(186, 100%, 75%, ${trail.opacity * 0.1}) 80%, 
+                transparent 90%
               )`,
-              borderRadius: '50% 0 50% 0',
-              transform: `rotate(${trail.age * 10}deg) scale(${1 + trail.age * 0.03})`,
-              transition: 'all 0.1s ease-out',
+              transform: `scale(${1 + (trail.age * 0.05)})`,
             }}
           />
         )
