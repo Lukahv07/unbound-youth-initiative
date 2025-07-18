@@ -13,10 +13,24 @@ export const CustomCursor = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [trails, setTrails] = useState<CursorTrail[]>([]);
   const [trailId, setTrailId] = useState(0);
+  const [isIdle, setIsIdle] = useState(false);
+  const [idleTimer, setIdleTimer] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
+      setIsIdle(false);
+      
+      // Clear previous idle timer
+      if (idleTimer) {
+        clearTimeout(idleTimer);
+      }
+      
+      // Set new idle timer
+      const newTimer = setTimeout(() => {
+        setIsIdle(true);
+      }, 1000); // 1 second of no movement
+      setIdleTimer(newTimer);
       
       // Add new trail
       const newTrail: CursorTrail = {
@@ -40,8 +54,11 @@ export const CustomCursor = () => {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.body.style.cursor = 'auto';
+      if (idleTimer) {
+        clearTimeout(idleTimer);
+      }
     };
-  }, [trailId]);
+  }, [trailId, idleTimer]);
 
   // Animate trails more smoothly
   useEffect(() => {
@@ -63,14 +80,32 @@ export const CustomCursor = () => {
     <div className="fixed inset-0 pointer-events-none z-50">
       {/* Main cursor */}
       <div
-        className="fixed w-5 h-5 rounded-full transition-transform duration-75 ease-out"
+        className="fixed rounded-full transition-all duration-300 ease-out"
         style={{
-          left: mousePos.x - 10,
-          top: mousePos.y - 10,
-          background: 'radial-gradient(circle, hsl(186, 100%, 75%), hsl(186, 100%, 55%))',
-          boxShadow: '0 0 25px hsl(186, 100%, 70%), 0 0 50px hsl(186, 100%, 60%)',
+          left: mousePos.x - (isIdle ? 12 : 10),
+          top: mousePos.y - (isIdle ? 12 : 10),
+          width: isIdle ? 24 : 20,
+          height: isIdle ? 24 : 20,
+          background: `radial-gradient(circle, hsl(186, 100%, ${isIdle ? 85 : 75}%), hsl(186, 100%, ${isIdle ? 65 : 55}%))`,
+          boxShadow: `0 0 ${isIdle ? 40 : 25}px hsl(186, 100%, 70%), 0 0 ${isIdle ? 80 : 50}px hsl(186, 100%, 60%)`,
+          transform: isIdle ? 'scale(1.2)' : 'scale(1)',
         }}
       />
+      
+      {/* Idle glow effect */}
+      {isIdle && (
+        <div
+          className="fixed rounded-full animate-pulse"
+          style={{
+            left: mousePos.x - 20,
+            top: mousePos.y - 20,
+            width: 40,
+            height: 40,
+            background: 'radial-gradient(circle, hsl(186, 100%, 70%, 0.3), transparent 70%)',
+            animation: 'pulse 2s ease-in-out infinite',
+          }}
+        />
+      )}
       
       {/* Main trails */}
       {trails.map((trail) => (

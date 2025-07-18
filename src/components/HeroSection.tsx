@@ -58,12 +58,22 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Image Indicators */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-        {heroImages.map((_, index) => <button key={index} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex ? 'bg-white scale-110' : 'bg-white/50 hover:bg-white/70'}`} onClick={() => setCurrentImageIndex(index)} />)}
+      {/* Image Indicators - centered and properly spaced */}
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+        {heroImages.map((_, index) => (
+          <button 
+            key={index} 
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentImageIndex 
+                ? 'bg-white scale-110 shadow-lg' 
+                : 'bg-white/50 hover:bg-white/70'
+            }`} 
+            onClick={() => setCurrentImageIndex(index)} 
+          />
+        ))}
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - positioned below carousel indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
