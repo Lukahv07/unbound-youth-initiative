@@ -12,8 +12,8 @@ const AmbientAudio = () => {
 
   // Two peaceful nature sounds to play simultaneously
   const soundTracks = [
-    '/audio/peaceful-nature-1.mp3',
-    '/audio/peaceful-nature-2.mp3'
+    '/audio/birds-chirping.mp3',
+    '/audio/light-rain.mp3'
   ];
 
   // Scroll detection for volume adjustment
@@ -91,6 +91,8 @@ const AmbientAudio = () => {
       }, 50);
     } catch (error) {
       console.log('Audio play failed:', error);
+      console.log('Audio 1 source:', audio1.src);
+      console.log('Audio 2 source:', audio2.src);
     }
   };
 
