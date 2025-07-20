@@ -30,27 +30,31 @@ const AmbientAudio = () => {
     audio1.preload = 'auto';
     audio2.preload = 'auto';
 
-    // Auto-start audio after first user interaction
-    const handleFirstInteraction = () => {
-      if (!hasInteracted) {
+    // Try to start audio immediately
+    const tryAutoPlay = async () => {
+      try {
+        await playAudio();
         setHasInteracted(true);
-        if (isPlaying) {
-          playAudio();
-        }
+      } catch (error) {
+        console.log('Auto-play prevented, waiting for user interaction');
+        // Fallback to user interaction
+        const handleFirstInteraction = () => {
+          if (!hasInteracted) {
+            setHasInteracted(true);
+            if (isPlaying) {
+              playAudio();
+            }
+          }
+        };
+
+        const events = ['click', 'touchstart', 'keydown'];
+        events.forEach(event => {
+          document.addEventListener(event, handleFirstInteraction, { once: true });
+        });
       }
     };
 
-    // Listen for any user interaction to start audio
-    const events = ['click', 'touchstart', 'keydown'];
-    events.forEach(event => {
-      document.addEventListener(event, handleFirstInteraction, { once: true });
-    });
-
-    return () => {
-      events.forEach(event => {
-        document.removeEventListener(event, handleFirstInteraction);
-      });
-    };
+    tryAutoPlay();
   }, []);
 
   // Smooth scroll-based volume adjustment
