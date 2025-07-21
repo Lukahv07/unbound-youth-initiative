@@ -37,15 +37,17 @@ const AmbientAudio = () => {
         setHasInteracted(true);
       } catch (error) {
         console.log('Auto-play prevented, waiting for user interaction');
-        // Ensure audio starts on any user interaction
+        // Fallback to user interaction
         const handleFirstInteraction = () => {
           if (!hasInteracted) {
             setHasInteracted(true);
-            playAudio(); // Always start audio on first interaction since default is on
+            if (isPlaying) {
+              playAudio();
+            }
           }
         };
 
-        const events = ['click', 'touchstart', 'keydown', 'scroll'];
+        const events = ['click', 'touchstart', 'keydown'];
         events.forEach(event => {
           document.addEventListener(event, handleFirstInteraction, { once: true });
         });
@@ -74,13 +76,12 @@ const AmbientAudio = () => {
       const targetVolume = baseVolume * volumeMultiplier;
       setCurrentVolume(targetVolume);
       
-      // Apply volume to both tracks with different strengths
-      if (audio1Ref.current && !audio1Ref.current.paused) {
-        audio1Ref.current.volume = targetVolume * 1.3; // 30% stronger
-      }
-      if (audio2Ref.current && !audio2Ref.current.paused) {
-        audio2Ref.current.volume = targetVolume * 1.5; // 50% stronger
-      }
+      // Apply volume to both tracks
+      [audio1Ref.current, audio2Ref.current].forEach(audio => {
+        if (audio && !audio.paused) {
+          audio.volume = targetVolume;
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -104,15 +105,12 @@ const AmbientAudio = () => {
       
       setIsPlaying(true);
       
-      // Fade in to current volume with different strengths
+      // Fade in to current volume
       let targetVol = currentVolume;
       const fadeIn = setInterval(() => {
-        const audio1Target = targetVol * 1.3; // 30% stronger
-        const audio2Target = targetVol * 1.5; // 50% stronger
-        
-        if (audio1.volume < audio1Target || audio2.volume < audio2Target) {
-          audio1.volume = Math.min(audio1.volume + 0.01, audio1Target);
-          audio2.volume = Math.min(audio2.volume + 0.01, audio2Target);
+        if (audio1.volume < targetVol) {
+          audio1.volume = Math.min(audio1.volume + 0.01, targetVol);
+          audio2.volume = Math.min(audio2.volume + 0.01, targetVol);
         } else {
           clearInterval(fadeIn);
         }
