@@ -49,9 +49,6 @@ All colors MUST be HSL.
     --gradient-diagonal: linear-gradient(45deg, hsl(var(--primary) / 0.1), hsl(var(--turquoise) / 0.05));
     --gradient-radial: radial-gradient(circle at center, hsl(var(--light-blue) / 0.1), transparent);
     --gradient-mesh: conic-gradient(from 45deg at 30% 70%, hsl(var(--primary) / 0.1), hsl(var(--turquoise) / 0.1), hsl(var(--light-blue) / 0.05));
-    --gradient-cyan: linear-gradient(135deg, #5DADE2, #48CAE4);
-    --gradient-cyan-bg: linear-gradient(45deg, rgba(93, 173, 226, 0.1), rgba(72, 202, 228, 0.05));
-    --gradient-cyan-strong: linear-gradient(135deg, rgba(93, 173, 226, 0.8), rgba(72, 202, 228, 0.9));
     
     /* Shadows */
     --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);

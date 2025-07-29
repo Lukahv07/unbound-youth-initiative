@@ -21,7 +21,7 @@ const MediaSection = () => {
                 </div>
                 <div>
                   <Badge variant="outline" className="border-white text-white mb-2">🎬 Mini Documentary</Badge>
-                  <CardTitle className="text-2xl bg-gradient-to-r from-[#5DADE2] to-[#48CAE4] bg-clip-text text-transparent font-bold">"More Than a Race"</CardTitle>
+                  <CardTitle className="text-2xl">"More Than a Race"</CardTitle>
                 </div>
               </div>
             </CardHeader>
@@ -47,7 +47,7 @@ const MediaSection = () => {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="cyan" className="flex items-center space-x-2">
+                <Button variant="hero" className="flex items-center space-x-2">
                   <Eye className="w-4 h-4" />
                   <span>Watch (~3 min)</span>
                 </Button>

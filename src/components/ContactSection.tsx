@@ -91,18 +91,11 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-[40px] overflow-hidden">
-      {/* Dynamic background with glassmorphism */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#5DADE2]/20 via-[#48CAE4]/15 to-[#5DADE2]/10"></div>
-      <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-r from-light-blue/80 to-turquoise/80"></div>
-      <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#5DADE2]/30 to-[#48CAE4]/20 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-[#48CAE4]/25 to-[#5DADE2]/15 rounded-full blur-2xl"></div>
-      <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-[#5DADE2]/20 to-[#48CAE4]/10 rounded-full blur-lg"></div>
-      <div className="relative z-10">
+    <section id="contact" className="bg-gradient-to-b from-light-blue to-turquoise py-[40px]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-[#5DADE2] to-[#48CAE4] bg-clip-text text-transparent mb-4 py-[40px] sm:text-5xl">Ready to Transform Your School?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4 py-[40px] sm:text-5xl">Ready to Transform Your School?</h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">Bring the UNbound methodology to your educational community and empower the next generation of changemakers.</p>
           <p className="text-lg text-white/80 mt-4 font-medium">
             Whether you're a student, educator, or changemaker—you belong here.
@@ -243,7 +236,6 @@ const ContactSection = () => {
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

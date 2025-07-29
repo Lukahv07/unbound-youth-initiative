@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-gradient-to-r from-primary to-turquoise text-white shadow-lg hover:shadow-xl hover:scale-105 border-0",
         gradient: "bg-gradient-to-r from-light-blue to-turquoise text-white shadow-md hover:shadow-lg hover:scale-105",
-        cyan: "bg-gradient-to-r from-[#5DADE2] to-[#48CAE4] text-white shadow-md hover:shadow-lg hover:scale-105 border-0",
+        cyan: "bg-cyan-400 text-white hover:bg-cyan-500 shadow-md hover:shadow-lg hover:scale-105",
       },
       size: {
         default: "h-10 px-4 py-2",
