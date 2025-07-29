@@ -9,6 +9,10 @@ const AmbientAudio = () => {
   const [baseVolume] = useState(0.15); // Peaceful but audible volume
   const [currentVolume, setCurrentVolume] = useState(0.15);
   const [hasInteracted, setHasInteracted] = useState(false);
+  
+  // Volume multipliers for each track
+  const audio1VolumeMultiplier = 1.3; // 30% stronger
+  const audio2VolumeMultiplier = 1.5; // 50% stronger
 
   // Two simultaneous nature sounds
   const soundFiles = [
@@ -30,31 +34,49 @@ const AmbientAudio = () => {
     audio1.preload = 'auto';
     audio2.preload = 'auto';
 
-    // Try to start audio immediately
+    // Auto-play attempt and fallback to user interaction
+    const handleFirstInteraction = () => {
+      if (!hasInteracted && isPlaying) {
+        setHasInteracted(true);
+        playAudio();
+        // Remove listeners after first interaction
+        const events = ['click', 'touchstart', 'keydown', 'mousemove'];
+        events.forEach(event => {
+          document.removeEventListener(event, handleFirstInteraction);
+        });
+      }
+    };
+
+    // Try immediate autoplay
     const tryAutoPlay = async () => {
       try {
+        // Load the audio files first
+        await Promise.all([
+          new Promise(resolve => { audio1.oncanplaythrough = resolve; }),
+          new Promise(resolve => { audio2.oncanplaythrough = resolve; })
+        ]);
+        
         await playAudio();
         setHasInteracted(true);
       } catch (error) {
         console.log('Auto-play prevented, waiting for user interaction');
-        // Fallback to user interaction
-        const handleFirstInteraction = () => {
-          if (!hasInteracted) {
-            setHasInteracted(true);
-            if (isPlaying) {
-              playAudio();
-            }
-          }
-        };
-
-        const events = ['click', 'touchstart', 'keydown'];
+        // Set up interaction listeners
+        const events = ['click', 'touchstart', 'keydown', 'mousemove'];
         events.forEach(event => {
-          document.addEventListener(event, handleFirstInteraction, { once: true });
+          document.addEventListener(event, handleFirstInteraction);
         });
       }
     };
 
     tryAutoPlay();
+
+    return () => {
+      // Cleanup listeners
+      const events = ['click', 'touchstart', 'keydown', 'mousemove'];
+      events.forEach(event => {
+        document.removeEventListener(event, handleFirstInteraction);
+      });
+    };
   }, []);
 
   // Smooth scroll-based volume adjustment
@@ -76,12 +98,15 @@ const AmbientAudio = () => {
       const targetVolume = baseVolume * volumeMultiplier;
       setCurrentVolume(targetVolume);
       
-      // Apply volume to both tracks
-      [audio1Ref.current, audio2Ref.current].forEach(audio => {
-        if (audio && !audio.paused) {
-          audio.volume = targetVolume;
-        }
-      });
+      // Apply volume to both tracks with their specific multipliers
+      const audio1 = audio1Ref.current;
+      const audio2 = audio2Ref.current;
+      if (audio1 && !audio1.paused) {
+        audio1.volume = targetVolume * audio1VolumeMultiplier;
+      }
+      if (audio2 && !audio2.paused) {
+        audio2.volume = targetVolume * audio2VolumeMultiplier;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -105,12 +130,13 @@ const AmbientAudio = () => {
       
       setIsPlaying(true);
       
-      // Fade in to current volume
-      let targetVol = currentVolume;
+      // Fade in to current volume with individual multipliers
+      const targetVol1 = currentVolume * audio1VolumeMultiplier;
+      const targetVol2 = currentVolume * audio2VolumeMultiplier;
       const fadeIn = setInterval(() => {
-        if (audio1.volume < targetVol) {
-          audio1.volume = Math.min(audio1.volume + 0.01, targetVol);
-          audio2.volume = Math.min(audio2.volume + 0.01, targetVol);
+        if (audio1.volume < targetVol1 || audio2.volume < targetVol2) {
+          audio1.volume = Math.min(audio1.volume + 0.01, targetVol1);
+          audio2.volume = Math.min(audio2.volume + 0.01, targetVol2);
         } else {
           clearInterval(fadeIn);
         }
