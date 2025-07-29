@@ -33,7 +33,7 @@ const HeroSection = () => {
         {heroImages.map((image, index) => <div key={index} className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} style={{
         backgroundImage: `url(${image})`
       }} />)}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-turquoise/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-turquoise/90 via-turquoise/85 to-primary/80"></div>
       </div>
 
       {/* Content */}
