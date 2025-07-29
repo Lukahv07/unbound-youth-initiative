@@ -36,7 +36,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: 'linear-gradient(135deg, hsl(195 80% 60%), hsl(180 70% 50%))'}}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-icon">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Compassion</h4>
@@ -46,7 +46,7 @@ const AboutSection = () => {
 
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: 'linear-gradient(135deg, hsl(195 80% 60%), hsl(180 70% 50%))'}}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-icon">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Collaboration</h4>
@@ -56,7 +56,7 @@ const AboutSection = () => {
 
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: 'linear-gradient(135deg, hsl(195 80% 60%), hsl(180 70% 50%))'}}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-icon">
                 <Globe className="w-6 h-6 text-white" />
               </div>
               <h4 className="text-foreground mb-2 font-semibold text-lg">Global Perspective</h4>
@@ -66,7 +66,7 @@ const AboutSection = () => {
 
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: 'linear-gradient(135deg, hsl(195 80% 60%), hsl(180 70% 50%))'}}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-icon">
                 <Target className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Impact</h4>

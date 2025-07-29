@@ -44,7 +44,7 @@ const WorkshopsSection = () => {
                 {features.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return <div key={index} className="text-center p-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{background: 'linear-gradient(135deg, hsl(195 80% 60%), hsl(180 70% 50%))'}}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 bg-gradient-icon">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-semibold text-foreground mb-2">{feature.title}</h4>
