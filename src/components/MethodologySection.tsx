@@ -43,8 +43,8 @@ const MethodologySection = () => {
             const IconComponent = step.icon;
             return <Card key={index} className="relative hover:shadow-lg transition-shadow border-l-4 border-primary">
                   <CardHeader className="pb-4">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 ${step.color}`}>
-                      <IconComponent className="w-6 h-6" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#5DADE2] to-[#48CAE4] rounded-full flex items-center justify-center mb-3">
+                      <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <CardTitle className="text-foreground font-bold text-2xl">{step.title}</CardTitle>
                   </CardHeader>

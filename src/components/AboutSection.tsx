@@ -36,8 +36,8 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-gradient-to-br from-[#5DADE2] to-[#48CAE4] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Compassion</h4>
               <p className="text-sm text-muted-foreground">Driven by empathy and the desire to make a difference</p>
@@ -46,8 +46,8 @@ const AboutSection = () => {
 
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-gradient-to-br from-[#5DADE2] to-[#48CAE4] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Collaboration</h4>
               <p className="text-sm text-muted-foreground">Building bridges between students, educators, and communities</p>
@@ -56,8 +56,8 @@ const AboutSection = () => {
 
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-gradient-to-br from-[#5DADE2] to-[#48CAE4] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-6 h-6 text-white" />
               </div>
               <h4 className="text-foreground mb-2 font-semibold text-lg">Global Perspective</h4>
               <p className="text-sm text-muted-foreground">Connecting local actions to worldwide sustainable development</p>
@@ -66,8 +66,8 @@ const AboutSection = () => {
 
           <Card className="text-center hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-gradient-to-br from-[#5DADE2] to-[#48CAE4] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Impact</h4>
               <p className="text-sm text-muted-foreground">Creating lasting change that ripples through communities</p>
