@@ -78,7 +78,8 @@ export default {
 				'gradient-subtle': 'var(--gradient-subtle)',
 				'gradient-diagonal': 'var(--gradient-diagonal)',
 				'gradient-radial': 'var(--gradient-radial)',
-				'gradient-mesh': 'var(--gradient-mesh)'
+				'gradient-mesh': 'var(--gradient-mesh)',
+				'gradient-mission': 'var(--gradient-mission)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

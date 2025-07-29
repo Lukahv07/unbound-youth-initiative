@@ -17,13 +17,13 @@ const WorkshopsSection = () => {
     description: "Guide students through creating impactful, measurable initiatives"
   }];
   const activities = ["A Quote Gallery Walk on service values", "Brainstorming & co-design activities", "Reflections on the Miles for Smiles story", "Tools to replicate the UNbound model in their own schools"];
-  return <section id="workshops" className="py-20 bg-gradient-to-b from-light-blue-soft to-background">
+  return <section id="workshops" className="py-20 bg-gradient-mission">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-5xl">Workshops & Conferences</h2>
-          <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Global Goals, Local Impact: Inspiring Youth Leadership With a Cause</h3>
-          <Badge variant="outline" className="text-lg px-4 py-2 bg-white">
+          <h2 className="text-3xl font-bold text-white mb-4 sm:text-5xl">Workshops & Conferences</h2>
+          <h3 className="text-2xl sm:text-3xl font-semibold text-white/90 mb-6">Global Goals, Local Impact: Inspiring Youth Leadership With a Cause</h3>
+          <Badge variant="outline" className="text-lg px-4 py-2 bg-white/20 border-white/30 text-white">
             Our ServiceEd Session at NEASC
           </Badge>
         </div>

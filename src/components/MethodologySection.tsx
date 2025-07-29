@@ -65,7 +65,7 @@ const MethodologySection = () => {
             <div className="mb-4">
               <span className="text-2xl">📍</span>
             </div>
-            <h3 className="font-bold text-foreground mb-4 text-3xl">Real Projects. Real People. Real Change.</h3>
+            <h3 className="font-bold text-transparent bg-gradient-mission bg-clip-text mb-4 text-3xl">Real Projects. Real People. Real Change.</h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">UNbound has rallied students and educators across 10 Tri-Association schools for the 2025-26 school year to launch service projects across 5 countries—from environmental campaigns to health equity drives—each uniquely rooted in their context but united by shared values.</p>
           </div>
         </div>
