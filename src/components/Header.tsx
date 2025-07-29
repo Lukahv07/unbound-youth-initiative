@@ -14,10 +14,13 @@ const Header = () => {
   };
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-3">
-            <img alt="UNbound Youth Initiative" className="h-10 w-auto" src="/lovable-uploads/3bd97583-c5bf-40d3-a2f5-a5dbff7ab1d1.png" />
-            <h1 className="text-xl font-bold text-primary">UNbound Youth Initiative</h1>
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center space-x-4">
+            <img alt="UNbound Youth Initiative" className="h-14 w-auto" src="/lovable-uploads/3bd97583-c5bf-40d3-a2f5-a5dbff7ab1d1.png" />
+            <div className="flex flex-col">
+              <h1 className="text-2xl font-bold text-primary">UNbound Youth Initiative</h1>
+              <p className="text-sm text-muted-foreground">Global Goals. Local Impact.</p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -34,7 +37,7 @@ const Header = () => {
             <button onClick={() => scrollToSection('media')} className="text-foreground hover:text-primary transition-colors">
               Media
             </button>
-            <Button onClick={() => scrollToSection('contact')} variant="hero" size="sm">
+            <Button onClick={() => scrollToSection('contact')} variant="cyan" size="sm">
               Get Involved
             </Button>
           </nav>
@@ -64,7 +67,7 @@ const Header = () => {
               Media
             </button>
             <div className="px-3 py-2">
-              <Button onClick={() => scrollToSection('contact')} variant="hero" size="sm" className="w-full">
+              <Button onClick={() => scrollToSection('contact')} variant="cyan" size="sm" className="w-full">
                 Get Involved
               </Button>
             </div>
