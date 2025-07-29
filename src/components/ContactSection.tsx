@@ -110,7 +110,7 @@ const ContactSection = () => {
               return (
                 <Card key={index} className="text-center hover:shadow-lg transition-shadow group bg-white/10 backdrop-blur border-white/20">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-colors">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 transition-colors" style={{background: 'linear-gradient(135deg, hsl(195 80% 60%), hsl(180 70% 50%))'}}>
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <CardTitle className="text-xl text-white">{card.title}</CardTitle>
