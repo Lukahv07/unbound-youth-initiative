@@ -2,14 +2,16 @@ import { Button } from "@/components/ui/button";
 
 const PartnershipSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-800 to-green-900 relative overflow-hidden">
-      {/* Slowly Moving Glassmorphism Elements */}
+    <section className="py-20 bg-gradient-to-br from-emerald-600 to-green-700 relative overflow-hidden">
+      {/* Slowly Moving Glassmorphism Orbs */}
       <div className="absolute inset-0">
-        <div className="absolute top-16 left-20 w-64 h-64 bg-emerald-400/30 rounded-full blur-3xl animate-[pulse_8s_ease-in-out_infinite] opacity-60"></div>
-        <div className="absolute top-32 right-16 w-80 h-80 bg-green-300/25 rounded-full blur-3xl animate-[pulse_12s_ease-in-out_infinite_2s] opacity-70"></div>
-        <div className="absolute bottom-24 left-1/4 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-[pulse_10s_ease-in-out_infinite_4s] opacity-50"></div>
-        <div className="absolute bottom-16 right-1/3 w-56 h-56 bg-green-400/35 rounded-full blur-3xl animate-[pulse_14s_ease-in-out_infinite_6s] opacity-65"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-300/15 rounded-full blur-3xl animate-[pulse_16s_ease-in-out_infinite_8s] opacity-40"></div>
+        <div className="absolute top-16 left-20 w-80 h-80 bg-emerald-300/40 rounded-full blur-3xl animate-[pulse_8s_ease-in-out_infinite] opacity-70"></div>
+        <div className="absolute top-32 right-16 w-96 h-96 bg-green-200/35 rounded-full blur-3xl animate-[pulse_12s_ease-in-out_infinite_2s] opacity-80"></div>
+        <div className="absolute bottom-24 left-1/4 w-88 h-88 bg-emerald-400/30 rounded-full blur-3xl animate-[pulse_10s_ease-in-out_infinite_4s] opacity-60"></div>
+        <div className="absolute bottom-16 right-1/3 w-72 h-72 bg-green-300/45 rounded-full blur-3xl animate-[pulse_14s_ease-in-out_infinite_6s] opacity-75"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-112 h-112 bg-emerald-200/25 rounded-full blur-3xl animate-[pulse_16s_ease-in-out_infinite_8s] opacity-50"></div>
+        <div className="absolute top-8 left-1/3 w-64 h-64 bg-green-400/30 rounded-full blur-3xl animate-[pulse_20s_ease-in-out_infinite_10s] opacity-65"></div>
+        <div className="absolute bottom-8 left-16 w-56 h-56 bg-emerald-300/35 rounded-full blur-3xl animate-[pulse_18s_ease-in-out_infinite_12s] opacity-55"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
