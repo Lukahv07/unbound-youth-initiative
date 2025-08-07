@@ -1,43 +1,34 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Eye, Lightbulb, Hammer, TestTube } from "lucide-react";
-
 const MethodologySection = () => {
-  const designThinkingSteps = [
-    {
-      icon: Heart,
-      title: "Empathize",
-      description: "Understand local needs through deep listening and research.",
-      color: "bg-primary/10 text-primary"
-    },
-    {
-      icon: Eye,
-      title: "Define",
-      description: "Frame community challenges as solvable, focused problems.",
-      color: "bg-turquoise/10 text-turquoise"
-    },
-    {
-      icon: Lightbulb,
-      title: "Ideate",
-      description: "Generate bold, collaborative ideas tailored to real-world needs.",
-      color: "bg-light-blue/10 text-light-blue"
-    },
-    {
-      icon: Hammer,
-      title: "Prototype",
-      description: "Design small-scale solutions to test creative hypotheses.",
-      color: "bg-primary/10 text-primary"
-    },
-    {
-      icon: TestTube,
-      title: "Test",
-      description: "Gather feedback and iterate for maximum real-world impact.",
-      color: "bg-turquoise/10 text-turquoise"
-    }
-  ];
-
-  return (
-    <section id="methodology" className="py-20 bg-gradient-mission">
+  const designThinkingSteps = [{
+    icon: Heart,
+    title: "Empathize",
+    description: "Understand local needs through deep listening and research.",
+    color: "bg-primary/10 text-primary"
+  }, {
+    icon: Eye,
+    title: "Define",
+    description: "Frame community challenges as solvable, focused problems.",
+    color: "bg-turquoise/10 text-turquoise"
+  }, {
+    icon: Lightbulb,
+    title: "Ideate",
+    description: "Generate bold, collaborative ideas tailored to real-world needs.",
+    color: "bg-light-blue/10 text-light-blue"
+  }, {
+    icon: Hammer,
+    title: "Prototype",
+    description: "Design small-scale solutions to test creative hypotheses.",
+    color: "bg-primary/10 text-primary"
+  }, {
+    icon: TestTube,
+    title: "Test",
+    description: "Gather feedback and iterate for maximum real-world impact.",
+    color: "bg-turquoise/10 text-turquoise"
+  }];
+  return <section id="methodology" className="py-20 bg-gradient-mission">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -58,9 +49,8 @@ const MethodologySection = () => {
               {/* Circular Design Steps */}
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-8">
                 {designThinkingSteps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  return (
-                    <div key={index} className="text-center p-4 group hover:scale-105 transition-transform cursor-pointer">
+                const IconComponent = step.icon;
+                return <div key={index} className="text-center p-4 group hover:scale-105 transition-transform cursor-pointer">
                       <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 bg-gradient-icon group-hover:shadow-lg transition-shadow">
                         <IconComponent className="w-8 h-8 text-white" />
                       </div>
@@ -68,9 +58,8 @@ const MethodologySection = () => {
                       <p className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {step.description}
                       </p>
-                    </div>
-                  );
-                })}
+                    </div>;
+              })}
               </div>
             </CardContent>
           </Card>
@@ -87,11 +76,11 @@ const MethodologySection = () => {
               
               {/* SDG Icons Placeholder */}
               <div className="flex flex-wrap justify-center gap-4 mb-4">
-                {Array.from({ length: 17 }, (_, i) => (
-                  <div key={i} className="w-12 h-12 bg-gradient-to-br from-primary/20 to-turquoise/20 rounded-lg flex items-center justify-center">
+                {Array.from({
+                length: 17
+              }, (_, i) => <div key={i} className="w-12 h-12 bg-gradient-to-br from-primary/20 to-turquoise/20 rounded-lg flex items-center justify-center">
                     <span className="text-xs font-bold text-foreground">{i + 1}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <div className="text-center">
@@ -114,8 +103,6 @@ const MethodologySection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default MethodologySection;
