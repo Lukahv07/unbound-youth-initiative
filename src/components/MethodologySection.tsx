@@ -48,8 +48,8 @@ const MethodologySection = () => {
               <CardHeader>
                 <CardTitle className="text-center text-2xl mb-6">Design Thinking Process</CardTitle>
               </CardHeader>
-              <CardContent className="flex justify-center items-center p-12">
-                <div className="relative w-96 h-96">
+              <CardContent className="flex justify-center items-center p-16">
+                <div className="relative w-[500px] h-[500px]">
                   {/* Center Circle */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-turquoise/20 flex items-center justify-center shadow-lg">
                     <div className="text-center">
@@ -58,29 +58,45 @@ const MethodologySection = () => {
                     </div>
                   </div>
                   
-                  {/* Arrows between steps */}
+                  {/* Curved arrows following the circle */}
                   {designThinkingSteps.map((_, index) => {
                     const angle = (index * 72) - 90;
-                    const arrowRadius = 130;
+                    const nextAngle = ((index + 1) * 72) - 90;
+                    const radius = 140;
                     
-                    const arrowAngle = angle + 36; // Midpoint between current and next step
-                    const arrowX = Math.cos(arrowAngle * Math.PI / 180) * arrowRadius;
-                    const arrowY = Math.sin(arrowAngle * Math.PI / 180) * arrowRadius;
+                    // Calculate start and end points for the arc
+                    const startAngle = angle + 20;
+                    const endAngle = nextAngle - 20;
+                    const centerX = 250;
+                    const centerY = 250;
+                    
+                    const startX = centerX + Math.cos(startAngle * Math.PI / 180) * radius;
+                    const startY = centerY + Math.sin(startAngle * Math.PI / 180) * radius;
+                    const endX = centerX + Math.cos(endAngle * Math.PI / 180) * radius;
+                    const endY = centerY + Math.sin(endAngle * Math.PI / 180) * radius;
+                    
+                    // Calculate arrow head position
+                    const arrowX = centerX + Math.cos((endAngle - 10) * Math.PI / 180) * radius;
+                    const arrowY = centerY + Math.sin((endAngle - 10) * Math.PI / 180) * radius;
                     
                     return (
-                      <div
-                        key={`arrow-${index}`}
-                        className="absolute text-primary/60"
-                        style={{
-                          left: `calc(50% + ${arrowX}px)`,
-                          top: `calc(50% + ${arrowY}px)`,
-                          transform: `translate(-50%, -50%) rotate(${arrowAngle + 90}deg)`
-                        }}
-                      >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
-                        </svg>
-                      </div>
+                      <svg key={`arrow-${index}`} className="absolute inset-0 w-full h-full pointer-events-none">
+                        {/* Curved path */}
+                        <path
+                          d={`M ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY}`}
+                          fill="none"
+                          stroke="hsl(var(--primary))"
+                          strokeWidth="2"
+                          opacity="0.6"
+                        />
+                        {/* Arrow head */}
+                        <polygon
+                          points={`${arrowX},${arrowY} ${arrowX-8},${arrowY-4} ${arrowX-8},${arrowY+4}`}
+                          fill="hsl(var(--primary))"
+                          opacity="0.6"
+                          transform={`rotate(${endAngle + 90} ${arrowX} ${arrowY})`}
+                        />
+                      </svg>
                     );
                   })}
                   
@@ -88,10 +104,10 @@ const MethodologySection = () => {
                   {designThinkingSteps.map((step, index) => {
                     const IconComponent = step.icon;
                     const angle = (index * 72) - 90; // 360/5 = 72 degrees between each step, start at top
-                    const radius = 110;
-                    const textRadius = 165; // Radius for text positioning
-                    const x = Math.cos(angle * Math.PI / 180) * radius;
-                    const y = Math.sin(angle * Math.PI / 180) * radius;
+                    const iconRadius = 120;
+                    const textRadius = 190; // Further out for text positioning
+                    const iconX = Math.cos(angle * Math.PI / 180) * iconRadius;
+                    const iconY = Math.sin(angle * Math.PI / 180) * iconRadius;
                     const textX = Math.cos(angle * Math.PI / 180) * textRadius;
                     const textY = Math.sin(angle * Math.PI / 180) * textRadius;
                     
@@ -103,19 +119,31 @@ const MethodologySection = () => {
                       'bg-gradient-to-br from-teal-400 to-teal-500'      // Test - Teal
                     ];
                     
-                    // Determine text alignment based on position
-                    const isLeft = textX < -20;
-                    const isRight = textX > 20;
-                    const isTop = textY < -20;
+                    // Determine text alignment and positioning based on position
+                    const isLeft = textX < -50;
+                    const isRight = textX > 50;
+                    const isTop = textY < -50;
+                    const isBottom = textY > 50;
+                    
+                    // Adjust text position to avoid overlaps
+                    let finalTextX = textX;
+                    let finalTextY = textY;
+                    
+                    // Push text further out if needed to avoid icon overlap
+                    if (Math.abs(textX) < 100 && Math.abs(textY) < 100) {
+                      const multiplier = 1.3;
+                      finalTextX = textX * multiplier;
+                      finalTextY = textY * multiplier;
+                    }
                     
                     return (
                       <div key={index}>
                         {/* Step Circle */}
                         <div 
-                          className="absolute hover:scale-110 transition-all duration-300"
+                          className="absolute hover:scale-110 transition-all duration-300 z-10"
                           style={{
-                            left: `calc(50% + ${x}px)`,
-                            top: `calc(50% + ${y}px)`,
+                            left: `calc(50% + ${iconX}px)`,
+                            top: `calc(50% + ${iconY}px)`,
                             transform: 'translate(-50%, -50%)'
                           }}
                         >
@@ -130,17 +158,17 @@ const MethodologySection = () => {
                         
                         {/* Step Text */}
                         <div 
-                          className={`absolute ${isLeft ? 'text-right' : isRight ? 'text-left' : 'text-center'}`}
+                          className={`absolute z-20 ${isLeft ? 'text-right' : isRight ? 'text-left' : 'text-center'}`}
                           style={{
-                            left: `calc(50% + ${textX}px)`,
-                            top: `calc(50% + ${textY}px)`,
+                            left: `calc(50% + ${finalTextX}px)`,
+                            top: `calc(50% + ${finalTextY}px)`,
                             transform: isLeft ? 'translate(-100%, -50%)' : isRight ? 'translate(0%, -50%)' : 'translate(-50%, -50%)',
-                            width: '140px'
+                            width: '120px'
                           }}
                         >
-                          <div className="bg-gray-100/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-gray-200/50">
-                            <h4 className="font-semibold text-foreground text-sm mb-1">{step.title}</h4>
-                            <p className="text-xs text-muted-foreground leading-tight">{step.description}</p>
+                          <div className="bg-gray-100/95 backdrop-blur-sm rounded-lg p-2.5 shadow-sm border border-gray-200/50">
+                            <h4 className="font-semibold text-foreground text-xs mb-1">{step.title}</h4>
+                            <p className="text-[10px] text-muted-foreground leading-tight">{step.description}</p>
                           </div>
                         </div>
                       </div>
