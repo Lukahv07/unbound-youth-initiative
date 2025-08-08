@@ -48,8 +48,8 @@ const MethodologySection = () => {
               <CardHeader>
                 <CardTitle className="text-center text-2xl mb-6">Design Thinking Process</CardTitle>
               </CardHeader>
-              <CardContent className="flex justify-center items-center p-8">
-                <div className="relative w-80 h-80">
+              <CardContent className="flex justify-center items-center p-12">
+                <div className="relative w-96 h-96">
                   {/* Center Circle */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-turquoise/20 flex items-center justify-center shadow-lg">
                     <div className="text-center">
@@ -58,13 +58,44 @@ const MethodologySection = () => {
                     </div>
                   </div>
                   
+                  {/* Arrows between steps */}
+                  {designThinkingSteps.map((_, index) => {
+                    const angle = (index * 72) - 90;
+                    const nextAngle = ((index + 1) * 72) - 90;
+                    const radius = 110;
+                    const arrowRadius = 130;
+                    
+                    const arrowAngle = angle + 36; // Midpoint between current and next step
+                    const arrowX = Math.cos(arrowAngle * Math.PI / 180) * arrowRadius;
+                    const arrowY = Math.sin(arrowAngle * Math.PI / 180) * arrowRadius;
+                    
+                    return (
+                      <div
+                        key={`arrow-${index}`}
+                        className="absolute text-primary/60"
+                        style={{
+                          left: `calc(50% + ${arrowX}px)`,
+                          top: `calc(50% + ${arrowY}px)`,
+                          transform: `translate(-50%, -50%) rotate(${arrowAngle + 90}deg)`
+                        }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      </div>
+                    );
+                  })}
+                  
                   {/* Circular Steps */}
                   {designThinkingSteps.map((step, index) => {
                     const IconComponent = step.icon;
                     const angle = (index * 72) - 90; // 360/5 = 72 degrees between each step, start at top
                     const radius = 110;
+                    const textRadius = 165; // Radius for text positioning
                     const x = Math.cos(angle * Math.PI / 180) * radius;
                     const y = Math.sin(angle * Math.PI / 180) * radius;
+                    const textX = Math.cos(angle * Math.PI / 180) * textRadius;
+                    const textY = Math.sin(angle * Math.PI / 180) * textRadius;
                     
                     const colors = [
                       'bg-gradient-to-br from-yellow-400 to-yellow-500', // Empathize - Yellow
@@ -74,22 +105,43 @@ const MethodologySection = () => {
                       'bg-gradient-to-br from-teal-400 to-teal-500'      // Test - Teal
                     ];
                     
+                    // Determine text alignment based on position
+                    const isLeft = textX < -20;
+                    const isRight = textX > 20;
+                    const isTop = textY < -20;
+                    
                     return (
-                      <div 
-                        key={index}
-                        className="absolute group cursor-pointer"
-                        style={{
-                          left: `calc(50% + ${x}px)`,
-                          top: `calc(50% + ${y}px)`,
-                          transform: 'translate(-50%, -50%)'
-                        }}
-                      >
-                        <div className={`w-20 h-20 rounded-full ${colors[index]} flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300`}>
-                          <IconComponent className="w-8 h-8 text-white" />
+                      <div key={index}>
+                        {/* Step Circle */}
+                        <div 
+                          className="absolute hover:scale-110 transition-all duration-300"
+                          style={{
+                            left: `calc(50% + ${x}px)`,
+                            top: `calc(50% + ${y}px)`,
+                            transform: 'translate(-50%, -50%)'
+                          }}
+                        >
+                          <div className={`w-20 h-20 rounded-full ${colors[index]} flex items-center justify-center shadow-lg relative`}>
+                            <IconComponent className="w-8 h-8 text-white" />
+                            {/* Number badge */}
+                            <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
+                              <span className="text-sm font-bold text-gray-800">{index + 1}</span>
+                            </div>
+                          </div>
                         </div>
-                        <div className="absolute top-24 left-1/2 transform -translate-x-1/2 text-center w-24 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        
+                        {/* Step Text */}
+                        <div 
+                          className={`absolute ${isLeft ? 'text-right' : isRight ? 'text-left' : 'text-center'}`}
+                          style={{
+                            left: `calc(50% + ${textX}px)`,
+                            top: `calc(50% + ${textY}px)`,
+                            transform: isLeft ? 'translate(-100%, -50%)' : isRight ? 'translate(0%, -50%)' : 'translate(-50%, -50%)',
+                            width: '120px'
+                          }}
+                        >
                           <h4 className="font-semibold text-foreground text-sm mb-1">{step.title}</h4>
-                          <p className="text-xs text-muted-foreground">{step.description}</p>
+                          <p className="text-xs text-muted-foreground leading-tight">{step.description}</p>
                         </div>
                       </div>
                     );
