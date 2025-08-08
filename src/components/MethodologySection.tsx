@@ -61,8 +61,6 @@ const MethodologySection = () => {
                   {/* Arrows between steps */}
                   {designThinkingSteps.map((_, index) => {
                     const angle = (index * 72) - 90;
-                    const nextAngle = ((index + 1) * 72) - 90;
-                    const radius = 110;
                     const arrowRadius = 130;
                     
                     const arrowAngle = angle + 36; // Midpoint between current and next step
@@ -79,8 +77,8 @@ const MethodologySection = () => {
                           transform: `translate(-50%, -50%) rotate(${arrowAngle + 90}deg)`
                         }}
                       >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
                         </svg>
                       </div>
                     );
@@ -137,11 +135,13 @@ const MethodologySection = () => {
                             left: `calc(50% + ${textX}px)`,
                             top: `calc(50% + ${textY}px)`,
                             transform: isLeft ? 'translate(-100%, -50%)' : isRight ? 'translate(0%, -50%)' : 'translate(-50%, -50%)',
-                            width: '120px'
+                            width: '140px'
                           }}
                         >
-                          <h4 className="font-semibold text-foreground text-sm mb-1">{step.title}</h4>
-                          <p className="text-xs text-muted-foreground leading-tight">{step.description}</p>
+                          <div className="bg-gray-100/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-gray-200/50">
+                            <h4 className="font-semibold text-foreground text-sm mb-1">{step.title}</h4>
+                            <p className="text-xs text-muted-foreground leading-tight">{step.description}</p>
+                          </div>
                         </div>
                       </div>
                     );
