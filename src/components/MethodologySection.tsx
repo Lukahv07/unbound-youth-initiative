@@ -43,115 +43,120 @@ const MethodologySection = () => {
           {/* Side by Side Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
             
-            {/* Design Thinking Process - Circular Layout */}
+            {/* Design Thinking Process - New Clean Design */}
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-center text-2xl mb-6">Design Thinking Process</CardTitle>
               </CardHeader>
               <CardContent className="flex justify-center items-center p-16">
-                <div className="relative w-[500px] h-[500px]">
-                  {/* Center Circle */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-turquoise/20 flex items-center justify-center shadow-lg">
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-foreground leading-tight">DESIGN</div>
-                      <div className="text-lg font-bold text-foreground leading-tight">THINKING</div>
-                    </div>
+                <div className="relative w-[700px] h-[700px]">
+                  {/* Center Circle with Globe Icon */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center shadow-lg border-4 border-white">
+                    <svg className="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
                   </div>
                   
-                  {/* Curved arrows following the circle */}
+                  {/* Curved Arrows */}
                   {designThinkingSteps.map((_, index) => {
-                  const angle = index * 72 - 90;
-                  const nextAngle = (index + 1) * 72 - 90;
-                  const radius = 140;
-
-                  // Calculate start and end points for the arc
-                  const startAngle = angle + 20;
-                  const endAngle = nextAngle - 20;
-                  const centerX = 250;
-                  const centerY = 250;
-                  const startX = centerX + Math.cos(startAngle * Math.PI / 180) * radius;
-                  const startY = centerY + Math.sin(startAngle * Math.PI / 180) * radius;
-                  const endX = centerX + Math.cos(endAngle * Math.PI / 180) * radius;
-                  const endY = centerY + Math.sin(endAngle * Math.PI / 180) * radius;
-
-                  // Calculate arrow head position
-                  const arrowX = centerX + Math.cos((endAngle - 10) * Math.PI / 180) * radius;
-                  const arrowY = centerY + Math.sin((endAngle - 10) * Math.PI / 180) * radius;
-                  return <svg key={`arrow-${index}`} className="absolute inset-0 w-full h-full pointer-events-none">
-                        {/* Curved path */}
-                        <path d={`M ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY}`} fill="none" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
+                    const currentAngle = index * 72 - 90;
+                    const nextAngle = ((index + 1) % 5) * 72 - 90;
+                    const radius = 160;
+                    const centerX = 350;
+                    const centerY = 350;
+                    
+                    // Calculate arrow path
+                    const startAngle = currentAngle + 15;
+                    const endAngle = nextAngle - 15;
+                    const startX = centerX + Math.cos(startAngle * Math.PI / 180) * radius;
+                    const startY = centerY + Math.sin(startAngle * Math.PI / 180) * radius;
+                    const endX = centerX + Math.cos(endAngle * Math.PI / 180) * radius;
+                    const endY = centerY + Math.sin(endAngle * Math.PI / 180) * radius;
+                    
+                    // Arrow direction
+                    const arrowAngle = endAngle * Math.PI / 180;
+                    const arrowLength = 12;
+                    const arrowHeadX = endX - Math.cos(arrowAngle) * arrowLength;
+                    const arrowHeadY = endY - Math.sin(arrowAngle) * arrowLength;
+                    
+                    return (
+                      <svg key={`arrow-${index}`} className="absolute inset-0 w-full h-full pointer-events-none">
+                        {/* Curved arrow path */}
+                        <path 
+                          d={`M ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY}`} 
+                          fill="none" 
+                          stroke="#60A5FA" 
+                          strokeWidth="4" 
+                          strokeLinecap="round"
+                        />
                         {/* Arrow head */}
-                        <polygon points={`${arrowX},${arrowY} ${arrowX - 8},${arrowY - 4} ${arrowX - 8},${arrowY + 4}`} fill="hsl(var(--primary))" opacity="0.6" transform={`rotate(${endAngle + 90} ${arrowX} ${arrowY})`} />
-                      </svg>;
-                })}
+                        <polygon 
+                          points={`${endX},${endY} ${arrowHeadX - 6},${arrowHeadY - 3} ${arrowHeadX - 6},${arrowHeadY + 3}`}
+                          fill="#60A5FA" 
+                          transform={`rotate(${endAngle + 90} ${endX} ${endY})`}
+                        />
+                      </svg>
+                    );
+                  })}
                   
-                  {/* Circular Steps */}
+                  {/* Step Icons and Text Boxes */}
                   {designThinkingSteps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  const angle = index * 72 - 90; // 360/5 = 72 degrees between each step, start at top
-                  const iconRadius = 120;
-                  const textRadius = 190; // Further out for text positioning
-                  const iconX = Math.cos(angle * Math.PI / 180) * iconRadius;
-                  const iconY = Math.sin(angle * Math.PI / 180) * iconRadius;
-                  const textX = Math.cos(angle * Math.PI / 180) * textRadius;
-                  const textY = Math.sin(angle * Math.PI / 180) * textRadius;
-                  const colors = ['bg-gradient-to-br from-yellow-400 to-yellow-500',
-                  // Empathize - Yellow
-                  'bg-gradient-to-br from-orange-400 to-orange-500',
-                  // Define - Orange
-                  'bg-gradient-to-br from-pink-400 to-pink-500',
-                  // Ideate - Pink
-                  'bg-gradient-to-br from-blue-400 to-blue-500',
-                  // Prototype - Blue
-                  'bg-gradient-to-br from-teal-400 to-teal-500' // Test - Teal
-                  ];
-
-                  // Determine text alignment and positioning based on position
-                  const isLeft = textX < -50;
-                  const isRight = textX > 50;
-                  const isTop = textY < -50;
-                  const isBottom = textY > 50;
-
-                  // Adjust text position to avoid overlaps
-                  let finalTextX = textX;
-                  let finalTextY = textY;
-
-                  // Push text further out if needed to avoid icon overlap
-                  if (Math.abs(textX) < 100 && Math.abs(textY) < 100) {
-                    const multiplier = 1.3;
-                    finalTextX = textX * multiplier;
-                    finalTextY = textY * multiplier;
-                  }
-                  return <div key={index}>
+                    const IconComponent = step.icon;
+                    const angle = index * 72 - 90;
+                    const iconRadius = 160;
+                    const textRadius = 280;
+                    
+                    const iconX = Math.cos(angle * Math.PI / 180) * iconRadius;
+                    const iconY = Math.sin(angle * Math.PI / 180) * iconRadius;
+                    const textX = Math.cos(angle * Math.PI / 180) * textRadius;
+                    const textY = Math.sin(angle * Math.PI / 180) * textRadius;
+                    
+                    const colors = [
+                      'bg-gradient-to-br from-yellow-400 to-yellow-500', // Empathize
+                      'bg-gradient-to-br from-orange-400 to-orange-500', // Define  
+                      'bg-gradient-to-br from-pink-400 to-pink-500',     // Ideate
+                      'bg-gradient-to-br from-blue-500 to-blue-600',     // Prototype
+                      'bg-gradient-to-br from-teal-400 to-teal-500'      // Test
+                    ];
+                    
+                    return (
+                      <div key={index}>
                         {/* Step Circle */}
-                        <div className="absolute hover:scale-110 transition-all duration-300 z-10" style={{
-                      left: `calc(50% + ${iconX}px)`,
-                      top: `calc(50% + ${iconY}px)`,
-                      transform: 'translate(-50%, -50%)'
-                    }}>
-                          <div className={`w-20 h-20 rounded-full ${colors[index]} flex items-center justify-center shadow-lg relative`}>
-                            <IconComponent className="w-8 h-8 text-white" />
+                        <div 
+                          className="absolute z-20" 
+                          style={{
+                            left: `calc(50% + ${iconX}px)`,
+                            top: `calc(50% + ${iconY}px)`,
+                            transform: 'translate(-50%, -50%)'
+                          }}
+                        >
+                          <div className={`w-16 h-16 rounded-full ${colors[index]} flex items-center justify-center shadow-lg relative border-4 border-white`}>
+                            <IconComponent className="w-7 h-7 text-white" />
                             {/* Number badge */}
-                            <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
+                            <div className="absolute -top-2 -right-2 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-gray-100">
                               <span className="text-sm font-bold text-gray-800">{index + 1}</span>
                             </div>
                           </div>
                         </div>
                         
-                        {/* Step Text */}
-                        <div className={`absolute z-20 ${isLeft ? 'text-right' : isRight ? 'text-left' : 'text-center'}`} style={{
-                      left: `calc(50% + ${finalTextX}px)`,
-                      top: `calc(50% + ${finalTextY}px)`,
-                      transform: isLeft ? 'translate(-100%, -50%)' : isRight ? 'translate(0%, -50%)' : 'translate(-50%, -50%)',
-                      width: '120px'
-                    }}>
-                          <div className="bg-gray-100/95 backdrop-blur-sm rounded-lg p-2.5 shadow-sm border border-gray-200/50">
-                            <h4 className="font-semibold text-foreground text-xs mb-1">{step.title}</h4>
-                            <p className="text-[10px] text-muted-foreground leading-tight">{step.description}</p>
+                        {/* Step Text Box */}
+                        <div 
+                          className="absolute z-10" 
+                          style={{
+                            left: `calc(50% + ${textX}px)`,
+                            top: `calc(50% + ${textY}px)`,
+                            transform: 'translate(-50%, -50%)',
+                            width: '180px'
+                          }}
+                        >
+                          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-4 shadow-lg border border-blue-200">
+                            <h4 className="font-bold text-gray-800 text-lg mb-2 text-center">{step.title}</h4>
+                            <p className="text-sm text-gray-600 leading-relaxed text-center">{step.description}</p>
                           </div>
                         </div>
-                      </div>;
-                })}
+                      </div>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
