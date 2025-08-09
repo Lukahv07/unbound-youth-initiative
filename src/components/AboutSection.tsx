@@ -1,5 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Globe, Target } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 const AboutSection = () => {
   return <section id="about" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,17 +16,81 @@ const AboutSection = () => {
           <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Our Story: From Miles to Movements</h3>
         </div>
 
-        {/* Story Content */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="prose prose-lg max-w-none text-foreground leading-relaxed">
-            <p className="mb-6 text-xl font-bold">
-              The UNbound Youth Initiative was born from a story of transformation.
-            </p>
-            <p className="mb-6">At 16, founder Lukah Villarreal stood in the recovery room of an Operation Smile medical mission—translating between surgeons and nurses and playing with children before life-changing cleft palate surgeries. As Finance Chair of Miles for Smiles (M4S), the largest student-led Operation Smile initiative in Mexico, Lukah helped raise $30,000 annually—enough for around 20 surgeries—rallied over 1,000 runners each year for the M4S charity raced, and worked side-by-side with surgeons, nurses, and children whose lives were about to change.</p>
-            <p className="mb-6">But Lukah saw a bigger pattern. While powerful, initiatives like M4S often operated in silos—limited in size, diversity, and interest. What if students could be empowered to build their own movements, tailored to their communities, aligned with the United Nations Sustainable Development Goals (SDGs)?</p>
-            <p className="font-medium text-primary text-xl">
-              That's how UNbound began: a platform to unchain youth service from boundaries—of subject, of setting, of expectation—and replace them with bold collaboration and global purpose.
-            </p>
+        {/* Story Content with Carousel */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="prose prose-lg max-w-none text-foreground leading-relaxed">
+              <p className="mb-6 text-xl font-bold">
+                The UNbound Youth Initiative was born from a story of transformation.
+              </p>
+              <p className="mb-6">At 16, founder Lukah Villarreal stood in the recovery room of an Operation Smile medical mission—translating between surgeons and nurses and playing with children before life-changing cleft palate surgeries. As Finance Chair of Miles for Smiles (M4S), the largest student-led Operation Smile initiative in Mexico, Lukah helped raise $30,000 annually—enough for around 20 surgeries—rallied over 1,000 runners each year for the M4S charity raced, and worked side-by-side with surgeons, nurses, and children whose lives were about to change.</p>
+              <p className="mb-6">But Lukah saw a bigger pattern. While powerful, initiatives like M4S often operated in silos—limited in size, diversity, and interest. What if students could be empowered to build their own movements, tailored to their communities, aligned with the United Nations Sustainable Development Goals (SDGs)?</p>
+              <p className="font-medium text-primary text-xl">
+                That's how UNbound began: a platform to unchain youth service from boundaries—of subject, of setting, of expectation—and replace them with bold collaboration and global purpose.
+              </p>
+            </div>
+
+            {/* Image Carousel */}
+            <div className="w-full">
+              <Carousel className="w-full max-w-lg mx-auto">
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="p-4">
+                          <img 
+                            src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
+                            alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit"
+                            className="w-full h-64 object-cover rounded-lg mb-4"
+                          />
+                          <p className="text-sm text-muted-foreground text-center">
+                            Founder Lukah Villarreal (middle) at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
+                            <span className="font-medium">— July, 2025</span>
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="p-4">
+                          <img 
+                            src="/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
+                            alt="Founder Lukah Villarreal in medical scrubs"
+                            className="w-full h-64 object-cover rounded-lg mb-4"
+                          />
+                          <p className="text-sm text-muted-foreground text-center">
+                            Founder Lukah Villarreal while translating for Operation Smile.<br />
+                            <span className="font-medium">— July, 2024</span>
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="p-4">
+                          <img 
+                            src="/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
+                            alt="Miles for Smiles charity race with participants"
+                            className="w-full h-64 object-cover rounded-lg mb-4"
+                          />
+                          <p className="text-sm text-muted-foreground text-center">
+                            Miles for Smiles race.<br />
+                            <span className="font-medium">— April, 2025</span>
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
         </div>
 
