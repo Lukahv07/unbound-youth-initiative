@@ -7,7 +7,27 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useState, useEffect } from "react";
+
 const AboutSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<any>();
+
+  useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    carouselApi.on("select", () => {
+      setCurrentSlide(carouselApi.selectedScrollSnap());
+    });
+  }, [carouselApi]);
+
+  const scrollToSlide = (index: number) => {
+    if (carouselApi) {
+      carouselApi.scrollTo(index);
+    }
+  };
   return <section id="about" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -33,17 +53,19 @@ const AboutSection = () => {
 
             {/* Image Carousel */}
             <div className="w-full">
-              <Carousel className="w-full max-w-lg mx-auto">
+              <Carousel className="w-full max-w-lg mx-auto" setApi={setCarouselApi}>
                 <CarouselContent>
                   <CarouselItem>
                     <div className="p-1">
                       <Card>
                         <CardContent className="p-4">
-                          <img 
-                            src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
-                            alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit"
-                            className="w-full h-64 object-cover rounded-lg mb-4"
-                          />
+                          <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img 
+                              src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
+                              alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                           <p className="text-sm text-muted-foreground text-center">
                             Founder Lukah Villarreal (middle) at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
                             <span className="font-medium">— July, 2025</span>
@@ -56,11 +78,13 @@ const AboutSection = () => {
                     <div className="p-1">
                       <Card>
                         <CardContent className="p-4">
-                          <img 
-                            src="/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
-                            alt="Founder Lukah Villarreal in medical scrubs"
-                            className="w-full h-64 object-cover rounded-lg mb-4"
-                          />
+                          <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img 
+                              src="/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
+                              alt="Founder Lukah Villarreal in medical scrubs"
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
                           <p className="text-sm text-muted-foreground text-center">
                             Founder Lukah Villarreal while translating for Operation Smile.<br />
                             <span className="font-medium">— July, 2024</span>
@@ -73,11 +97,13 @@ const AboutSection = () => {
                     <div className="p-1">
                       <Card>
                         <CardContent className="p-4">
-                          <img 
-                            src="/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
-                            alt="Miles for Smiles charity race with participants"
-                            className="w-full h-64 object-cover rounded-lg mb-4"
-                          />
+                          <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img 
+                              src="/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
+                              alt="Miles for Smiles charity race with participants"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                           <p className="text-sm text-muted-foreground text-center">
                             Miles for Smiles race.<br />
                             <span className="font-medium">— April, 2025</span>
@@ -90,6 +116,22 @@ const AboutSection = () => {
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
+              
+              {/* Carousel Indicators */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {[0, 1, 2].map((index) => (
+                  <button
+                    key={index}
+                    onClick={() => scrollToSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                      currentSlide === index 
+                        ? 'bg-primary' 
+                        : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
