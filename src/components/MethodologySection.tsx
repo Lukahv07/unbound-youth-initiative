@@ -48,11 +48,11 @@ const MethodologySection = () => {
               <CardHeader>
                 <CardTitle className="text-center text-2xl mb-6">Design Thinking Process</CardTitle>
               </CardHeader>
-              <CardContent className="flex justify-center items-center p-8">
+              <CardContent className="flex justify-center items-center p-12">
                 <img 
                   src="/lovable-uploads/6b74b7b7-c84c-4104-9f3e-8d486244affb.png" 
                   alt="Design Thinking Process diagram showing 5 steps: Empathize, Define, Ideate, Prototype, and Test & Revise arranged in a circle with arrows connecting them"
-                  className="max-w-full h-auto max-h-96 object-contain"
+                  className="max-w-full h-auto max-h-[420px] object-contain mx-auto"
                 />
               </CardContent>
             </Card>
@@ -79,25 +79,53 @@ const MethodologySection = () => {
             </Card>
           </div>
 
-          {/* Impact Statement - Enhanced Glassmorphism */}
-          <div className="relative overflow-hidden rounded-3xl p-12 text-center backdrop-blur-lg bg-white/20 border border-white/30 shadow-2xl">
-            {/* Animated Background Swirls */}
+          {/* Impact Statement - Beach Image Background */}
+          <div className="relative overflow-hidden rounded-3xl p-12 text-center shadow-2xl">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/lovable-uploads/9ba2bc88-acf8-4613-892e-5ee0b48c8305.png)'
+              }}
+            ></div>
+            
+            {/* Color Overlay for Text Visibility */}
+            <div className="absolute inset-0 bg-slate-900/60"></div>
+            
+            {/* Semi-translucent Cloud Icons */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-emerald-400/30 to-teal-500/30 rounded-full blur-xl animate-float" style={{
-              animationDelay: '0s'
-            }}></div>
-              <div className="absolute top-1/2 -right-20 w-60 h-60 bg-gradient-to-br from-blue-400/25 to-cyan-500/25 rounded-full blur-2xl animate-float" style={{
-              animationDelay: '2s'
-            }}></div>
-              <div className="absolute -bottom-20 left-1/3 w-50 h-50 bg-gradient-to-br from-green-300/35 to-emerald-400/35 rounded-full blur-xl animate-float" style={{
-              animationDelay: '4s'
-            }}></div>
-              <div className="absolute top-20 left-1/4 w-32 h-32 bg-gradient-to-br from-white/40 to-blue-200/40 rounded-full blur-lg animate-float" style={{
-              animationDelay: '1s'
-            }}></div>
-              <div className="absolute bottom-1/4 right-1/4 w-36 h-36 bg-gradient-to-br from-teal-300/30 to-green-400/30 rounded-full blur-xl animate-float" style={{
-              animationDelay: '3s'
-            }}></div>
+              <div className="absolute top-20 left-1/4 w-16 h-16 text-white/20 animate-float" style={{
+                animationDelay: '0s'
+              }}>
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M18.5 10.5c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5h-13c-.83 0-1.5-.67-1.5-1.5v-6c0-.83.67-1.5 1.5-1.5h13zM18.5 8h-13C4.12 8 3 9.12 3 10.5v7C3 18.88 4.12 20 5.5 20h13c1.38 0 2.5-1.12 2.5-2.5v-7C21 9.12 19.88 8 18.5 8z"/>
+                  <path d="M7 6.5c0-1.38 1.12-2.5 2.5-2.5h5c1.38 0 2.5 1.12 2.5 2.5"/>
+                </svg>
+              </div>
+              <div className="absolute top-1/3 right-1/4 w-20 h-20 text-white/15 animate-float" style={{
+                animationDelay: '2s'
+              }}>
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M18.5 10.5c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5h-13c-.83 0-1.5-.67-1.5-1.5v-6c0-.83.67-1.5 1.5-1.5h13zM18.5 8h-13C4.12 8 3 9.12 3 10.5v7C3 18.88 4.12 20 5.5 20h13c1.38 0 2.5-1.12 2.5-2.5v-7C21 9.12 19.88 8 18.5 8z"/>
+                  <path d="M7 6.5c0-1.38 1.12-2.5 2.5-2.5h5c1.38 0 2.5 1.12 2.5 2.5"/>
+                </svg>
+              </div>
+              <div className="absolute bottom-1/3 left-1/5 w-14 h-14 text-white/25 animate-float" style={{
+                animationDelay: '4s'
+              }}>
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M18.5 10.5c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5h-13c-.83 0-1.5-.67-1.5-1.5v-6c0-.83.67-1.5 1.5-1.5h13zM18.5 8h-13C4.12 8 3 9.12 3 10.5v7C3 18.88 4.12 20 5.5 20h13c1.38 0 2.5-1.12 2.5-2.5v-7C21 9.12 19.88 8 18.5 8z"/>
+                  <path d="M7 6.5c0-1.38 1.12-2.5 2.5-2.5h5c1.38 0 2.5 1.12 2.5 2.5"/>
+                </svg>
+              </div>
+              <div className="absolute top-2/3 right-1/3 w-12 h-12 text-white/20 animate-float" style={{
+                animationDelay: '1s'
+              }}>
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M18.5 10.5c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5h-13c-.83 0-1.5-.67-1.5-1.5v-6c0-.83.67-1.5 1.5-1.5h13zM18.5 8h-13C4.12 8 3 9.12 3 10.5v7C3 18.88 4.12 20 5.5 20h13c1.38 0 2.5-1.12 2.5-2.5v-7C21 9.12 19.88 8 18.5 8z"/>
+                  <path d="M7 6.5c0-1.38 1.12-2.5 2.5-2.5h5c1.38 0 2.5 1.12 2.5 2.5"/>
+                </svg>
+              </div>
             </div>
             
             {/* Content */}
@@ -105,8 +133,8 @@ const MethodologySection = () => {
               <div className="mb-6">
                 <span className="text-4xl">📍</span>
               </div>
-              <h3 className="font-bold text-slate-800 mb-6 text-4xl leading-tight">Real Projects. Real People. Real Change.</h3>
-              <p className="text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+              <h3 className="font-bold text-white mb-6 text-4xl leading-tight">Real Projects. Real People. Real Change.</h3>
+              <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                 UNbound has rallied students and educators across 10 Tri-Association schools for the 2025-26 school year to launch service projects across 5 countries—from environmental campaigns to health equity drives—each uniquely rooted in their context but united by shared values.
               </p>
             </div>
