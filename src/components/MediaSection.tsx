@@ -92,7 +92,7 @@ const MediaSection = () => {
             </CardHeader>
             <CardContent className="p-8">
               {/* Horizontal Layout for Larger Screens */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Side - Text Content */}
                 <div className="space-y-6">
                   <p className="text-lg text-muted-foreground leading-relaxed">
@@ -102,29 +102,10 @@ const MediaSection = () => {
                   <p className="text-muted-foreground text-lg">
                     From hospital hallways to 1,000-runner fundraisers, explore the journey of students who turned compassion into action.
                   </p>
-
-                  {/* Features */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-4">Featuring:</h4>
-                    <div className="space-y-3">
-                      {features.map((feature, index) => <div key={index} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <p className="text-sm text-muted-foreground">{feature}</p>
-                        </div>)}
-                    </div>
-                  </div>
-
-                  {/* Action Button */}
-                  <div className="flex justify-start">
-                    <Button variant="hero" className="flex items-center space-x-2">
-                      <Eye className="w-4 h-4" />
-                      <span>Watch in Full Screen Mode (~3 min)</span>
-                    </Button>
-                  </div>
                 </div>
 
                 {/* Right Side - Documentary Player Frame */}
-                <div>
+                <div className="lg:row-span-2">
                   <div className="relative bg-gradient-to-br from-primary to-turquoise rounded-lg overflow-hidden aspect-video">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-20 h-20 rounded-full bg-gradient-icon flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200">
@@ -137,6 +118,28 @@ const MediaSection = () => {
                     <div className="absolute bottom-4 left-4 text-white text-xs bg-black/30 px-2 py-1 rounded">
                       Coming Soon
                     </div>
+                  </div>
+                </div>
+                
+                {/* Bottom Left - Features and Button */}
+                <div className="space-y-6">
+                  {/* Features */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-4">Featuring:</h4>
+                    <div className="space-y-3">
+                      {features.map((feature, index) => <div key={index} className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <p className="text-sm text-muted-foreground">{feature}</p>
+                        </div>)}
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="flex justify-center lg:justify-start">
+                    <Button variant="hero" className="flex items-center space-x-2">
+                      <Eye className="w-4 h-4" />
+                      <span>Watch in Full Screen Mode (~3 min)</span>
+                    </Button>
                   </div>
                 </div>
               </div>
