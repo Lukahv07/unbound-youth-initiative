@@ -1,7 +1,72 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, Eye, Mail } from "lucide-react";
+import { Play, Eye } from "lucide-react";
+import { useState } from "react";
+
+const PhotoGalleryCarousel = () => {
+  const [activeGallery, setActiveGallery] = useState(0);
+  
+  const galleries = [
+    {
+      title: "Miles for Smiles 2024",
+      description: "Highlights from our 2024 charity race and fundraising efforts.",
+      image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
+    },
+    {
+      title: "Miles for Smiles 2025", 
+      description: "Our most successful race yet with over 1,000 participants.",
+      image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
+    },
+    {
+      title: "Operation Smile Missions",
+      description: "Behind-the-scenes moments from medical missions.",
+      image: "/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
+    },
+    {
+      title: "Global Citizens Initiative 2025",
+      description: "Summit moments and global collaboration.",
+      image: "/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
+    }
+  ];
+
+  return (
+    <div>
+      {/* Gallery Navigation */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {galleries.map((gallery, index) => (
+          <Button
+            key={index}
+            variant={activeGallery === index ? "default" : "outline"}
+            size="sm"
+            onClick={() => setActiveGallery(index)}
+            className="text-xs"
+          >
+            {gallery.title}
+          </Button>
+        ))}
+      </div>
+      
+      {/* Active Gallery Preview */}
+      <div className="space-y-4">
+        <div className="aspect-video bg-light-blue-soft rounded-lg overflow-hidden">
+          <img 
+            src={galleries[activeGallery].image}
+            alt={galleries[activeGallery].title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="text-center space-y-2">
+          <h5 className="font-medium text-foreground">{galleries[activeGallery].title}</h5>
+          <p className="text-sm text-muted-foreground">{galleries[activeGallery].description}</p>
+          <Button variant="outline" size="sm">
+            View Full Gallery
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
 const MediaSection = () => {
   const features = ["On-the-ground footage from medical missions", "Interviews with families and volunteers", "Reflections from student leaders"];
   return <section id="media" className="bg-gradient-to-b from-background to-light-blue-soft py-[40px] bg-slate-500">
@@ -45,30 +110,41 @@ const MediaSection = () => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* Documentary Player Frame */}
+              <div className="mb-8">
+                <div className="relative bg-gradient-to-br from-primary to-turquoise rounded-lg overflow-hidden aspect-video">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-gradient-icon flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200">
+                      <Play className="w-8 h-8 text-white ml-1" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 right-4 text-white text-sm font-medium bg-black/30 px-3 py-1 rounded">
+                    Documentary Preview
+                  </div>
+                  <div className="absolute bottom-4 left-4 text-white text-xs bg-black/30 px-2 py-1 rounded">
+                    Coming Soon
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div className="flex justify-center">
                 <Button variant="hero" className="flex items-center space-x-2">
                   <Eye className="w-4 h-4" />
-                  <span>Watch (~3 min)</span>
+                  <span>Watch in Full Screen Mode (~3 min)</span>
                 </Button>
-                
               </div>
             </CardContent>
           </Card>
 
-          {/* Additional Media Content */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 my-0 py-0">
+          {/* Photo Gallery Carousel */}
+          <div className="mt-12">
             <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6 my-0 px-[24px] py-[24px]">
-                <h4 className="font-semibold text-foreground mb-3">Photo Gallery</h4>
-                <p className="text-muted-foreground mb-4">
-                  Explore moments from our missions, workshops, and student-led initiatives around the world.
-                </p>
-                <Button variant="outline" size="sm">View Gallery</Button>
+              <CardContent className="p-6">
+                <h4 className="font-semibold text-foreground mb-6">Photo Gallery</h4>
+                <PhotoGalleryCarousel />
               </CardContent>
             </Card>
-
-            
           </div>
         </div>
       </div>
