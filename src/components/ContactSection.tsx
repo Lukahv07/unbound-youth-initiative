@@ -91,7 +91,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="bg-gradient-to-b from-light-blue to-turquoise py-[40px]">
+    <section id="contact" className="bg-gradient-to-b from-light-blue to-cyan-400 py-[40px]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

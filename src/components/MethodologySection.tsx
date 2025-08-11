@@ -48,11 +48,11 @@ const MethodologySection = () => {
               <CardHeader>
                 <CardTitle className="text-center text-2xl mb-6">Design Thinking Process</CardTitle>
               </CardHeader>
-              <CardContent className="flex justify-center items-start pt-4 pb-8">
+              <CardContent className="flex justify-center items-start pt-2 pb-4">
                 <img 
                   src="/lovable-uploads/6b74b7b7-c84c-4104-9f3e-8d486244affb.png" 
                   alt="Design Thinking Process diagram showing 5 steps: Empathize, Define, Ideate, Prototype, and Test & Revise arranged in a circle with arrows connecting them"
-                  className="max-w-full h-auto max-h-[420px] object-contain mx-auto"
+                  className="max-w-full h-auto max-h-[450px] object-contain mx-auto"
                 />
               </CardContent>
             </Card>
@@ -89,22 +89,22 @@ const MethodologySection = () => {
               }}
             ></div>
             
-            {/* Color Overlay for Text Visibility */}
-            <div className="absolute inset-0 bg-green-900/75"></div>
+            {/* Gradient Color Overlay - Apple Green to Lime Green */}
+            <div className="absolute inset-0 bg-gradient-to-t from-green-700/90 to-lime-500/60"></div>
             
-            {/* Semi-translucent Cloud Icons */}
+            {/* Semi-translucent Cloud Icons - Larger and positioned around text */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-16 left-16 w-20 h-12 opacity-40 animate-float" style={{
+              <div className="absolute -top-8 -left-16 w-48 h-32 opacity-40 animate-float" style={{
                 animationDelay: '0s'
               }}>
                 <img src="/lovable-uploads/0ebd7247-2a3e-4b99-bdb1-e2c8c9df01df.png" alt="Cloud decoration" className="w-full h-full object-contain" />
               </div>
-              <div className="absolute top-1/3 right-20 w-24 h-16 opacity-30 animate-float" style={{
+              <div className="absolute top-8 -right-20 w-56 h-36 opacity-30 animate-float" style={{
                 animationDelay: '2s'
               }}>
                 <img src="/lovable-uploads/8d35549f-5fa3-4cd5-b625-9fc3b18b4a7e.png" alt="Cloud decoration" className="w-full h-full object-contain" />
               </div>
-              <div className="absolute bottom-20 left-1/4 w-28 h-16 opacity-35 animate-float" style={{
+              <div className="absolute -bottom-12 -left-20 w-52 h-32 opacity-35 animate-float" style={{
                 animationDelay: '4s'
               }}>
                 <img src="/lovable-uploads/b8bdaa5f-f117-48ba-81e5-b194646f76af.png" alt="Cloud decoration" className="w-full h-full object-contain" />

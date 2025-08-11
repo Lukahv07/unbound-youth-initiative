@@ -76,37 +76,38 @@ const MediaSection = () => {
           <h2 className="text-3xl font-bold text-foreground mb-4 py-0 my-[40px] sm:text-5xl">Media</h2>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Documentary Card */}
-          <Card className="shadow-lg overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-primary to-turquoise text-white">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                  <Play className="w-5 h-5" />
-                </div>
-                <div>
-                  <Badge variant="outline" className="border-white text-white mb-2">🎬 Mini Documentary</Badge>
-                  <CardTitle className="text-2xl">"More Than a Race"</CardTitle>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="p-8">
-              {/* Horizontal Layout for Larger Screens */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Left Side - Text Content */}
-                <div className="space-y-6">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    A behind-the-scenes look at Miles for Smiles, Operation Smile Mexico, and the moments that sparked a movement.
-                  </p>
-                  
-                  <p className="text-muted-foreground text-lg">
-                    From hospital hallways to 1,000-runner fundraisers, explore the journey of students who turned compassion into action.
-                  </p>
-                </div>
+        <div className="max-w-7xl mx-auto">
+          {/* Documentary and Photo Gallery - Side by Side */}
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-8">
+            
+            {/* Documentary Card - Takes 3 columns */}
+            <div className="xl:col-span-3">
+              <Card className="shadow-lg overflow-hidden h-full">
+                <CardHeader className="bg-gradient-to-r from-primary to-turquoise text-white">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                      <Play className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <Badge variant="outline" className="border-white text-white mb-2">🎬 Mini Documentary</Badge>
+                      <CardTitle className="text-2xl">"More Than a Race"</CardTitle>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-6">
+                  {/* Text Content */}
+                  <div className="space-y-4 mb-6">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      A behind-the-scenes look at Miles for Smiles, Operation Smile Mexico, and the moments that sparked a movement.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      From hospital hallways to 1,000-runner fundraisers, explore the journey of students who turned compassion into action.
+                    </p>
+                  </div>
 
-                {/* Right Side - Documentary Player Frame */}
-                <div className="lg:row-span-2">
-                  <div className="relative bg-gradient-to-br from-primary to-turquoise rounded-lg overflow-hidden aspect-video">
+                  {/* Documentary Player Frame */}
+                  <div className="relative bg-gradient-to-br from-primary to-turquoise rounded-lg overflow-hidden aspect-video mb-6">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-20 h-20 rounded-full bg-gradient-icon flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200">
                         <Play className="w-8 h-8 text-white ml-1" />
@@ -119,41 +120,40 @@ const MediaSection = () => {
                       Coming Soon
                     </div>
                   </div>
-                </div>
-                
-                {/* Bottom Left - Features and Button */}
-                <div className="space-y-6">
-                  {/* Features */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-4">Featuring:</h4>
-                    <div className="space-y-3">
-                      {features.map((feature, index) => <div key={index} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <p className="text-sm text-muted-foreground">{feature}</p>
-                        </div>)}
+                  
+                  {/* Features spanning full width */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-4">Featuring:</h4>
+                      <div className="space-y-3">
+                        {features.map((feature, index) => <div key={index} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <p className="text-sm text-muted-foreground">{feature}</p>
+                          </div>)}
+                      </div>
+                    </div>
+
+                    {/* Action Button */}
+                    <div className="flex justify-center md:justify-start items-end">
+                      <Button variant="hero" className="flex items-center space-x-2">
+                        <Eye className="w-4 h-4" />
+                        <span>Watch in Full Screen Mode (~3 min)</span>
+                      </Button>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+            </div>
 
-                  {/* Action Button */}
-                  <div className="flex justify-center lg:justify-start">
-                    <Button variant="hero" className="flex items-center space-x-2">
-                      <Eye className="w-4 h-4" />
-                      <span>Watch in Full Screen Mode (~3 min)</span>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Photo Gallery Carousel */}
-          <div className="mt-12">
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-6">Photo Gallery</h4>
-                <PhotoGalleryCarousel />
-              </CardContent>
-            </Card>
+            {/* Photo Gallery - Takes 2 columns */}
+            <div className="xl:col-span-2">
+              <Card className="hover:shadow-md transition-shadow h-full">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-foreground mb-6">Photo Gallery</h4>
+                  <PhotoGalleryCarousel />
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
