@@ -6,7 +6,12 @@ const Header = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
+      const headerHeight = 80; // Height of the fixed header
+      const extraMargin = 40; // Additional margin for better spacing
+      const elementPosition = element.offsetTop - headerHeight - extraMargin;
+      
+      window.scrollTo({
+        top: elementPosition,
         behavior: 'smooth'
       });
       setIsMenuOpen(false);
@@ -29,10 +34,10 @@ const Header = () => {
               About
             </button>
             <button onClick={() => scrollToSection('methodology')} className="text-foreground hover:text-primary transition-colors">
-              What We Do
+              Our Model
             </button>
-            <button onClick={() => scrollToSection('workshops')} className="text-foreground hover:text-primary transition-colors">
-              Workshops
+            <button onClick={() => scrollToSection('partnership')} className="text-foreground hover:text-primary transition-colors">
+              Our GCI Partnership
             </button>
             <button onClick={() => scrollToSection('media')} className="text-foreground hover:text-primary transition-colors">
               Media
@@ -58,10 +63,10 @@ const Header = () => {
               About
             </button>
             <button onClick={() => scrollToSection('methodology')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
-              What We Do
+              Our Model
             </button>
-            <button onClick={() => scrollToSection('workshops')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
-              Workshops
+            <button onClick={() => scrollToSection('partnership')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
+              Our GCI Partnership
             </button>
             <button onClick={() => scrollToSection('media')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
               Media

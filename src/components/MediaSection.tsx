@@ -55,11 +55,11 @@ const MediaSection = () => {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          {/* Documentary and Photo Gallery - Side by Side */}
-          <div className="grid grid-cols-1 xl:grid-cols-5 gap-8">
-            
-            {/* Documentary Card - Takes 3 columns */}
-            <div className="xl:col-span-3">
+            {/* Documentary and Photo Gallery - Side by Side */}
+            <div className="grid grid-cols-1 xl:grid-cols-7 gap-8">
+              
+              {/* Documentary Card - Takes 4 columns */}
+              <div className="xl:col-span-4">
               <Card className="shadow-lg overflow-hidden h-full">
                 <CardHeader className="bg-gradient-to-r from-primary to-turquoise text-white">
                   <div className="flex items-center space-x-3">
@@ -123,12 +123,14 @@ const MediaSection = () => {
               </Card>
             </div>
 
-            {/* Photo Gallery - Takes 2 columns */}
-            <div className="xl:col-span-2">
+            {/* Photo Gallery - Takes 3 columns */}
+            <div className="xl:col-span-3">
               <Card className="hover:shadow-md transition-shadow h-full">
-                <CardContent className="p-6">
+                <CardContent className="p-6 h-full flex flex-col">
                   <h4 className="font-semibold text-foreground mb-6 text-4xl">Photo Galleries</h4>
-                  <PhotoGalleryCarousel />
+                  <div className="flex-1">
+                    <PhotoGalleryCarousel />
+                  </div>
                 </CardContent>
               </Card>
             </div>

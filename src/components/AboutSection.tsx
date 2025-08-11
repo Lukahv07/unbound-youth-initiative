@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Users, Globe, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Heart, Users, Globe, Target, ArrowDown } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
 const AboutSection = () => {
@@ -18,6 +19,20 @@ const AboutSection = () => {
       carouselApi.scrollTo(index);
     }
   };
+
+  const scrollToPartnership = () => {
+    const element = document.getElementById('partnership');
+    if (element) {
+      const headerHeight = 80;
+      const extraMargin = 40;
+      const elementPosition = element.offsetTop - headerHeight - extraMargin;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
   return <section id="about" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -26,31 +41,39 @@ const AboutSection = () => {
           <h3 className="text-2xl font-semibold text-primary mb-6 sm:text-4xl">Our Story: From Miles to Movements</h3>
         </div>
 
-        {/* Story Content with Carousel */}
+        {/* Opening Paragraph - Full Width */}
         <div className="max-w-6xl mx-auto mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <p className="mb-12 text-xl font-bold text-foreground leading-relaxed text-center">
+            The UNbound Youth Initiative was born from a story of transformation.
+          </p>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             {/* Text Content */}
             <div className="prose prose-lg max-w-none text-foreground leading-relaxed">
-              <p className="mb-6 text-xl font-bold">
-                The UNbound Youth Initiative was born from a story of transformation.
-              </p>
               <p className="mb-6">At 16, founder Lukah Villarreal stood in the recovery room of an Operation Smile medical mission—translating between surgeons and nurses and playing with children before life-changing cleft palate surgeries. As Finance Chair of Miles for Smiles (M4S), the largest student-led Operation Smile initiative in Mexico, Lukah helped raise $30,000 annually—enough for around 20 surgeries—rallied over 1,000 runners each year for the M4S charity raced, and worked side-by-side with surgeons, nurses, and children whose lives were about to change.</p>
               <p className="mb-6">But Lukah saw a bigger pattern. While powerful, initiatives like M4S often operated in silos—limited in size, diversity, and interest. What if students could be empowered to build their own movements, tailored to their communities, aligned with the United Nations Sustainable Development Goals (SDGs)?</p>
-              <p className="font-medium text-primary text-xl">
-                That's how UNbound began: a platform to unchain youth service from boundaries—of subject, of setting, of expectation—and replace them with bold collaboration and global purpose.
-              </p>
             </div>
 
             {/* Image Carousel */}
-            <div className="w-full">
+            <div className="w-full relative">
               <Carousel className="w-full max-w-lg mx-auto" setApi={setCarouselApi}>
                 <CarouselContent>
                   <CarouselItem>
                     <div className="p-1">
-                      <Card>
+                      <Card className="relative">
                         <CardContent className="p-4">
-                          <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                          <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
                             <img src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png" alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit" className="w-full h-full object-cover" />
+                            {currentSlide === 0 && (
+                              <Button
+                                onClick={scrollToPartnership}
+                                className="absolute top-3 right-3 bg-primary/90 hover:bg-primary text-white text-xs px-3 py-1 rounded-full shadow-lg animate-pulse"
+                                size="sm"
+                              >
+                                Learn More About GCI
+                                <ArrowDown className="w-3 h-3 ml-1" />
+                              </Button>
+                            )}
                           </div>
                           <p className="text-sm text-muted-foreground text-center">
                             Founder Lukah Villarreal (middle) at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
@@ -101,6 +124,11 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
+
+          {/* Closing Paragraph - Full Width */}
+          <p className="font-medium text-primary text-xl text-center leading-relaxed">
+            That's how UNbound began: a platform to unchain youth service from boundaries—of subject, of setting, of expectation—and replace them with bold collaboration and global purpose.
+          </p>
         </div>
 
         {/* Mission */}
