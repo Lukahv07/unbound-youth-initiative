@@ -67,7 +67,7 @@ const AboutSection = () => {
                             {currentSlide === 0 && (
                               <Button
                                 onClick={scrollToPartnership}
-                                className="absolute top-3 right-3 bg-primary/90 hover:bg-primary text-white text-xs px-3 py-1 rounded-full shadow-lg animate-pulse"
+                                className="absolute top-3 right-3 bg-primary/90 hover:bg-primary text-white text-xs px-3 py-1 rounded-full shadow-lg animate-[glow_2s_ease-in-out_infinite_alternate]"
                                 size="sm"
                               >
                                 Learn More About GCI
