@@ -3,58 +3,37 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Eye } from "lucide-react";
 import { useState } from "react";
-
 const PhotoGalleryCarousel = () => {
   const [activeGallery, setActiveGallery] = useState(0);
-  
-  const galleries = [
-    {
-      title: "Miles for Smiles 2024",
-      description: "Highlights from our 2024 charity race and fundraising efforts.",
-      image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
-    },
-    {
-      title: "Miles for Smiles 2025", 
-      description: "Our most successful race yet with over 1,000 participants.",
-      image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
-    },
-    {
-      title: "Operation Smile Missions",
-      description: "Behind-the-scenes moments from medical missions.",
-      image: "/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
-    },
-    {
-      title: "Global Citizens Initiative 2025",
-      description: "Summit moments and global collaboration.",
-      image: "/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
-    }
-  ];
-
-  return (
-    <div>
+  const galleries = [{
+    title: "Miles for Smiles 2024",
+    description: "Highlights from our 2024 charity race and fundraising efforts.",
+    image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
+  }, {
+    title: "Miles for Smiles 2025",
+    description: "Our most successful race yet with over 1,000 participants.",
+    image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
+  }, {
+    title: "Operation Smile Missions",
+    description: "Behind-the-scenes moments from medical missions.",
+    image: "/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
+  }, {
+    title: "Global Citizens Initiative 2025",
+    description: "Summit moments and global collaboration.",
+    image: "/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
+  }];
+  return <div>
       {/* Gallery Navigation */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {galleries.map((gallery, index) => (
-          <Button
-            key={index}
-            variant={activeGallery === index ? "default" : "outline"}
-            size="sm"
-            onClick={() => setActiveGallery(index)}
-            className="text-xs"
-          >
+        {galleries.map((gallery, index) => <Button key={index} variant={activeGallery === index ? "default" : "outline"} size="sm" onClick={() => setActiveGallery(index)} className="text-xs">
             {gallery.title}
-          </Button>
-        ))}
+          </Button>)}
       </div>
       
       {/* Active Gallery Preview */}
       <div className="space-y-4">
         <div className="aspect-video bg-light-blue-soft rounded-lg overflow-hidden">
-          <img 
-            src={galleries[activeGallery].image}
-            alt={galleries[activeGallery].title}
-            className="w-full h-full object-cover"
-          />
+          <img src={galleries[activeGallery].image} alt={galleries[activeGallery].title} className="w-full h-full object-cover" />
         </div>
         <div className="text-center space-y-2">
           <h5 className="font-medium text-foreground">{galleries[activeGallery].title}</h5>
@@ -64,8 +43,7 @@ const PhotoGalleryCarousel = () => {
           </Button>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
 const MediaSection = () => {
   const features = ["On-the-ground footage from medical missions", "Interviews with families and volunteers", "Reflections from student leaders"];
@@ -73,7 +51,7 @@ const MediaSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-0">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-4 py-0 my-[40px] sm:text-5xl">Media</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4 py-0 my-[40px] sm:text-7xl">Media</h2>
         </div>
 
         <div className="max-w-7xl mx-auto">
@@ -90,7 +68,7 @@ const MediaSection = () => {
                     </div>
                     <div>
                       <Badge variant="outline" className="border-white text-white mb-2">🎬 Mini Documentary</Badge>
-                      <CardTitle className="text-2xl">"More Than a Race"</CardTitle>
+                      <CardTitle className="text-4xl">"More Than a Race"</CardTitle>
                     </div>
                   </div>
                 </CardHeader>
@@ -149,7 +127,7 @@ const MediaSection = () => {
             <div className="xl:col-span-2">
               <Card className="hover:shadow-md transition-shadow h-full">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold text-foreground mb-6">Photo Gallery</h4>
+                  <h4 className="font-semibold text-foreground mb-6 text-4xl">Photo Galleries</h4>
                   <PhotoGalleryCarousel />
                 </CardContent>
               </Card>

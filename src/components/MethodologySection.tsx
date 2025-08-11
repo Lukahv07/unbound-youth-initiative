@@ -32,8 +32,8 @@ const MethodologySection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4 sm:text-5xl">Our Model: Design Thinking Meets the SDGs</h2>
-          <h3 className="text-2xl sm:text-3xl font-semibold text-white/90 mb-6">Where Creative Process Meets Global Purpose</h3>
+          <h2 className="text-3xl font-bold text-white mb-4 sm:text-7xl">Our Model: Design Thinking Meets the SDGs</h2>
+          <h3 className="text-2xl font-semibold text-white/90 mb-6 sm:text-4xl">Where Creative Process Meets Global Purpose</h3>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
             UNbound empowers students to become changemakers through a model rooted in Stanford's design thinking process and guided by the United Nations Sustainable Development Goals.
           </p>
@@ -46,21 +46,17 @@ const MethodologySection = () => {
             {/* Design Thinking Process - Using Provided Image */}
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-center text-2xl mb-6">Design Thinking Process</CardTitle>
+                <CardTitle className="text-center mb-6 text-4xl">Design Thinking Process</CardTitle>
               </CardHeader>
               <CardContent className="flex justify-center items-start pt-2 pb-4">
-                <img 
-                  src="/lovable-uploads/6b74b7b7-c84c-4104-9f3e-8d486244affb.png" 
-                  alt="Design Thinking Process diagram showing 5 steps: Empathize, Define, Ideate, Prototype, and Test & Revise arranged in a circle with arrows connecting them"
-                  className="max-w-full h-auto max-h-[450px] object-contain mx-auto"
-                />
+                <img src="/lovable-uploads/6b74b7b7-c84c-4104-9f3e-8d486244affb.png" alt="Design Thinking Process diagram showing 5 steps: Empathize, Define, Ideate, Prototype, and Test & Revise arranged in a circle with arrows connecting them" className="max-w-full h-auto max-h-[450px] object-contain mx-auto" />
               </CardContent>
             </Card>
 
             {/* SDG Alignment Section */}
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-center text-2xl">Rooted in Global Goals</CardTitle>
+                <CardTitle className="text-center text-4xl">Rooted in Global Goals</CardTitle>
               </CardHeader>
               <CardContent className="px-6">
                 <p className="text-base text-center text-muted-foreground mb-6">Each UNbound project is guided by the principles of the United Nations Sustainable Development Goals. While our project network is still growing, our commitment to aligning youth action with global needs—from climate resilience to inclusive education—shapes our foundation.</p>
@@ -82,12 +78,9 @@ const MethodologySection = () => {
           {/* Impact Statement - Beach Image Background */}
           <div className="relative overflow-hidden rounded-3xl p-12 text-center shadow-2xl">
             {/* Background Image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: 'url(/lovable-uploads/9ba2bc88-acf8-4613-892e-5ee0b48c8305.png)'
-              }}
-            ></div>
+            <div className="absolute inset-0 bg-cover bg-center" style={{
+            backgroundImage: 'url(/lovable-uploads/9ba2bc88-acf8-4613-892e-5ee0b48c8305.png)'
+          }}></div>
             
             {/* Gradient Color Overlay - Apple Green to Lime Green */}
             <div className="absolute inset-0 bg-gradient-to-t from-green-700/90 to-lime-500/60"></div>
@@ -95,18 +88,18 @@ const MethodologySection = () => {
             {/* Semi-translucent Cloud Icons - Larger and positioned around text */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute -top-8 -left-16 w-48 h-32 opacity-40 animate-float" style={{
-                animationDelay: '0s'
-              }}>
+              animationDelay: '0s'
+            }}>
                 <img src="/lovable-uploads/0ebd7247-2a3e-4b99-bdb1-e2c8c9df01df.png" alt="Cloud decoration" className="w-full h-full object-contain" />
               </div>
               <div className="absolute top-8 -right-20 w-56 h-36 opacity-30 animate-float" style={{
-                animationDelay: '2s'
-              }}>
+              animationDelay: '2s'
+            }}>
                 <img src="/lovable-uploads/8d35549f-5fa3-4cd5-b625-9fc3b18b4a7e.png" alt="Cloud decoration" className="w-full h-full object-contain" />
               </div>
               <div className="absolute -bottom-12 -left-20 w-52 h-32 opacity-35 animate-float" style={{
-                animationDelay: '4s'
-              }}>
+              animationDelay: '4s'
+            }}>
                 <img src="/lovable-uploads/b8bdaa5f-f117-48ba-81e5-b194646f76af.png" alt="Cloud decoration" className="w-full h-full object-contain" />
               </div>
             </div>
@@ -118,7 +111,7 @@ const MethodologySection = () => {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <h3 className="font-bold text-white mb-6 text-4xl leading-tight">Real Projects. Real People. Real Change.</h3>
+              <h3 className="font-bold text-white mb-6 leading-tight text-4xl">Real Projects. Real People. Real Change.</h3>
               <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                 UNbound has rallied students and educators across 10 Tri-Association schools for the 2025-26 school year to launch service projects across 5 countries—from environmental campaigns to health equity drives—each uniquely rooted in their context but united by shared values.
               </p>

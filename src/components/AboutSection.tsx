@@ -1,28 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Globe, Target } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
-
 const AboutSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [carouselApi, setCarouselApi] = useState<any>();
-
   useEffect(() => {
     if (!carouselApi) {
       return;
     }
-
     carouselApi.on("select", () => {
       setCurrentSlide(carouselApi.selectedScrollSnap());
     });
   }, [carouselApi]);
-
   const scrollToSlide = (index: number) => {
     if (carouselApi) {
       carouselApi.scrollTo(index);
@@ -32,8 +22,8 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-5xl">About</h2>
-          <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Our Story: From Miles to Movements</h3>
+          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-7xl">About</h2>
+          <h3 className="text-2xl font-semibold text-primary mb-6 sm:text-4xl">Our Story: From Miles to Movements</h3>
         </div>
 
         {/* Story Content with Carousel */}
@@ -60,11 +50,7 @@ const AboutSection = () => {
                       <Card>
                         <CardContent className="p-4">
                           <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                            <img 
-                              src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
-                              alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit"
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png" alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit" className="w-full h-full object-cover" />
                           </div>
                           <p className="text-sm text-muted-foreground text-center">
                             Founder Lukah Villarreal (middle) at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
@@ -79,11 +65,7 @@ const AboutSection = () => {
                       <Card>
                         <CardContent className="p-4">
                           <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                            <img 
-                              src="/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
-                              alt="Founder Lukah Villarreal in medical scrubs"
-                              className="w-full h-full object-contain"
-                            />
+                            <img src="/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png" alt="Founder Lukah Villarreal in medical scrubs" className="w-full h-full object-contain" />
                           </div>
                           <p className="text-sm text-muted-foreground text-center">
                             Founder Lukah Villarreal while translating for Operation Smile.<br />
@@ -98,11 +80,7 @@ const AboutSection = () => {
                       <Card>
                         <CardContent className="p-4">
                           <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                            <img 
-                              src="/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
-                              alt="Miles for Smiles charity race with participants"
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png" alt="Miles for Smiles charity race with participants" className="w-full h-full object-cover" />
                           </div>
                           <p className="text-sm text-muted-foreground text-center">
                             Miles for Smiles race.<br />
@@ -119,18 +97,7 @@ const AboutSection = () => {
               
               {/* Carousel Indicators */}
               <div className="flex justify-center mt-4 space-x-2">
-                {[0, 1, 2].map((index) => (
-                  <button
-                    key={index}
-                    onClick={() => scrollToSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                      currentSlide === index 
-                        ? 'bg-primary' 
-                        : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
+                {[0, 1, 2].map(index => <button key={index} onClick={() => scrollToSlide(index)} className={`w-3 h-3 rounded-full transition-colors duration-200 ${currentSlide === index ? 'bg-primary' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'}`} aria-label={`Go to slide ${index + 1}`} />)}
               </div>
             </div>
           </div>
@@ -138,7 +105,7 @@ const AboutSection = () => {
 
         {/* Mission */}
         <div className="bg-gradient-mission rounded-2xl shadow-lg p-8 mb-16 text-white">
-          <h3 className="font-bold text-center text-white mb-6 text-3xl">Our Mission</h3>
+          <h3 className="font-bold text-center text-white mb-6 text-4xl">Our Mission</h3>
           <p className="text-lg text-center text-white leading-relaxed max-w-3xl mx-auto font-normal">
             To equip students with the tools, guidance, and global lens to lead multilateral, community-based service initiatives—sparking lasting impact that begins in schools and ripples outward.
           </p>
