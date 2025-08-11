@@ -7,9 +7,10 @@ import { Mail, MapPin, Globe, Users } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
-
 const ContactSection = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,38 +18,32 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
+    const {
+      id,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [id]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Initialize EmailJS with your public key
       emailjs.init("uMNwmyp_ASfpHMYO8");
-      
-      await emailjs.send(
-        "UNboundYouthInitiative",
-        "template_xc6jvd9",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          role: formData.role,
-          message: formData.message,
-          to_email: "26villarreal7045@asfm.mx"
-        }
-      );
-
+      await emailjs.send("UNboundYouthInitiative", "template_xc6jvd9", {
+        from_name: formData.name,
+        from_email: formData.email,
+        role: formData.role,
+        message: formData.message,
+        to_email: "26villarreal7045@asfm.mx"
+      });
       toast({
         title: "Message sent successfully!",
-        description: "Thank you for reaching out. We'll get back to you soon.",
+        description: "Thank you for reaching out. We'll get back to you soon."
       });
 
       // Reset form
@@ -62,40 +57,33 @@ const ContactSection = () => {
       toast({
         title: "Error sending message",
         description: "Please try again or contact us directly at 26villarreal7045@asfm.mx",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  const actionCards = [
-    {
-      icon: Users,
-      title: "Students",
-      description: "Want to start a service initiative at your school?",
-      action: "Get Started Guide"
-    },
-    {
-      icon: Mail,
-      title: "Educators",
-      description: "Bring the UNbound Workshop to your campus",
-      action: "Schedule Workshop"
-    },
-    {
-      icon: Globe,
-      title: "Organizations",
-      description: "Partner with us to amplify youth impact",
-      action: "Partner with Us"
-    }
-  ];
-
-  return (
-    <section id="contact" className="bg-gradient-to-b from-light-blue to-cyan-400 py-[40px]">
+  const actionCards = [{
+    icon: Users,
+    title: "Students",
+    description: "Want to start a service initiative at your school?",
+    action: "Get Started Guide"
+  }, {
+    icon: Mail,
+    title: "Educators",
+    description: "Bring the UNbound Workshop to your campus",
+    action: "Schedule Workshop"
+  }, {
+    icon: Globe,
+    title: "Organizations",
+    description: "Partner with us to amplify youth impact",
+    action: "Partner with Us"
+  }];
+  return <section id="contact" className="bg-gradient-to-b from-light-blue to-cyan-400 py-[40px]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4 py-[40px] sm:text-5xl">Ready to Transform Your School?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4 py-[40px] sm:text-7xl">Ready to Transform Your School?</h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">Bring the UNbound methodology to your educational community and empower the next generation of changemakers.</p>
           <p className="text-lg text-white/80 mt-4 font-medium">
             Whether you're a student, educator, or changemaker—you belong here.
@@ -106,9 +94,8 @@ const ContactSection = () => {
           {/* Action Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {actionCards.map((card, index) => {
-              const IconComponent = card.icon;
-              return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow group bg-white/10 backdrop-blur border-white/20">
+            const IconComponent = card.icon;
+            return <Card key={index} className="text-center hover:shadow-lg transition-shadow group bg-white/10 backdrop-blur border-white/20">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 transition-colors bg-gradient-icon">
                       <IconComponent className="w-6 h-6 text-white" />
@@ -118,9 +105,8 @@ const ContactSection = () => {
                   <CardContent>
                     <p className="text-white/80 mb-4">{card.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           {/* Contact Form and Info */}
@@ -135,57 +121,21 @@ const ContactSection = () => {
                   <div className="space-y-6">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-white">Name</Label>
-                      <Input 
-                        id="name" 
-                        placeholder="Your full name" 
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white/20 border-white/30 text-white placeholder:text-white/60"
-                      />
+                      <Input id="name" placeholder="Your full name" value={formData.name} onChange={handleInputChange} required className="bg-white/20 border-white/30 text-white placeholder:text-white/60" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-white">Email</Label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="your.email@example.com" 
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white/20 border-white/30 text-white placeholder:text-white/60"
-                      />
+                      <Input id="email" type="email" placeholder="your.email@example.com" value={formData.email} onChange={handleInputChange} required className="bg-white/20 border-white/30 text-white placeholder:text-white/60" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="role" className="text-white">Role</Label>
-                      <Input 
-                        id="role" 
-                        placeholder="Student, Educator, Organization, etc." 
-                        value={formData.role}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white/20 border-white/30 text-white placeholder:text-white/60"
-                      />
+                      <Input id="role" placeholder="Student, Educator, Organization, etc." value={formData.role} onChange={handleInputChange} required className="bg-white/20 border-white/30 text-white placeholder:text-white/60" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-white">Message</Label>
-                      <Textarea 
-                        id="message" 
-                        placeholder="Tell us about your interest in UNbound, your school, or your project ideas..." 
-                        rows={4}
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white/20 border-white/30 text-white placeholder:text-white/60"
-                      />
+                      <Textarea id="message" placeholder="Tell us about your interest in UNbound, your school, or your project ideas..." rows={4} value={formData.message} onChange={handleInputChange} required className="bg-white/20 border-white/30 text-white placeholder:text-white/60" />
                     </div>
-                    <Button 
-                      type="submit" 
-                      variant="hero" 
-                      className="w-full" 
-                      size="lg"
-                      disabled={isSubmitting}
-                    >
+                    <Button type="submit" variant="hero" className="w-full" size="lg" disabled={isSubmitting}>
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </div>
@@ -202,20 +152,10 @@ const ContactSection = () => {
                     <h4 className="font-semibold text-white">Email Us</h4>
                   </div>
                   <div className="space-y-2">
-                    <a 
-                      href="https://mail.google.com/mail/?view=cm&to=26villarreal7045@asfm.mx" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-white hover:text-white/80 transition-colors block"
-                    >
+                    <a href="https://mail.google.com/mail/?view=cm&to=26villarreal7045@asfm.mx" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors block">
                       26villarreal7045@asfm.mx (Founder)
                     </a>
-                    <a 
-                      href="https://mail.google.com/mail/?view=cm&to=unboundyouthinitiative@gmail.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-white hover:text-white/80 transition-colors block"
-                    >
+                    <a href="https://mail.google.com/mail/?view=cm&to=unboundyouthinitiative@gmail.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors block">
                       unboundyouthinitiative@gmail.com
                     </a>
                   </div>
@@ -237,8 +177,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
