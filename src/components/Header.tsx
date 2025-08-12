@@ -7,7 +7,7 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       const headerHeight = 80; // Height of the fixed header
-      const extraMargin = 40; // Additional margin for better spacing
+      const extraMargin = 20; // Reduced margin for better spacing
       const elementPosition = element.offsetTop - headerHeight - extraMargin;
       
       window.scrollTo({

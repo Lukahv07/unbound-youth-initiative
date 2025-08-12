@@ -24,7 +24,7 @@ const AboutSection = () => {
     const element = document.getElementById('partnership');
     if (element) {
       const headerHeight = 80;
-      const extraMargin = 40;
+      const extraMargin = 20;
       const elementPosition = element.offsetTop - headerHeight - extraMargin;
       
       window.scrollTo({
@@ -67,7 +67,7 @@ const AboutSection = () => {
                             {currentSlide === 0 && (
                               <Button
                                 onClick={scrollToPartnership}
-                                className="absolute top-3 right-3 bg-primary/90 hover:bg-primary text-white text-xs px-3 py-1 rounded-full shadow-lg animate-[glow_2s_ease-in-out_infinite_alternate]"
+                                className="absolute top-3 right-3 bg-lime-500/90 hover:bg-lime-400 text-white text-xs px-3 py-1 rounded-full shadow-lg animate-[glow-soft_2s_ease-in-out_infinite_alternate]"
                                 size="sm"
                               >
                                 Learn More About GCI

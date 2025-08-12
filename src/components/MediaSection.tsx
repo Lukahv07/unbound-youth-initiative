@@ -38,7 +38,7 @@ const PhotoGalleryCarousel = () => {
         <div className="text-center space-y-2">
           <h5 className="font-medium text-foreground">{galleries[activeGallery].title}</h5>
           <p className="text-sm text-muted-foreground">{galleries[activeGallery].description}</p>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" className="mt-2">
             View Full Gallery
           </Button>
         </div>
@@ -56,10 +56,10 @@ const MediaSection = () => {
 
         <div className="max-w-7xl mx-auto">
             {/* Documentary and Photo Gallery - Side by Side */}
-            <div className="grid grid-cols-1 xl:grid-cols-7 gap-8">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
               
-              {/* Documentary Card - Takes 4 columns */}
-              <div className="xl:col-span-4">
+              {/* Documentary Card - Takes equal space */}
+              <div>
               <Card className="shadow-lg overflow-hidden h-full">
                 <CardHeader className="bg-gradient-to-r from-primary to-turquoise text-white">
                   <div className="flex items-center space-x-3">
@@ -123,8 +123,8 @@ const MediaSection = () => {
               </Card>
             </div>
 
-            {/* Photo Gallery - Takes 3 columns */}
-            <div className="xl:col-span-3">
+            {/* Photo Gallery - Takes equal space */}
+            <div>
               <Card className="hover:shadow-md transition-shadow h-full">
                 <CardContent className="p-6 h-full flex flex-col">
                   <h4 className="font-semibold text-foreground mb-6 text-4xl">Photo Galleries</h4>

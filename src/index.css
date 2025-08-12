@@ -138,4 +138,13 @@ All colors MUST be HSL.
       box-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
     }
   }
+
+  @keyframes glow-soft {
+    0% {
+      box-shadow: 0 0 3px rgb(132 204 22), 0 0 6px rgb(132 204 22);
+    }
+    100% {
+      box-shadow: 0 0 6px rgb(132 204 22), 0 0 12px rgb(132 204 22);
+    }
+  }
 }

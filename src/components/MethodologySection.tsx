@@ -46,9 +46,9 @@ const MethodologySection = () => {
             {/* Design Thinking Process - Using Provided Image */}
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-center mb-6 text-4xl">Design Thinking Process</CardTitle>
+                <CardTitle className="text-center mb-3 text-4xl">Design Thinking Process</CardTitle>
               </CardHeader>
-              <CardContent className="flex justify-center items-start pt-2 pb-4 py-0">
+              <CardContent className="flex justify-center items-start pt-2 pb-2">
                 <img src="/lovable-uploads/6b74b7b7-c84c-4104-9f3e-8d486244affb.png" alt="Design Thinking Process diagram showing 5 steps: Empathize, Define, Ideate, Prototype, and Test & Revise arranged in a circle with arrows connecting them" className="max-w-full h-auto max-h-[450px] object-contain mx-auto" />
               </CardContent>
             </Card>
