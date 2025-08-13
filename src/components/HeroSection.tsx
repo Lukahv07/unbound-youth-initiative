@@ -23,7 +23,7 @@ const HeroSection = () => {
     const element = document.getElementById(id);
     if (element) {
       const headerHeight = 80;
-      const extraMargin = 20;
+      const extraMargin = 0; // No extra margin to show exact section start
       const elementPosition = element.offsetTop - headerHeight - extraMargin;
       
       window.scrollTo({

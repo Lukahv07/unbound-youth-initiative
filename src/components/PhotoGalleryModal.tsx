@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Grid, ChevronLeft, ChevronRight, LayoutGrid } from "lucide-react";
+import { X, Grid, ChevronLeft, ChevronRight, LayoutGrid, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -48,9 +48,19 @@ const PhotoGalleryModal = ({ isOpen, onClose, galleryTitle, images }: PhotoGalle
           <Button
             variant="ghost"
             onClick={() => setViewMode(viewMode === "grid" ? "carousel" : "grid")}
-            className="text-white hover:bg-white/20 px-3 py-2 text-sm"
+            className="text-white hover:bg-white/20 px-3 py-2 text-sm flex items-center gap-2"
           >
-            {viewMode === "grid" ? "Switch to Carousel Mode" : "Switch to Grid Mode"}
+            {viewMode === "grid" ? (
+              <>
+                Switch to Carousel Mode
+                <img src="/lovable-uploads/dcd6ecae-ecfb-4f2f-849c-3ceea2f316b7.png" alt="" className="w-4 h-4" />
+              </>
+            ) : (
+              <>
+                Switch to Grid Mode
+                <Grid className="w-4 h-4" />
+              </>
+            )}
           </Button>
         </div>
 

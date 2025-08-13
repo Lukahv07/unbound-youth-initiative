@@ -7,7 +7,7 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       const headerHeight = 80; // Height of the fixed header
-      const extraMargin = 20; // Reduced margin for better spacing
+      const extraMargin = 0; // No extra margin to show exact section start
       const elementPosition = element.offsetTop - headerHeight - extraMargin;
       
       window.scrollTo({
@@ -31,7 +31,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors">
-              About
+              About Us
             </button>
             <button onClick={() => scrollToSection('methodology')} className="text-foreground hover:text-primary transition-colors">
               Our Model
@@ -57,7 +57,7 @@ const Header = () => {
       {isMenuOpen && <div className="md:hidden bg-background border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button onClick={() => scrollToSection('about')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
-              About
+              About Us
             </button>
             <button onClick={() => scrollToSection('methodology')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
               Our Model

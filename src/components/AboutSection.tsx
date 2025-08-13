@@ -67,7 +67,7 @@ const AboutSection = () => {
                             {currentSlide === 0 && (
                               <div
                                 onClick={scrollToPartnership}
-                                className="absolute top-3 right-3 bg-lime-500/90 text-white text-xs px-3 py-1 rounded-full shadow-lg cursor-pointer"
+                                className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-lime-500 text-white text-xs px-3 py-1 rounded-full shadow-lg cursor-pointer opacity-100"
                               >
                                 Scroll to Learn More About GCI
                                 <ArrowDown className="w-3 h-3 ml-1 inline" />
@@ -75,7 +75,7 @@ const AboutSection = () => {
                             )}
                           </div>
                           <p className="text-sm text-muted-foreground text-center">
-                            Founder Lukah Villarreal (middle) at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
+                            Founder Lukah Villarreal (middle) launching UNbound at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
                             <span className="font-medium">— July, 2025</span>
                           </p>
                         </CardContent>

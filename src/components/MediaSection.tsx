@@ -41,9 +41,9 @@ const PhotoGalleryCarousel = ({
         <div className="aspect-video bg-light-blue-soft rounded-lg overflow-hidden">
           <img src={galleries[activeGallery].image} alt={galleries[activeGallery].title} className="w-full h-full object-cover" />
         </div>
-        <div className="text-center space-y-2">
-          <h5 className="font-medium text-foreground text-4xl">{galleries[activeGallery].title}</h5>
-          <p className="text-muted-foreground text-lg">{galleries[activeGallery].description}</p>
+        <div className="text-center space-y-2 flex flex-col justify-center h-full">
+          <h5 className="font-bold text-foreground text-3xl">{galleries[activeGallery].title}</h5>
+          <p className="text-muted-foreground text-base">{galleries[activeGallery].description}</p>
           <Button variant="outline" size="sm" className="mt-2" onClick={() => onOpenGallery(activeGallery)}>
             {activeGallery === 0 ? "View Full M4S25 Gallery" : activeGallery === 1 ? "View Full OpSmile Gallery" : "View Full GCI Gallery"}
           </Button>
@@ -140,7 +140,7 @@ const MediaSection = () => {
                     <div className="flex justify-center md:justify-start items-end">
                       <Button variant="hero" className="flex items-center space-x-2 text-sm">
                         <Eye className="w-4 h-4" />
-                        <span>Watch Full (~3 min)</span>
+                        <span>Watch in Full Screen (~3 min)</span>
                       </Button>
                     </div>
                   </div>
