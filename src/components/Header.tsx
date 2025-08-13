@@ -9,8 +9,8 @@ const Header = () => {
       const scrollTop = window.scrollY;
       const headerHeight = 80;
       
-      // Define white/light sections - adjust these IDs based on actual sections with white backgrounds
-      const whiteSections = ['contact']; // ContactSection has white background
+      // Define white/light sections - About Us and Media sections have white backgrounds
+      const whiteSections = ['about', 'media'];
       
       // Check if header is over any white section
       let overWhite = false;
