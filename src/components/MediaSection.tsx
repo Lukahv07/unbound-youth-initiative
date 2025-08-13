@@ -7,10 +7,6 @@ import PhotoGalleryModal from "./PhotoGalleryModal";
 const PhotoGalleryCarousel = ({ onOpenGallery }: { onOpenGallery: (galleryIndex: number) => void }) => {
   const [activeGallery, setActiveGallery] = useState(0);
   const galleries = [{
-    title: "Miles for Smiles 2024",
-    description: "Highlights from our 2024 charity race and fundraising efforts.",
-    image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
-  }, {
     title: "Miles for Smiles 2025",
     description: "Our most successful race yet with over 1,000 participants.",
     image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
@@ -54,17 +50,6 @@ const MediaSection = () => {
   // Gallery data with images from each folder - filtered for browser compatibility
   const galleryData = [
     {
-      title: "Miles for Smiles 2024",
-      images: [
-        "/M4S24/F8D28564-A930-48AA-BA59-A1F8DD868C46.jpg",
-        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.21%20p.m..png",
-        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.30%20p.m..png",
-        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.39%20p.m..png",
-        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.55%20p.m..png",
-        "/M4S24/Screen%20Shot%202024-02-07%20at%202.37.03%20p.m..png"
-      ]
-    },
-    {
       title: "Miles for Smiles 2025",
       images: [
         "/M4S25/002A0F40-188A-4DCC-86BE-1C9EB1AD7D65.jpeg",
@@ -94,7 +79,17 @@ const MediaSection = () => {
         "/OpSmile/DSC00470.JPG",
         "/OpSmile/DSC00471.JPG",
         "/OpSmile/DSC00472.JPG",
-        "/OpSmile/DSC00473.JPG"
+        "/OpSmile/DSC00473.JPG",
+        "/lovable-uploads/75859d8c-cd41-4167-b792-04099c478f86.png",
+        "/lovable-uploads/90fb8603-4046-45ee-9570-3c02ac09aa9b.png",
+        "/lovable-uploads/5322c2ad-df0b-4450-895f-4d08c77f4d68.png",
+        "/lovable-uploads/38e53cb8-6692-4c16-846e-40426cecd673.png",
+        "/lovable-uploads/dab02569-0cb2-4886-babf-c8da8dc19a22.png",
+        "/lovable-uploads/9e7c1cd4-3df3-4004-ad83-29b3cb0f5181.png",
+        "/lovable-uploads/be7c15de-2553-4e52-880f-7bc8739fc071.png",
+        "/lovable-uploads/95a89bcf-69fc-497a-b162-f6f1755b5f20.png",
+        "/lovable-uploads/bacaeab9-cd69-4daf-8147-daea708c3d5b.png",
+        "/lovable-uploads/566eff49-11cb-4021-aba3-edcc75a607c3.png"
       ]
     },
     {
