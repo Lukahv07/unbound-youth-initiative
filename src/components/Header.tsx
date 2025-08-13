@@ -12,7 +12,7 @@ const Header = () => {
       // Define white/light sections - About Us and Media sections have white backgrounds
       const whiteSections = ['about', 'media'];
       
-      // Check if header is over any white section
+      // Check if header is over any white section or at the border
       let overWhite = false;
       whiteSections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
@@ -20,8 +20,8 @@ const Header = () => {
           const sectionTop = section.offsetTop;
           const sectionBottom = sectionTop + section.offsetHeight;
           
-          // Check if header overlaps with this section
-          if (scrollTop + headerHeight > sectionTop && scrollTop < sectionBottom) {
+          // Check if header overlaps with this section or is at the border (within 20px of section start)
+          if (scrollTop + headerHeight >= sectionTop - 20 && scrollTop < sectionBottom) {
             overWhite = true;
           }
         }
