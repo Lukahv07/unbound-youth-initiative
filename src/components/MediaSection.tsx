@@ -41,10 +41,10 @@ const PhotoGalleryCarousel = ({
         <div className="aspect-video bg-light-blue-soft rounded-lg overflow-hidden">
           <img src={galleries[activeGallery].image} alt={galleries[activeGallery].title} className="w-full h-full object-cover" />
         </div>
-        <div className="text-center space-y-4 flex flex-col justify-center h-full px-2 py-6">
-          <h5 className="font-bold text-turquoise text-2xl">{galleries[activeGallery].title}</h5>
-          <p className="text-turquoise/70 text-sm">{galleries[activeGallery].description}</p>
-          <Button variant="outline" size="sm" className="mt-4" onClick={() => onOpenGallery(activeGallery)}>
+        <div className="text-center space-y-3 flex flex-col justify-center h-full px-2 py-4">
+          <h5 className="font-bold text-turquoise text-2xl mb-1">{galleries[activeGallery].title}</h5>
+          <p className="text-turquoise/70 text-sm mb-2">{galleries[activeGallery].description}</p>
+          <Button variant="outline" size="sm" className="mt-2" onClick={() => onOpenGallery(activeGallery)}>
             {activeGallery === 0 ? "View Full M4S25 Gallery" : activeGallery === 1 ? "View Full OpSmile Gallery" : "View Full GCI Gallery"}
           </Button>
         </div>
