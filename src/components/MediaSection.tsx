@@ -51,24 +51,17 @@ const MediaSection = () => {
   const [selectedGallery, setSelectedGallery] = useState(0);
   const features = ["On-the-ground footage from medical missions", "Interviews with families and volunteers", "Reflections from student leaders"];
 
-  // Gallery data with images from each folder
+  // Gallery data with images from each folder - filtered for browser compatibility
   const galleryData = [
     {
       title: "Miles for Smiles 2024",
       images: [
         "/M4S24/F8D28564-A930-48AA-BA59-A1F8DD868C46.jpg",
-        "/M4S24/PHOTO-2023-04-23-18-01-09 2.jpg",
-        "/M4S24/PHOTO-2023-04-23-18-37-21 2.jpg",
-        "/M4S24/PHOTO-2023-04-23-18-37-21 3.jpg",
-        "/M4S24/PHOTO-2023-04-23-18-37-21 4.jpg",
-        "/M4S24/PHOTO-2023-04-23-18-37-21 5.jpg",
-        "/M4S24/PHOTO-2023-04-23-18-37-21.jpg",
-        "/M4S24/PHOTO-2023-04-23-18-37-22.jpg",
-        "/M4S24/Screen Shot 2024-02-07 at 2.36.21 p.m..png",
-        "/M4S24/Screen Shot 2024-02-07 at 2.36.30 p.m..png",
-        "/M4S24/Screen Shot 2024-02-07 at 2.36.39 p.m..png",
-        "/M4S24/Screen Shot 2024-02-07 at 2.36.55 p.m..png",
-        "/M4S24/Screen Shot 2024-02-07 at 2.37.03 p.m..png"
+        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.21%20p.m..png",
+        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.30%20p.m..png",
+        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.39%20p.m..png",
+        "/M4S24/Screen%20Shot%202024-02-07%20at%202.36.55%20p.m..png",
+        "/M4S24/Screen%20Shot%202024-02-07%20at%202.37.03%20p.m..png"
       ]
     },
     {
@@ -76,7 +69,6 @@ const MediaSection = () => {
       images: [
         "/M4S25/002A0F40-188A-4DCC-86BE-1C9EB1AD7D65.jpeg",
         "/M4S25/006C53BF-990E-4110-B9A4-965B485C261C.jpeg",
-        "/M4S25/01DA1BD4-3520-440F-851C-2DE1311EE8B4 2.JPG",
         "/M4S25/0D71F6B8-7759-4008-BCDE-B1740B08B694.jpeg",
         "/M4S25/18B2D6E7-5FAC-4245-A8FD-DB0B1C38A8D0.jpeg",
         "/M4S25/1D253FE5-655C-4C8C-9305-8844D4FE758C.jpeg",
@@ -88,30 +80,14 @@ const MediaSection = () => {
         "/M4S25/9F252E58-447C-4E48-9997-4DC85D0766BA.jpeg",
         "/M4S25/A79F854A-222E-4857-AF51-70ABBB737482.jpeg",
         "/M4S25/A9F24B94-B1DA-41DE-9936-626A334E8FE0.jpeg",
-        "/M4S25/IMG_1536 2.HEIC",
-        "/M4S25/IMG_1550.HEIC",
         "/M4S25/IMG_3481.JPG",
         "/M4S25/IMG_4965.JPG",
-        "/M4S25/IMG_5058 2.JPG",
         "/M4S25/IMG_5126.JPG"
       ]
     },
     {
       title: "Operation Smile Missions",
       images: [
-        "/OpSmile/Copy of Copy of Copy of DSC_0009.jpg",
-        "/OpSmile/Copy of Copy of Copy of DSC_0017.jpg",
-        "/OpSmile/Copy of Copy of DSC_0128.JPG",
-        "/OpSmile/Copy of Copy of DSC_0170.jpg",
-        "/OpSmile/Copy of Copy of DSC_0190.jpg",
-        "/OpSmile/Copy of Copy of DSC_0239.jpg",
-        "/OpSmile/Copy of Copy of DSC_0272 (1).jpg",
-        "/OpSmile/Copy of Copy of DSC_0290.jpg",
-        "/OpSmile/Copy of Copy of DSC_0317.jpg",
-        "/OpSmile/Copy of Copy of DSC_0319.jpg",
-        "/OpSmile/Copy of Copy of DSC_0334.jpg",
-        "/OpSmile/Copy of Copy of DSC_0338.jpg",
-        "/OpSmile/Copy of Copy of DSC_0345.jpg",
         "/OpSmile/DSC00463.JPG",
         "/OpSmile/DSC00465.JPG",
         "/OpSmile/DSC00469.JPG",
