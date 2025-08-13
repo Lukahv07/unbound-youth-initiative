@@ -30,7 +30,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, galleryTitle, images }: PhotoGalle
   };
 
   return (
-    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-black/90 z-[9998] flex items-center justify-center">
       <div className="relative w-full h-full">
         {/* Header */}
         <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">

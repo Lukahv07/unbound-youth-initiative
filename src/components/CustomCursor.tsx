@@ -60,7 +60,7 @@ export const CustomCursor = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-50">
+    <div className="fixed inset-0 pointer-events-none z-[9999]">
       {/* Main cursor */}
       <div
         className="fixed w-5 h-5 rounded-full transition-transform duration-75 ease-out"
