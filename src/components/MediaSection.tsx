@@ -56,6 +56,14 @@ const MediaSection = () => {
     {
       title: "Miles for Smiles 2024",
       images: [
+        "/M4S24/F8D28564-A930-48AA-BA59-A1F8DD868C46.jpg",
+        "/M4S24/PHOTO-2023-04-23-18-01-09 2.jpg",
+        "/M4S24/PHOTO-2023-04-23-18-37-21 2.jpg",
+        "/M4S24/PHOTO-2023-04-23-18-37-21 3.jpg",
+        "/M4S24/PHOTO-2023-04-23-18-37-21 4.jpg",
+        "/M4S24/PHOTO-2023-04-23-18-37-21 5.jpg",
+        "/M4S24/PHOTO-2023-04-23-18-37-21.jpg",
+        "/M4S24/PHOTO-2023-04-23-18-37-22.jpg",
         "/M4S24/Screen Shot 2024-02-07 at 2.36.21 p.m..png",
         "/M4S24/Screen Shot 2024-02-07 at 2.36.30 p.m..png",
         "/M4S24/Screen Shot 2024-02-07 at 2.36.39 p.m..png",
@@ -68,9 +76,24 @@ const MediaSection = () => {
       images: [
         "/M4S25/002A0F40-188A-4DCC-86BE-1C9EB1AD7D65.jpeg",
         "/M4S25/006C53BF-990E-4110-B9A4-965B485C261C.jpeg",
+        "/M4S25/01DA1BD4-3520-440F-851C-2DE1311EE8B4 2.JPG",
         "/M4S25/0D71F6B8-7759-4008-BCDE-B1740B08B694.jpeg",
         "/M4S25/18B2D6E7-5FAC-4245-A8FD-DB0B1C38A8D0.jpeg",
-        "/M4S25/1D253FE5-655C-4C8C-9305-8844D4FE758C.jpeg"
+        "/M4S25/1D253FE5-655C-4C8C-9305-8844D4FE758C.jpeg",
+        "/M4S25/33EA2C4F-B76D-4BEE-9D4D-EBDC94AB85D7.jpeg",
+        "/M4S25/4A76CE1E-5F3E-4035-BFF0-A43D054CEF6A.jpeg",
+        "/M4S25/59E84F39-6688-4051-8780-09685A6918E1.jpeg",
+        "/M4S25/5BA4A982-CA10-444B-BE91-FD59969F5205.JPG",
+        "/M4S25/72A58E4C-0DBF-401B-8F8F-F6E75D8D48EA.jpeg",
+        "/M4S25/9F252E58-447C-4E48-9997-4DC85D0766BA.jpeg",
+        "/M4S25/A79F854A-222E-4857-AF51-70ABBB737482.jpeg",
+        "/M4S25/A9F24B94-B1DA-41DE-9936-626A334E8FE0.jpeg",
+        "/M4S25/IMG_1536 2.HEIC",
+        "/M4S25/IMG_1550.HEIC",
+        "/M4S25/IMG_3481.JPG",
+        "/M4S25/IMG_4965.JPG",
+        "/M4S25/IMG_5058 2.JPG",
+        "/M4S25/IMG_5126.JPG"
       ]
     },
     {
@@ -80,7 +103,22 @@ const MediaSection = () => {
         "/OpSmile/Copy of Copy of Copy of DSC_0017.jpg",
         "/OpSmile/Copy of Copy of DSC_0128.JPG",
         "/OpSmile/Copy of Copy of DSC_0170.jpg",
-        "/OpSmile/Copy of Copy of DSC_0190.jpg"
+        "/OpSmile/Copy of Copy of DSC_0190.jpg",
+        "/OpSmile/Copy of Copy of DSC_0239.jpg",
+        "/OpSmile/Copy of Copy of DSC_0272 (1).jpg",
+        "/OpSmile/Copy of Copy of DSC_0290.jpg",
+        "/OpSmile/Copy of Copy of DSC_0317.jpg",
+        "/OpSmile/Copy of Copy of DSC_0319.jpg",
+        "/OpSmile/Copy of Copy of DSC_0334.jpg",
+        "/OpSmile/Copy of Copy of DSC_0338.jpg",
+        "/OpSmile/Copy of Copy of DSC_0345.jpg",
+        "/OpSmile/DSC00463.JPG",
+        "/OpSmile/DSC00465.JPG",
+        "/OpSmile/DSC00469.JPG",
+        "/OpSmile/DSC00470.JPG",
+        "/OpSmile/DSC00471.JPG",
+        "/OpSmile/DSC00472.JPG",
+        "/OpSmile/DSC00473.JPG"
       ]
     },
     {
@@ -90,7 +128,18 @@ const MediaSection = () => {
         "/GCI/TAPC3883.jpg",
         "/GCI/TAPC4775.jpg",
         "/GCI/TAPC4844.jpg",
-        "/GCI/TAPC4872.jpg"
+        "/GCI/TAPC4872.jpg",
+        "/GCI/TAPC5721.jpg",
+        "/GCI/TAPC6213.jpg",
+        "/GCI/TAPC6320.jpg",
+        "/GCI/TAPC6720.jpg",
+        "/GCI/TAPS3340.jpg",
+        "/GCI/TAPS5139.jpg",
+        "/GCI/TAPS5332.jpg",
+        "/GCI/TAPS5516.jpg",
+        "/GCI/TAPS5726.jpg",
+        "/GCI/TAPS5989.jpg",
+        "/GCI/TAPS6038.jpg"
       ]
     }
   ];
