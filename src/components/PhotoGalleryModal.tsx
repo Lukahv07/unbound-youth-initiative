@@ -47,11 +47,10 @@ const PhotoGalleryModal = ({ isOpen, onClose, galleryTitle, images }: PhotoGalle
           
           <Button
             variant="ghost"
-            size="icon"
             onClick={() => setViewMode(viewMode === "grid" ? "carousel" : "grid")}
-            className="text-white hover:bg-white/20"
+            className="text-white hover:bg-white/20 px-3 py-2 text-sm"
           >
-            {viewMode === "grid" ? <Grid className="w-6 h-6" /> : <LayoutGrid className="w-6 h-6" />}
+            {viewMode === "grid" ? "Switch to Carousel Mode" : "Switch to Grid Mode"}
           </Button>
         </div>
 
@@ -109,9 +108,9 @@ const PhotoGalleryModal = ({ isOpen, onClose, galleryTitle, images }: PhotoGalle
               </div>
               
               {/* Thumbnail Strip */}
-              <div className="h-24 px-4 py-2">
+              <div className="h-24 px-4 py-2 flex-shrink-0">
                 <ScrollArea className="w-full h-full">
-                  <div className="flex gap-2 pb-2">
+                  <div className="flex gap-2 pb-2 h-20">
                     {images.map((image, index) => (
                       <div
                         key={index}
@@ -126,6 +125,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, galleryTitle, images }: PhotoGalle
                           src={image}
                           alt={`${galleryTitle} thumbnail ${index + 1}`}
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                       </div>
                     ))}

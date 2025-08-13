@@ -63,6 +63,7 @@ const MediaSection = () => {
     images: ["/GCI/TAP-2909.jpg", "/GCI/TAPC3883.jpg", "/GCI/TAPC4775.jpg", "/GCI/TAPC4844.jpg", "/GCI/TAPC4872.jpg", "/GCI/TAPC5721.jpg", "/GCI/TAPC6213.jpg", "/GCI/TAPC6320.jpg", "/GCI/TAPC6720.jpg", "/GCI/TAPS3340.jpg", "/GCI/TAPS5139.jpg", "/GCI/TAPS5332.jpg", "/GCI/TAPS5516.jpg", "/GCI/TAPS5726.jpg", "/GCI/TAPS5989.jpg", "/GCI/TAPS6038.jpg"]
   }];
   const handleOpenGallery = (galleryIndex: number) => {
+    // Optimize by setting both states simultaneously
     setSelectedGallery(galleryIndex);
     setIsGalleryOpen(true);
   };
