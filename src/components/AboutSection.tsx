@@ -19,14 +19,12 @@ const AboutSection = () => {
       carouselApi.scrollTo(index);
     }
   };
-
   const scrollToPartnership = () => {
     const element = document.getElementById('partnership');
     if (element) {
       const headerHeight = 80;
       const extraMargin = 20;
       const elementPosition = element.offsetTop - headerHeight - extraMargin;
-      
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
@@ -37,7 +35,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-7xl">About</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4 sm:text-7xl">About Us</h2>
           <h3 className="text-2xl font-semibold text-primary mb-6 sm:text-4xl">Our Story: From Miles to Movements</h3>
         </div>
 
@@ -64,18 +62,13 @@ const AboutSection = () => {
                         <CardContent className="p-4">
                           <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
                             <img src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png" alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit" className="w-full h-full object-cover" />
-                            {currentSlide === 0 && (
-                              <div
-                                onClick={scrollToPartnership}
-                                className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-lime-500 text-white text-xs px-3 py-1 rounded-full shadow-lg cursor-pointer opacity-100"
-                              >
+                            {currentSlide === 0 && <div onClick={scrollToPartnership} className="absolute top-3 right-3 bg-lime-500/90 text-white text-xs px-3 py-1 rounded-full shadow-lg cursor-pointer">
                                 Scroll to Learn More About GCI
                                 <ArrowDown className="w-3 h-3 ml-1 inline" />
-                              </div>
-                            )}
+                              </div>}
                           </div>
                           <p className="text-sm text-muted-foreground text-center">
-                            Founder Lukah Villarreal (middle) launching UNbound at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
+                            Founder Lukah Villarreal (middle) at the Global Citizens Initiative Summit in St. Andrews, Scotland.<br />
                             <span className="font-medium">— July, 2025</span>
                           </p>
                         </CardContent>
