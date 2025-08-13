@@ -113,9 +113,9 @@ const MediaSection = () => {
 
                     {/* Action Button */}
                     <div className="flex justify-center md:justify-start items-end">
-                      <Button variant="hero" className="flex items-center space-x-2">
+                      <Button variant="hero" className="flex items-center space-x-2 text-sm">
                         <Eye className="w-4 h-4" />
-                        <span>Watch in Full Screen Mode (~3 min)</span>
+                        <span>Watch Full (~3 min)</span>
                       </Button>
                     </div>
                   </div>

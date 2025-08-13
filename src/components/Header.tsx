@@ -36,9 +36,6 @@ const Header = () => {
             <button onClick={() => scrollToSection('methodology')} className="text-foreground hover:text-primary transition-colors">
               Our Model
             </button>
-            <button onClick={() => scrollToSection('partnership')} className="text-foreground hover:text-primary transition-colors">
-              Our GCI Partnership
-            </button>
             <button onClick={() => scrollToSection('media')} className="text-foreground hover:text-primary transition-colors">
               Media
             </button>
@@ -64,9 +61,6 @@ const Header = () => {
             </button>
             <button onClick={() => scrollToSection('methodology')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
               Our Model
-            </button>
-            <button onClick={() => scrollToSection('partnership')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
-              Our GCI Partnership
             </button>
             <button onClick={() => scrollToSection('media')} className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left">
               Media

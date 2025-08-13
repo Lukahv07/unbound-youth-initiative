@@ -65,14 +65,13 @@ const AboutSection = () => {
                           <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
                             <img src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png" alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit" className="w-full h-full object-cover" />
                             {currentSlide === 0 && (
-                              <Button
+                              <div
                                 onClick={scrollToPartnership}
-                                className="absolute top-3 right-3 bg-lime-500/90 hover:bg-lime-400 text-white text-xs px-3 py-1 rounded-full shadow-lg animate-[glow-soft_2s_ease-in-out_infinite_alternate]"
-                                size="sm"
+                                className="absolute top-3 right-3 bg-lime-500/90 text-white text-xs px-3 py-1 rounded-full shadow-lg cursor-pointer"
                               >
-                                Learn More About GCI
-                                <ArrowDown className="w-3 h-3 ml-1" />
-                              </Button>
+                                Scroll to Learn More About GCI
+                                <ArrowDown className="w-3 h-3 ml-1 inline" />
+                              </div>
                             )}
                           </div>
                           <p className="text-sm text-muted-foreground text-center">
