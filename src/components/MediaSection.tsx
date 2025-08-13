@@ -4,7 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Play, Eye } from "lucide-react";
 import { useState } from "react";
 import PhotoGalleryModal from "./PhotoGalleryModal";
-const PhotoGalleryCarousel = ({ onOpenGallery }: { onOpenGallery: (galleryIndex: number) => void }) => {
+const PhotoGalleryCarousel = ({
+  onOpenGallery
+}: {
+  onOpenGallery: (galleryIndex: number) => void;
+}) => {
   const [activeGallery, setActiveGallery] = useState(0);
   const galleries = [{
     title: "Miles for Smiles 2025",
@@ -33,12 +37,10 @@ const PhotoGalleryCarousel = ({ onOpenGallery }: { onOpenGallery: (galleryIndex:
           <img src={galleries[activeGallery].image} alt={galleries[activeGallery].title} className="w-full h-full object-cover" />
         </div>
         <div className="text-center space-y-2">
-          <h5 className="font-medium text-foreground">{galleries[activeGallery].title}</h5>
-          <p className="text-sm text-muted-foreground">{galleries[activeGallery].description}</p>
+          <h5 className="font-medium text-foreground text-4xl">{galleries[activeGallery].title}</h5>
+          <p className="text-muted-foreground text-lg">{galleries[activeGallery].description}</p>
           <Button variant="outline" size="sm" className="mt-2" onClick={() => onOpenGallery(activeGallery)}>
-            {activeGallery === 0 ? "View Full M4S25 Gallery" : 
-             activeGallery === 1 ? "View Full OpSmile Gallery" : 
-             "View Full GCI Gallery"}
+            {activeGallery === 0 ? "View Full M4S25 Gallery" : activeGallery === 1 ? "View Full OpSmile Gallery" : "View Full GCI Gallery"}
           </Button>
         </div>
       </div>
@@ -50,73 +52,16 @@ const MediaSection = () => {
   const features = ["On-the-ground footage from medical missions", "Interviews with families and volunteers", "Reflections from student leaders"];
 
   // Gallery data with images from each folder - filtered for browser compatibility
-  const galleryData = [
-    {
-      title: "Miles for Smiles 2025",
-      images: [
-        "/M4S25/002A0F40-188A-4DCC-86BE-1C9EB1AD7D65.jpeg",
-        "/M4S25/006C53BF-990E-4110-B9A4-965B485C261C.jpeg",
-        "/M4S25/0D71F6B8-7759-4008-BCDE-B1740B08B694.jpeg",
-        "/M4S25/18B2D6E7-5FAC-4245-A8FD-DB0B1C38A8D0.jpeg",
-        "/M4S25/1D253FE5-655C-4C8C-9305-8844D4FE758C.jpeg",
-        "/M4S25/33EA2C4F-B76D-4BEE-9D4D-EBDC94AB85D7.jpeg",
-        "/M4S25/4A76CE1E-5F3E-4035-BFF0-A43D054CEF6A.jpeg",
-        "/M4S25/59E84F39-6688-4051-8780-09685A6918E1.jpeg",
-        "/M4S25/5BA4A982-CA10-444B-BE91-FD59969F5205.JPG",
-        "/M4S25/72A58E4C-0DBF-401B-8F8F-F6E75D8D48EA.jpeg",
-        "/M4S25/9F252E58-447C-4E48-9997-4DC85D0766BA.jpeg",
-        "/M4S25/A79F854A-222E-4857-AF51-70ABBB737482.jpeg",
-        "/M4S25/A9F24B94-B1DA-41DE-9936-626A334E8FE0.jpeg",
-        "/M4S25/IMG_3481.JPG",
-        "/M4S25/IMG_4965.JPG",
-        "/M4S25/IMG_5126.JPG"
-      ]
-    },
-    {
-      title: "Operation Smile Missions",
-      images: [
-        "/OpSmile/DSC00463.JPG",
-        "/OpSmile/DSC00465.JPG",
-        "/OpSmile/DSC00469.JPG",
-        "/OpSmile/DSC00470.JPG",
-        "/OpSmile/DSC00471.JPG",
-        "/OpSmile/DSC00472.JPG",
-        "/OpSmile/DSC00473.JPG",
-        "/lovable-uploads/75859d8c-cd41-4167-b792-04099c478f86.png",
-        "/lovable-uploads/90fb8603-4046-45ee-9570-3c02ac09aa9b.png",
-        "/lovable-uploads/5322c2ad-df0b-4450-895f-4d08c77f4d68.png",
-        "/lovable-uploads/38e53cb8-6692-4c16-846e-40426cecd673.png",
-        "/lovable-uploads/dab02569-0cb2-4886-babf-c8da8dc19a22.png",
-        "/lovable-uploads/9e7c1cd4-3df3-4004-ad83-29b3cb0f5181.png",
-        "/lovable-uploads/be7c15de-2553-4e52-880f-7bc8739fc071.png",
-        "/lovable-uploads/95a89bcf-69fc-497a-b162-f6f1755b5f20.png",
-        "/lovable-uploads/bacaeab9-cd69-4daf-8147-daea708c3d5b.png",
-        "/lovable-uploads/566eff49-11cb-4021-aba3-edcc75a607c3.png"
-      ]
-    },
-    {
-      title: "Global Citizens Initiative 2025",
-      images: [
-        "/GCI/TAP-2909.jpg",
-        "/GCI/TAPC3883.jpg",
-        "/GCI/TAPC4775.jpg",
-        "/GCI/TAPC4844.jpg",
-        "/GCI/TAPC4872.jpg",
-        "/GCI/TAPC5721.jpg",
-        "/GCI/TAPC6213.jpg",
-        "/GCI/TAPC6320.jpg",
-        "/GCI/TAPC6720.jpg",
-        "/GCI/TAPS3340.jpg",
-        "/GCI/TAPS5139.jpg",
-        "/GCI/TAPS5332.jpg",
-        "/GCI/TAPS5516.jpg",
-        "/GCI/TAPS5726.jpg",
-        "/GCI/TAPS5989.jpg",
-        "/GCI/TAPS6038.jpg"
-      ]
-    }
-  ];
-
+  const galleryData = [{
+    title: "Miles for Smiles 2025",
+    images: ["/M4S25/002A0F40-188A-4DCC-86BE-1C9EB1AD7D65.jpeg", "/M4S25/006C53BF-990E-4110-B9A4-965B485C261C.jpeg", "/M4S25/0D71F6B8-7759-4008-BCDE-B1740B08B694.jpeg", "/M4S25/18B2D6E7-5FAC-4245-A8FD-DB0B1C38A8D0.jpeg", "/M4S25/1D253FE5-655C-4C8C-9305-8844D4FE758C.jpeg", "/M4S25/33EA2C4F-B76D-4BEE-9D4D-EBDC94AB85D7.jpeg", "/M4S25/4A76CE1E-5F3E-4035-BFF0-A43D054CEF6A.jpeg", "/M4S25/59E84F39-6688-4051-8780-09685A6918E1.jpeg", "/M4S25/5BA4A982-CA10-444B-BE91-FD59969F5205.JPG", "/M4S25/72A58E4C-0DBF-401B-8F8F-F6E75D8D48EA.jpeg", "/M4S25/9F252E58-447C-4E48-9997-4DC85D0766BA.jpeg", "/M4S25/A79F854A-222E-4857-AF51-70ABBB737482.jpeg", "/M4S25/A9F24B94-B1DA-41DE-9936-626A334E8FE0.jpeg", "/M4S25/IMG_3481.JPG", "/M4S25/IMG_4965.JPG", "/M4S25/IMG_5126.JPG"]
+  }, {
+    title: "Operation Smile Missions",
+    images: ["/OpSmile/DSC00463.JPG", "/OpSmile/DSC00465.JPG", "/OpSmile/DSC00469.JPG", "/OpSmile/DSC00470.JPG", "/OpSmile/DSC00471.JPG", "/OpSmile/DSC00472.JPG", "/OpSmile/DSC00473.JPG", "/lovable-uploads/75859d8c-cd41-4167-b792-04099c478f86.png", "/lovable-uploads/90fb8603-4046-45ee-9570-3c02ac09aa9b.png", "/lovable-uploads/5322c2ad-df0b-4450-895f-4d08c77f4d68.png", "/lovable-uploads/38e53cb8-6692-4c16-846e-40426cecd673.png", "/lovable-uploads/dab02569-0cb2-4886-babf-c8da8dc19a22.png", "/lovable-uploads/9e7c1cd4-3df3-4004-ad83-29b3cb0f5181.png", "/lovable-uploads/be7c15de-2553-4e52-880f-7bc8739fc071.png", "/lovable-uploads/95a89bcf-69fc-497a-b162-f6f1755b5f20.png", "/lovable-uploads/bacaeab9-cd69-4daf-8147-daea708c3d5b.png", "/lovable-uploads/566eff49-11cb-4021-aba3-edcc75a607c3.png"]
+  }, {
+    title: "Global Citizens Initiative 2025",
+    images: ["/GCI/TAP-2909.jpg", "/GCI/TAPC3883.jpg", "/GCI/TAPC4775.jpg", "/GCI/TAPC4844.jpg", "/GCI/TAPC4872.jpg", "/GCI/TAPC5721.jpg", "/GCI/TAPC6213.jpg", "/GCI/TAPC6320.jpg", "/GCI/TAPC6720.jpg", "/GCI/TAPS3340.jpg", "/GCI/TAPS5139.jpg", "/GCI/TAPS5332.jpg", "/GCI/TAPS5516.jpg", "/GCI/TAPS5726.jpg", "/GCI/TAPS5989.jpg", "/GCI/TAPS6038.jpg"]
+  }];
   const handleOpenGallery = (galleryIndex: number) => {
     setSelectedGallery(galleryIndex);
     setIsGalleryOpen(true);
@@ -213,12 +158,7 @@ const MediaSection = () => {
       </div>
 
       {/* Photo Gallery Modal */}
-      <PhotoGalleryModal
-        isOpen={isGalleryOpen}
-        onClose={() => setIsGalleryOpen(false)}
-        galleryTitle={galleryData[selectedGallery]?.title || ""}
-        images={galleryData[selectedGallery]?.images || []}
-      />
+      <PhotoGalleryModal isOpen={isGalleryOpen} onClose={() => setIsGalleryOpen(false)} galleryTitle={galleryData[selectedGallery]?.title || ""} images={galleryData[selectedGallery]?.images || []} />
     </section>;
 };
 export default MediaSection;
