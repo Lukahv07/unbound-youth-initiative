@@ -10,19 +10,21 @@ const PhotoGalleryCarousel = ({
   onOpenGallery: (galleryIndex: number) => void;
 }) => {
   const [activeGallery, setActiveGallery] = useState(0);
+  
   const galleries = [{
     title: "Miles for Smiles 2025",
-    description: "Our biggest, boldest, and most inspiring race yet—this year's run captured unforgettable moments of unity, resilience, and joy as we pushed past our goals for global smiles. M4S 2025 had the most successful finance team in recent history, with the most extensive list of sponsors and raffle prizes yet. With guest speakers from Operation Smile Mexico, family testimonies, Yoghurt trucks, and a professional host, this year's race brought flare, character, and a whole lot of smiles.",
+    description: "Our biggest, boldest, and most inspiring race yet—this year's run captured unforgettable moments of unity, resilience, and joy as we pushed past our goals for global smiles. M4S 2025 had the most successful finance team in recent history, with the most extensive list of sponsors and raffle prizes yet. The 2025 M4S Executive Council faced some challenges along the way. Due to school administrative decisions, the race's staff was selected three months later than expected. Air quality even forced the team to delay the race.  Ultimately, however, M4S staff succeeded in overcoming hurdles and making 2025 a year to remember. With guest speakers from Operation Smile Mexico, family testimonies, Yoghurt trucks, and a professional host, M4S 2025 brought flare, character, and a whole lot of smiles.",
     image: "/lovable-uploads/2d1077b3-de6a-4131-b2f2-5bebb1fccfad.png"
   }, {
     title: "Operation Smile Missions",
-    description: "Behind-the-scenes glimpses into surgical missions at Christus Muguerza Hospital Sur, where dedicated medical teams and volunteers transform lives one smile at a time. While supporting Operation Smile staff, M4S organizers translated for nurses and surgeons, assisted with medical records, and comforted families awaiting life-changing surgery.",
+    description: "This gallery offers behind-the-scenes glimpses into surgical missions at Christus Muguerza Hospital Sur, where dedicated medical teams and volunteers transform lives one smile at a time. While supporting Operation Smile staff, M4S organizers translated for nurses and surgeons, assisted with medical records, and comforted families awaiting life-changing surgery. Here, their year-long efforts culminate in the opportunity to see their work manifest. \"It's beautiful to see all hands on deck,\" says one staff member, \"as everyone—from doctors to volunteers—collaborates for a common purpose.\" This year, the M4S team received an honorary Operation Smile recognition Mexico for their continued aid in changing lives.",
     image: "/lovable-uploads/70847e30-0738-434c-806b-66d49a84c057.png"
   }, {
     title: "Global Citizens Initiative 2025",
-    description: "A window into the place that started it all. Located in St. Andrews Scotland, the 2025 GCI Summit brought leaders from around the world together to launch \"Glocal Service Projects.\" The 9-day experience was quintessential for UNbound's partnership with GCI, which empowered our international network to thrive.",
+    description: "A window into the place that started it all. Located in St. Andrews Scotland, the 2025 GCI Summit brought leaders from around the world together to launch \"Glocal Service Projects (GSPs).\" The 8-day experience was quintessential for UNbound's partnership with GCI, which empowered our international network to thrive. GCI was also the launchpad off of which UNbound sprung forward. In ideating his very own GSP, Founder Lukah Villarreal formulated a question: \"How might we unite Latin American HS communities to launch NGO-partnered fundraising events that follow the Miles for Smiles (Operation Smile) roadmap?\" This question—a story—is at the heart of what UNbound does.",
     image: "/lovable-uploads/f0d2be46-6442-4e07-89f9-0155c9c76268.png"
   }];
+
   const handleGallerySwitch = (index: number) => {
     setActiveGallery(index);
   };
@@ -35,14 +37,14 @@ const PhotoGalleryCarousel = ({
       </div>
       
       {/* Active Gallery Preview */}
-      <div className="space-y-4">
+      <div className="space-y-6">
         <div className="aspect-video bg-light-blue-soft rounded-lg overflow-hidden">
           <img src={galleries[activeGallery].image} alt={galleries[activeGallery].title} className="w-full h-full object-cover" />
         </div>
-        <div className="text-center space-y-2 py-[20px]">
-          <h5 className="font-medium text-foreground text-4xl">{galleries[activeGallery].title}</h5>
-          <p className="text-muted-foreground text-lg">{galleries[activeGallery].description}</p>
-          <Button variant="outline" size="sm" className="mt-2" onClick={() => onOpenGallery(activeGallery)}>
+        <div className="text-center space-y-4 flex flex-col justify-center h-full px-2 py-6">
+          <h5 className="font-bold text-turquoise text-2xl">{galleries[activeGallery].title}</h5>
+          <p className="text-turquoise/70 text-sm">{galleries[activeGallery].description}</p>
+          <Button variant="outline" size="sm" className="mt-4" onClick={() => onOpenGallery(activeGallery)}>
             {activeGallery === 0 ? "View Full M4S25 Gallery" : activeGallery === 1 ? "View Full OpSmile Gallery" : "View Full GCI Gallery"}
           </Button>
         </div>
@@ -138,7 +140,7 @@ const MediaSection = () => {
                     <div className="flex justify-center md:justify-start items-end">
                       <Button variant="hero" className="flex items-center space-x-2 text-sm">
                         <Eye className="w-4 h-4" />
-                        <span>Watch Full (~3 min)</span>
+                        <span>Watch in Full Screen (~3 min)</span>
                       </Button>
                     </div>
                   </div>
