@@ -62,7 +62,7 @@ const AboutSection = () => {
                         <CardContent className="p-4">
                           <div className="w-full h-64 bg-light-blue-soft rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
                             <img src="/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png" alt="Founder Lukah Villarreal with fellows at Global Citizens Initiative Summit" className="w-full h-full object-cover" />
-                            {currentSlide === 0 && <div onClick={scrollToPartnership} className="absolute top-3 right-3 bg-gradient-to-r from-lime-300 to-green-400 text-black text-xs px-3 py-1 rounded-full shadow-lg cursor-pointer opacity-100">
+                            {currentSlide === 0 && <div onClick={scrollToPartnership} className="absolute top-3 right-3 bg-gradient-to-r from-lime-300 to-green-500 text-white font-bold text-xs px-3 py-1 rounded-full shadow-lg cursor-pointer opacity-100">
                                 Scroll to Learn More About GCI
                                 <ArrowDown className="w-3 h-3 ml-1 inline" />
                               </div>}

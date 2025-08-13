@@ -53,7 +53,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, galleryTitle, images }: PhotoGalle
             {viewMode === "grid" ? (
               <>
                 Switch to Carousel Mode
-                <img src="/lovable-uploads/306a2652-de7d-4b29-8603-87132aa6e984.png" alt="" className="w-4 h-4" />
+                <img src="/lovable-uploads/306a2652-de7d-4b29-8603-87132aa6e984.png" alt="" className="w-5 h-auto" />
               </>
             ) : (
               <>
