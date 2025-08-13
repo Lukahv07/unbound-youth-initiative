@@ -8,16 +8,16 @@ const PhotoGalleryCarousel = ({ onOpenGallery }: { onOpenGallery: (galleryIndex:
   const [activeGallery, setActiveGallery] = useState(0);
   const galleries = [{
     title: "Miles for Smiles 2025",
-    description: "Our most successful race yet with over 1,000 participants.",
-    image: "/lovable-uploads/61655475-7264-48ac-90be-bc69fba72053.png"
+    description: "Our biggest, boldest, and most inspiring race yet—this year's run captured unforgettable moments of unity, resilience, and joy as we pushed past our goals for global smiles. M4S 2025 had the most successful finance team in recent history, with the most extensive list of sponsors and raffle prizes yet. With guest speakers from Operation Smile Mexico, family testimonies, Yoghurt trucks, and a professional host, this year's race brought flare, character, and a whole lot of smiles.",
+    image: "/lovable-uploads/2d1077b3-de6a-4131-b2f2-5bebb1fccfad.png"
   }, {
     title: "Operation Smile Missions",
-    description: "Behind-the-scenes moments from medical missions.",
-    image: "/lovable-uploads/36bee2e3-53d0-4a61-acd1-a2cd9ada85ab.png"
+    description: "Behind-the-scenes glimpses into surgical missions at Christus Muguerza Hospital Sur, where dedicated medical teams and volunteers transform lives one smile at a time. While supporting Operation Smile staff, M4S organizers translated for nurses and surgeons, assisted with medical records, and comforted families awaiting life-changing surgery.",
+    image: "/lovable-uploads/70847e30-0738-434c-806b-66d49a84c057.png"
   }, {
     title: "Global Citizens Initiative 2025",
-    description: "Summit moments and global collaboration.",
-    image: "/lovable-uploads/5a208512-aae3-45ed-9a75-3e283ea450b4.png"
+    description: "A window into the place that started it all. Located in St. Andrews Scotland, the 2025 GCI Summit brought leaders from around the world together to launch \"Glocal Service Projects.\" The 9-day experience was quintessential for UNbound's partnership with GCI, which empowered our international network to thrive.",
+    image: "/lovable-uploads/f0d2be46-6442-4e07-89f9-0155c9c76268.png"
   }];
   return <div>
       {/* Gallery Navigation */}
@@ -36,7 +36,9 @@ const PhotoGalleryCarousel = ({ onOpenGallery }: { onOpenGallery: (galleryIndex:
           <h5 className="font-medium text-foreground">{galleries[activeGallery].title}</h5>
           <p className="text-sm text-muted-foreground">{galleries[activeGallery].description}</p>
           <Button variant="outline" size="sm" className="mt-2" onClick={() => onOpenGallery(activeGallery)}>
-            View Full Gallery
+            {activeGallery === 0 ? "View Full M4S25 Gallery" : 
+             activeGallery === 1 ? "View Full OpSmile Gallery" : 
+             "View Full GCI Gallery"}
           </Button>
         </div>
       </div>
