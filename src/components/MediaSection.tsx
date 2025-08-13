@@ -10,6 +10,7 @@ const PhotoGalleryCarousel = ({
   onOpenGallery: (galleryIndex: number) => void;
 }) => {
   const [activeGallery, setActiveGallery] = useState(0);
+  
   const galleries = [{
     title: "Miles for Smiles 2025",
     description: "Our biggest, boldest, and most inspiring race yet—this year's run captured unforgettable moments of unity, resilience, and joy as we pushed past our goals for global smiles. M4S 2025 had the most successful finance team in recent history, with the most extensive list of sponsors and raffle prizes yet. With guest speakers from Operation Smile Mexico, family testimonies, Yoghurt trucks, and a professional host, this year's race brought flare, character, and a whole lot of smiles.",
@@ -23,10 +24,14 @@ const PhotoGalleryCarousel = ({
     description: "A window into the place that started it all. Located in St. Andrews Scotland, the 2025 GCI Summit brought leaders from around the world together to launch \"Glocal Service Projects.\" The 9-day experience was quintessential for UNbound's partnership with GCI, which empowered our international network to thrive.",
     image: "/lovable-uploads/f0d2be46-6442-4e07-89f9-0155c9c76268.png"
   }];
+
+  const handleGallerySwitch = (index: number) => {
+    setActiveGallery(index);
+  };
   return <div>
       {/* Gallery Navigation */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {galleries.map((gallery, index) => <Button key={index} variant={activeGallery === index ? "default" : "outline"} size="sm" onClick={() => setActiveGallery(index)} className="text-xs">
+        {galleries.map((gallery, index) => <Button key={index} variant={activeGallery === index ? "default" : "outline"} size="sm" onClick={() => handleGallerySwitch(index)} className="text-xs">
             {gallery.title}
           </Button>)}
       </div>

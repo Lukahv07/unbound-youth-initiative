@@ -78,37 +78,39 @@ const PhotoGalleryModal = ({ isOpen, onClose, galleryTitle, images }: PhotoGalle
           ) : (
             // Carousel View
             <div className="flex flex-col h-full">
-              {/* Main Image */}
-              <div className="flex-1 flex items-center justify-center relative px-4">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={goToPrevious}
-                  className="absolute left-4 text-white hover:bg-white/20 z-10"
-                >
-                  <ChevronLeft className="w-8 h-8" />
-                </Button>
-                
-                <div className="max-w-4xl max-h-full">
-                  <img
-                    src={images[selectedImageIndex]}
-                    alt={`${galleryTitle} ${selectedImageIndex + 1}`}
-                    className="max-w-full max-h-full object-contain"
-                  />
+              {/* Main Image - Fixed height container */}
+              <div className="relative px-4" style={{ height: 'calc(100% - 6rem)' }}>
+                <div className="h-full flex items-center justify-center">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={goToPrevious}
+                    className="absolute left-4 text-white hover:bg-white/20 z-10"
+                  >
+                    <ChevronLeft className="w-8 h-8" />
+                  </Button>
+                  
+                  <div className="max-w-4xl max-h-full">
+                    <img
+                      src={images[selectedImageIndex]}
+                      alt={`${galleryTitle} ${selectedImageIndex + 1}`}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={goToNext}
+                    className="absolute right-4 text-white hover:bg-white/20 z-10"
+                  >
+                    <ChevronRight className="w-8 h-8" />
+                  </Button>
                 </div>
-                
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={goToNext}
-                  className="absolute right-4 text-white hover:bg-white/20 z-10"
-                >
-                  <ChevronRight className="w-8 h-8" />
-                </Button>
               </div>
               
-              {/* Thumbnail Strip */}
-              <div className="h-24 px-4 py-2 flex-shrink-0">
+              {/* Thumbnail Strip - Fixed height */}
+              <div className="h-24 px-4 py-2 flex-shrink-0 border-t border-white/20">
                 <ScrollArea className="w-full h-full">
                   <div className="flex gap-2 pb-2 h-20">
                     {images.map((image, index) => (
