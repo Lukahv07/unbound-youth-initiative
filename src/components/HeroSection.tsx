@@ -2,11 +2,13 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 // Array of hero images showcasing UNbound Youth Initiative's real impact
-const heroImages = [
-  "/lovable-uploads/7bdb6b03-5c23-4b52-8933-c87fede02548.png", // Miles for Smiles charity run
-  "/lovable-uploads/3aa7d80a-73bf-423e-8d25-1e6fed176002.png", // Hands holding Earth - global impact
-  "/lovable-uploads/3a78a30a-d587-4a65-be4f-7adaf5ee8441.png", // Youth with SDG signs
-  "/lovable-uploads/febafb1f-f6bc-48e7-8a22-49351a8f7c45.png"  // Medical mission with children
+const heroImages = ["/lovable-uploads/7bdb6b03-5c23-4b52-8933-c87fede02548.png",
+// Miles for Smiles charity run
+"/lovable-uploads/3aa7d80a-73bf-423e-8d25-1e6fed176002.png",
+// Hands holding Earth - global impact
+"/lovable-uploads/3a78a30a-d587-4a65-be4f-7adaf5ee8441.png",
+// Youth with SDG signs
+"/lovable-uploads/febafb1f-f6bc-48e7-8a22-49351a8f7c45.png" // Medical mission with children
 ];
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -25,7 +27,6 @@ const HeroSection = () => {
       const headerHeight = 80;
       const extraMargin = 0; // No extra margin to show exact section start
       const elementPosition = element.offsetTop - headerHeight - extraMargin;
-      
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
@@ -43,7 +44,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight lg:text-8xl">
+        <h1 className="text-4xl sm:text-5xl text-white mb-6 leading-tight lg:text-8xl font-extrabold">
           UNbound Youth Initiative
         </h1>
         <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 mb-4 font-medium">
