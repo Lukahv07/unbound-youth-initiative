@@ -7,7 +7,7 @@ import MethodologySection from "@/components/MethodologySection";
 import MediaSection from "@/components/MediaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation, useScrollWhiteFade } from "@/hooks/useScrollAnimation";
 
 const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const { ref, isVisible } = useScrollAnimation();
@@ -25,8 +25,11 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Index = () => {
+  const isScrolling = useScrollWhiteFade();
+
   return (
     <div className="min-h-screen">
+      <div className={`white-fade-overlay ${isScrolling ? 'white-fade-active' : ''}`} />
       <Header />
       <HeroSection />
       <AnimatedSection>

@@ -159,6 +159,18 @@ All colors MUST be HSL.
     }
   }
 
+  @keyframes white-fade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.15;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   .scroll-fade-in {
     animation: scroll-fade-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
@@ -166,5 +178,21 @@ All colors MUST be HSL.
   .scroll-fade-hidden {
     opacity: 0;
     transform: translateY(60px) scale(0.95);
+  }
+
+  .white-fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+  }
+
+  .white-fade-active {
+    animation: white-fade 0.3s ease-out;
   }
 }
