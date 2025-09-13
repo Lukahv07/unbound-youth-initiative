@@ -36,42 +36,37 @@ export const useScrollWhiteFade = () => {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-    let scrollVelocity = 0;
-    let isUserScrolling = false;
-    let scrollTimeout: NodeJS.Timeout;
-    let velocityTimeout: NodeJS.Timeout;
+    let lastTimestamp = Date.now();
+    let fadeTimeout: NodeJS.Timeout;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const newVelocity = Math.abs(currentScrollY - lastScrollY);
-      scrollVelocity = newVelocity;
-      lastScrollY = currentScrollY;
-
-      // User is actively scrolling
-      isUserScrolling = true;
-      clearTimeout(scrollTimeout);
+      const currentTimestamp = Date.now();
+      const timeDiff = currentTimestamp - lastTimestamp;
+      const scrollDiff = Math.abs(currentScrollY - lastScrollY);
       
-      // After user stops scrolling, check if there's momentum
-      scrollTimeout = setTimeout(() => {
-        isUserScrolling = false;
+      if (timeDiff > 0) {
+        const velocity = scrollDiff / timeDiff;
         
-        // If there's still significant velocity after user stopped, it's a flick scroll
-        if (scrollVelocity > 15) {
+        // If velocity is high (flick scroll), trigger immediately
+        if (velocity > 0.8) {
           setIsFlickScrolling(true);
-          clearTimeout(velocityTimeout);
-          velocityTimeout = setTimeout(() => {
+          clearTimeout(fadeTimeout);
+          fadeTimeout = setTimeout(() => {
             setIsFlickScrolling(false);
-          }, 800); // Longer duration for more noticeable effect
+          }, 800);
         }
-      }, 100);
+      }
+
+      lastScrollY = currentScrollY;
+      lastTimestamp = currentTimestamp;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearTimeout(scrollTimeout);
-      clearTimeout(velocityTimeout);
+      clearTimeout(fadeTimeout);
     };
   }, []);
 
