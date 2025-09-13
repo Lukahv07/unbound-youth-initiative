@@ -171,8 +171,11 @@ All colors MUST be HSL.
     0% {
       opacity: 0;
     }
-    50% {
-      opacity: 0.15;
+    30% {
+      opacity: 0.25;
+    }
+    70% {
+      opacity: 0.25;
     }
     100% {
       opacity: 0;
@@ -201,6 +204,6 @@ All colors MUST be HSL.
   }
 
   .white-fade-active {
-    animation: white-fade 0.3s ease-out;
+    animation: white-fade 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }

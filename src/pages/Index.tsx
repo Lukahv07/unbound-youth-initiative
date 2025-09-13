@@ -25,11 +25,11 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Index = () => {
-  const isScrolling = useScrollWhiteFade();
+  const isFlickScrolling = useScrollWhiteFade();
 
   return (
     <div className="min-h-screen">
-      <div className={`white-fade-overlay ${isScrolling ? 'white-fade-active' : ''}`} />
+      <div className={`white-fade-overlay ${isFlickScrolling ? 'white-fade-active' : ''}`} />
       <Header />
       <HeroSection />
       <AnimatedSection>

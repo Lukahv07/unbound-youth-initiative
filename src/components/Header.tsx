@@ -3,30 +3,32 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOverWhiteSection, setIsOverWhiteSection] = useState(false);
+  const [isOverWhiteSection, setIsOverWhiteSection] = useState(true); // Start white initially
   useEffect(() => {
     const checkHeaderPosition = () => {
       const scrollTop = window.scrollY;
       const headerHeight = 80;
 
-      // Define white/light sections - About Us and Media sections have white backgrounds
-      const whiteSections = ['about', 'media'];
+      // Define colored sections - Hero, Partnership, Methodology sections have colored backgrounds
+      const coloredSections = ['hero', 'partnership', 'methodology'];
 
-      // Check if header is over any white section or at the border
-      let overWhite = false;
-      whiteSections.forEach(sectionId => {
+      // Check if header is over any colored section
+      let overColored = false;
+      coloredSections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) {
           const sectionTop = section.offsetTop;
           const sectionBottom = sectionTop + section.offsetHeight;
 
-          // Check if header overlaps with this section or is at the border (within 20px of section start)
-          if (scrollTop + headerHeight >= sectionTop - 20 && scrollTop < sectionBottom) {
-            overWhite = true;
+          // Check if header overlaps with this section
+          if (scrollTop + headerHeight >= sectionTop && scrollTop < sectionBottom) {
+            overColored = true;
           }
         }
       });
-      setIsOverWhiteSection(overWhite);
+      
+      // Header should be white by default, blue when over colored sections
+      setIsOverWhiteSection(!overColored);
     };
     window.addEventListener('scroll', checkHeaderPosition);
     checkHeaderPosition(); // Initial check
