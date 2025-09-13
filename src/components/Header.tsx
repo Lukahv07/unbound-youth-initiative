@@ -9,14 +9,12 @@ const Header = () => {
       const scrollTop = window.scrollY;
       const headerHeight = 80;
 
-      // Define white sections - About Us and Media sections have white backgrounds
+      // White sections that should make header blue
       const whiteSections = ['about', 'media'];
-      
-      // Define colored sections - Hero, Partnership, Methodology, Contact sections have colored backgrounds
-      const coloredSections = ['hero', 'partnership', 'methodology', 'contact'];
 
+      let shouldBeBlue = false;
+      
       // Check if header is over any white section
-      let overWhite = false;
       whiteSections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -25,19 +23,14 @@ const Header = () => {
 
           // Check if header overlaps with this section
           if (scrollTop + headerHeight >= sectionTop && scrollTop < sectionBottom) {
-            overWhite = true;
+            shouldBeBlue = true;
           }
         }
       });
-
-      // If not over white section, check if we're at the very top (hero section)
-      if (!overWhite && scrollTop < 100) {
-        overWhite = false; // Hero section should have white header
-      }
       
-      // Header should be blue when over white sections, white when over colored sections
-      setIsOverWhiteSection(overWhite);
+      setIsOverWhiteSection(shouldBeBlue);
     };
+    
     window.addEventListener('scroll', checkHeaderPosition);
     checkHeaderPosition(); // Initial check
 
