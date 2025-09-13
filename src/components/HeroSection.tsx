@@ -22,6 +22,7 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
   const scrollToSection = (id: string) => {
+codex/update-button-navigation-links
     console.log("Hero scrolling to section:", id);
     const element = document.getElementById(id);
     console.log("Hero element found:", element);

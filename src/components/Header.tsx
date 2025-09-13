@@ -38,6 +38,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', checkHeaderPosition);
   }, []);
   const scrollToSection = (id: string) => {
+codex/update-button-navigation-links
     console.log("Scrolling to section:", id);
     const element = document.getElementById(id);
     console.log("Element found:", element);
