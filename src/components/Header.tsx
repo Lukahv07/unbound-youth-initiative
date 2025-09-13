@@ -37,16 +37,20 @@ const Header = () => {
     return () => window.removeEventListener('scroll', checkHeaderPosition);
   }, []);
   const scrollToSection = (id: string) => {
+    console.log('Scrolling to section:', id);
     const element = document.getElementById(id);
+    console.log('Element found:', element);
     if (element) {
-      const headerHeight = 80; // Height of the fixed header
-      const extraMargin = 0; // No extra margin to show exact section start
-      const elementPosition = element.offsetTop - headerHeight - extraMargin;
+      const headerHeight = 80;
+      const elementPosition = element.offsetTop - headerHeight;
+      console.log('Scrolling to position:', elementPosition);
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
       });
       setIsMenuOpen(false);
+    } else {
+      console.error('Element not found for id:', id);
     }
   };
   return <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b transition-all duration-300 ${isOverWhiteSection ? 'bg-blue-600/95 border-blue-500/30' : 'bg-background/95 border-border'}`}>

@@ -22,15 +22,19 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
   const scrollToSection = (id: string) => {
+    console.log('Hero scrolling to section:', id);
     const element = document.getElementById(id);
+    console.log('Hero element found:', element);
     if (element) {
       const headerHeight = 80;
-      const extraMargin = 0; // No extra margin to show exact section start
-      const elementPosition = element.offsetTop - headerHeight - extraMargin;
+      const elementPosition = element.offsetTop - headerHeight;
+      console.log('Hero scrolling to position:', elementPosition);
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
       });
+    } else {
+      console.error('Hero element not found for id:', id);
     }
   };
   return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
