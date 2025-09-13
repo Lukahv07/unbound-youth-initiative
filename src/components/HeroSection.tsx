@@ -24,7 +24,13 @@ const HeroSection = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80;
+      const extraMargin = 20;
+      const elementPosition = element.offsetTop - headerHeight - extraMargin;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth',
+      });
     } else {
       console.error('Hero element not found for id:', id);
     }
