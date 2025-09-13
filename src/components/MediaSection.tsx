@@ -72,7 +72,7 @@ const MediaSection = () => {
     setSelectedGallery(galleryIndex);
     setIsGalleryOpen(true);
   };
-  return <section id="media" className="bg-gradient-to-b from-background to-light-blue-soft py-[40px] bg-slate-500">
+  return <section id="media" className="bg-gradient-to-b from-background to-light-blue-soft py-[40px] bg-slate-500 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-0">
         {/* Header */}
         <div className="text-center mb-16">

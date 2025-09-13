@@ -39,12 +39,7 @@ const Header = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     } else {
       console.error('Element not found for id:', id);

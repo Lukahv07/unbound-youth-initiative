@@ -79,7 +79,7 @@ const ContactSection = () => {
     description: "Partner with us to amplify youth impact",
     action: "Partner with Us"
   }];
-  return <section id="contact" className="bg-gradient-to-b from-light-blue to-teal-400 py-[40px]">
+  return <section id="contact" className="bg-gradient-to-b from-light-blue to-teal-400 py-[40px] scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

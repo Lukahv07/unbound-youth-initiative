@@ -28,7 +28,7 @@ const MethodologySection = () => {
     description: "Gather feedback and iterate for maximum real-world impact.",
     color: "bg-turquoise/10 text-turquoise"
   }];
-  return <section id="methodology" className="py-20 bg-gradient-mission">
+  return <section id="methodology" className="py-20 bg-gradient-mission scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

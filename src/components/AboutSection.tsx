@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Globe, Target, ArrowDown } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
 const AboutSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [carouselApi, setCarouselApi] = useState<any>();
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   useEffect(() => {
     if (!carouselApi) {
       return;
@@ -31,7 +31,7 @@ const AboutSection = () => {
       });
     }
   };
-  return <section id="about" className="py-20 bg-gradient-to-b from-background to-light-blue-soft">
+  return <section id="about" className="py-20 bg-gradient-to-b from-background to-light-blue-soft scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
