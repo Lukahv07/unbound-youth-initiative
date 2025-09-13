@@ -18,8 +18,9 @@ const Header = () => {
       whiteSections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionBottom = sectionTop + section.offsetHeight;
+          const rect = section.getBoundingClientRect();
+          const sectionTop = rect.top + window.scrollY;
+          const sectionBottom = sectionTop + rect.height;
 
           // Check if header overlaps with this section
           if (scrollTop + headerHeight >= sectionTop && scrollTop < sectionBottom) {
@@ -37,20 +38,21 @@ const Header = () => {
     return () => window.removeEventListener('scroll', checkHeaderPosition);
   }, []);
   const scrollToSection = (id: string) => {
-    console.log('Scrolling to section:', id);
+    console.log("Scrolling to section:", id);
     const element = document.getElementById(id);
-    console.log('Element found:', element);
+    console.log("Element found:", element);
     if (element) {
       const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
-      console.log('Scrolling to position:', elementPosition);
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY - headerHeight;
+      console.log("Scrolling to position:", elementPosition);
       window.scrollTo({
         top: elementPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
       setIsMenuOpen(false);
     } else {
-      console.error('Element not found for id:', id);
+      console.error("Element not found for id:", id);
     }
   };
   return <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b transition-all duration-300 ${isOverWhiteSection ? 'bg-blue-600/95 border-blue-500/30' : 'bg-background/95 border-border'}`}>
