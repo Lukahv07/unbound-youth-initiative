@@ -11,6 +11,9 @@ const Header = () => {
 
       // Define white sections - About Us and Media sections have white backgrounds
       const whiteSections = ['about', 'media'];
+      
+      // Define colored sections - Hero, Partnership, Methodology, Contact sections have colored backgrounds
+      const coloredSections = ['hero', 'partnership', 'methodology', 'contact'];
 
       // Check if header is over any white section
       let overWhite = false;
@@ -26,6 +29,11 @@ const Header = () => {
           }
         }
       });
+
+      // If not over white section, check if we're at the very top (hero section)
+      if (!overWhite && scrollTop < 100) {
+        overWhite = false; // Hero section should have white header
+      }
       
       // Header should be blue when over white sections, white when over colored sections
       setIsOverWhiteSection(overWhite);

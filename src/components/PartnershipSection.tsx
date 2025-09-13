@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const PartnershipSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-green-500 via-green-600 to-emerald-700 relative overflow-hidden">
+    <section id="partnership" className="py-20 bg-gradient-to-br from-green-500 via-green-600 to-emerald-700 relative overflow-hidden">
       {/* Floating Circular Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Small floating circles */}
