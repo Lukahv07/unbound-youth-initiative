@@ -22,16 +22,21 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
   const scrollToSection = (id: string) => {
+codex/update-button-navigation-links
+    console.log("Hero scrolling to section:", id);
     const element = document.getElementById(id);
+    console.log("Hero element found:", element);
     if (element) {
       const headerHeight = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY - headerHeight;
+      console.log("Hero scrolling to position:", elementPosition);
       window.scrollTo({
         top: elementPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     } else {
-      console.error('Hero element not found for id:', id);
+      console.error("Hero element not found for id:", id);
     }
   };
   return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">

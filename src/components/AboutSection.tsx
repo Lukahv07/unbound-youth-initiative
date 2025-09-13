@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Globe, Target, ArrowDown } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
+codex/update-button-navigation-links
+import type { CarouselApi } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
 const AboutSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,14 +22,16 @@ const AboutSection = () => {
     }
   };
   const scrollToPartnership = () => {
-    const element = document.getElementById('partnership');
+    const element = document.getElementById("partnership");
     if (element) {
       const headerHeight = 80;
       const extraMargin = 20;
-      const elementPosition = element.offsetTop - headerHeight - extraMargin;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY - headerHeight -
+        extraMargin;
       window.scrollTo({
         top: elementPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
