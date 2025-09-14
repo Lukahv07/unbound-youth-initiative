@@ -47,7 +47,7 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
       window.scrollTo({
         top: elementPosition,
