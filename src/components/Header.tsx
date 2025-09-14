@@ -48,7 +48,7 @@ const Header = () => {
     if (element) {
       const headerHeight = 80;
       const fixedOffset = 20; // Added offset for extra space
-      const topPosition = element.offsetTop - headerHeight - fixedOffset;
+      const topPosition = element.getBoundingClientRect().top + window.pageYOffset - headerHeight - fixedOffset;
 
       window.scrollTo({
         top: topPosition,
