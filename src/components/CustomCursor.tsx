@@ -10,13 +10,13 @@ const CustomCursor = () => {
     // The function to handle mouse movement and update cursor position
     const onMouseMove = (e: MouseEvent) => {
       if (cursorRef.current) {
-        // Use a CSS transform for smoother, GPU-accelerated movement
-        cursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+        // Use translate3d for better GPU acceleration and smoother movement
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
       }
     };
 
-    // Add event listener for mouse movement
-    window.addEventListener('mousemove', onMouseMove);
+    // Add event listener for mouse movement with passive flag for better performance
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
 
     // Clean up function to remove event listener and restore cursor
     return () => {
@@ -28,7 +28,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed z-[9999] pointer-events-none transition-transform duration-75 ease-out"
+      className="fixed z-[9999] pointer-events-none"
       style={{
         width: '20px',
         height: '20px',
