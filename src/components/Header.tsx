@@ -37,15 +37,14 @@ const Header = () => {
     return () => window.removeEventListener('scroll', checkHeaderPosition);
   }, []);
   const scrollToSection = (id: string) => {
-    console.log('Scrolling to section:', id);
     const element = document.getElementById(id);
-    console.log('Element found:', element);
     if (element) {
       const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
-      console.log('Scrolling to position:', elementPosition);
+      const rect = element.getBoundingClientRect();
+      const scrollTop = window.scrollY || window.pageYOffset;
+      const targetTop = rect.top + scrollTop - headerHeight;
       window.scrollTo({
-        top: elementPosition,
+        top: targetTop,
         behavior: 'smooth'
       });
       setIsMenuOpen(false);

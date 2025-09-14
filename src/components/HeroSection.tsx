@@ -22,15 +22,14 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
   const scrollToSection = (id: string) => {
-    console.log('Hero scrolling to section:', id);
     const element = document.getElementById(id);
-    console.log('Hero element found:', element);
     if (element) {
       const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
-      console.log('Hero scrolling to position:', elementPosition);
+      const rect = element.getBoundingClientRect();
+      const scrollTop = window.scrollY || window.pageYOffset;
+      const targetTop = rect.top + scrollTop - headerHeight;
       window.scrollTo({
-        top: elementPosition,
+        top: targetTop,
         behavior: 'smooth'
       });
     } else {
